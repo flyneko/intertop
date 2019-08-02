@@ -1,0 +1,46 @@
+{
+  "jquery": [
+    "dist/jquery.min.js"
+  ],
+  "@fancyapps/fancybox": [
+    "dist/jquery.fancybox.min.js",
+    "dist/jquery.fancybox.min.css"
+  ],
+  "swiper": [
+    "dist/js/swiper.min.js",
+    "dist/css/swiper.min.css"
+  ],
+  "autosize": [
+    "dist/autosize.min.js"
+  ],
+  "select2": [
+    "dist/js/select2.min.js",
+    "dist/js/i18n/ru.js"
+  ],
+  "jquery-mask-plugin": [
+    "dist/jquery.mask.min.js"
+  ],
+  "perfect-scrollbar": [
+    "dist/perfect-scrollbar.min.js",
+    "css/perfect-scrollbar.css"
+  ],
+  "ion-rangeslider": [
+    "js/ion.rangeSlider.min.js",
+    "css/ion.rangeSlider.css"
+  ],
+  "sticky-kit": [
+    "dist/sticky-kit.min.js"
+  ],
+  "@zeitiger/elevatezoom": [
+    "jquery.elevateZoom-3.0.8.min.js"
+  ],
+  "gumshoejs": [
+    "dist/js/gumshoe.min.js"
+  ],
+  "smooth-scroll": [
+    "dist/smooth-scroll.min.js"
+  ],
+  "bigpicture": [
+    "dist/BigPicture.min.js"
+  ]
+}

@@ -1,0 +1,263 @@
+---
+title: О нас
+---
+
+{% extends "layouts/_layout.nunj" %}
+
+{% block content %}
+    <div  data-sticky_parent class="l-inner p-about">
+        <div class="l-page">
+            <div class="l-wrapper">
+                <div class="l-page__main l-page__main--offset">
+                    <h2 class="h2">О нас</h2>
+                </div>
+            </div>
+            <section id="about" class="p-about__section p-t-0">
+                <div class="l-wrapper">
+                    <div class="l-page__inn">
+                        <aside class="l-page__aside">
+                            <div class="js-aside">
+                                <ul data-gumshoe class="sidebar">
+                                    {% for k, v in {
+                                    'about': 'О нас',
+                                    'brands': 'Бренды',
+                                    'soc': 'Социальная ответсвенность',
+                                    'club': 'Бонусный клуб',
+                                    'news': 'Новости',
+                                    'carrier': 'Карьера',
+                                    'insoc': 'Мы в соц.сетях'
+                                    } %}
+                                        <li class="sidebar__item"><a href="#{{ k }}" class="sidebar__link js-scroll-to">{{ v }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </aside>
+                        <div class="l-page__main">
+                            <div class="p-about__head">
+                                <div class="p-about__head-inn">
+                                    <p>
+                                        Первый магазин INTERTOP открылся в Киеве в 1994 году, а в Алматы – в 2006. <br>
+                                        С этого момента началась новая эра в розничной торговле обувью – эра INTERTOP.
+                                    </p>
+                                    <p>С самого начала сеть создавалась, как магазины качественной и комфортной обуви от известных мировых брендов для всей семьи.</p>
+                                </div>
+                            </div>
+                            <div class="p-about__desc">
+                                <div class="row">
+                                    <div class="col-12 col-xxs-6 text text--lg">
+                                        <h3 class="h3">Лидер рынка</h3>
+                                        <p>
+                                            Сегодня INTERTOP остается безусловным лидером рынка. Сеть включает более 80 магазинов в Украине и Казахстане, в которых представлена продукция Geox, Clarks, Skechers, Timberland, Braska, Armani Jeans, Tommy Hilfiger и других ведущих мировых брендов.
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-xxs-6 text text--lg">
+                                        <h3 class="h3">Самый широкий ассортимент</h3>
+                                        <p>
+                                            INTERTOP постоянно работает над тем, чтобы максимально соответствовать тенденциям рынка, предоставляя клиентам возможность не только купить качественную обувь, одежду и аксессуары, а создать свой образ, стиль, выразить себя и при этом получить приятные впечатления от покупок.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-sm-between">
+                                {% for i in [
+                                    { val: '2006', desc: 'посажено деревьев за 2018 г.' },
+                                    { val: '25', desc: 'розничных магазинов' },
+                                    { val: '10', desc: 'в крупных городах' },
+                                    { val: '>350', desc: 'сотрудников' },
+                                    { val: '>100', desc: 'брендов' },
+                                    { val: '>300к', desc: 'лояльных клиентов' }
+                                ] %}
+                                    <div class="col-12 col-xxs-6 col-sm-4">
+                                        <span class="stat__val">{{ i.val }}</span>
+                                        <span class="stat__desc">{{ i.desc }}</span>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="brands" class="p-about__section">
+                <div class="l-wrapper">
+                    <div class="l-page__main l-page__main--offset">
+                        <h2 class="h2">Бренды</h2>
+                        <div class="p-about__text text text--lg">
+                            Сегодня ассортимент сети магазинов INTERTOP включает женские, мужские, а также детские коллекции более 50 известных брендов из десяток стран мира.
+                        </div>
+                        <div class="carousel">
+                            <div class="swiper-container js-brands-about-carousel">
+                                <div class="swiper-wrapper">
+                                    {% for i in ['ara', 'ax', 'braska', 'clarks', 'gabor', 'garvalin', 'geox', 'keddo', 'panama', 'picard', 'skechers', 'tamaris'] %}
+                                        <div class="swiper-slide">
+                                            <figure class="brand">
+                                                <img class="brand__img" src="./assets/img/brands/{{ i }}.png">
+                                            </figure>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center m-t-20">
+                            <a href="#" class="btn btn--outline btn--md"><span>Показать все бренды</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="soc" class="p-about__section p-about__section--bright">
+                <div class="l-wrapper">
+                    <div class="l-page__main l-page__main--offset">
+                        <h2 class="h2">Социальная ответственность</h2>
+                        <div class="p-about__text text text--lg">
+                            Компания INTERTOP является организатором социального проекта «Я за чистую жизнь!», в рамках которого проводится озеленение городов Казахстана.
+                        </div>
+                        <div class="p-about__photos cards">
+                            <div class="cards__row row">
+                                <div class="cards__col col-6 col-sm-3">
+                                    <div class="cards__container cards__container--v">
+                                        <picture class="p-about__photo"><img src="./assets/img/about/2.jpg"></picture>
+                                        <picture class="p-about__photo"><img src="./assets/img/about/3.jpg"></picture>
+                                    </div>
+                                </div>
+                                <div class="cards__col col-6  d-none d-sm-block">
+                                    <div class="cards__container">
+                                        <picture class="p-about__photo"><img src="./assets/img/about/1.jpg"></picture>
+                                    </div>
+                                </div>
+                                <div class="cards__col col-6 col-sm-3">
+                                    <div class="cards__container cards__container--v">
+                                        <picture class="p-about__photo"><img src="./assets/img/about/4.jpg"></picture>
+                                        <picture class="p-about__photo"><img src="./assets/img/about/5.jpg"></picture>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-about__stats">
+                            <div class="row justify-content-sm-between">
+                                <div class="col-12 col-xxs-6 col-sm">
+                                    <span class="stat__val">227</span>
+                                    <span class="stat__desc">посажено деревьев за 2018 г.</span>
+                                </div>
+                                <div class="col-12 col-xxs-6 col-sm">
+                                    <span class="stat__val">2885</span>
+                                    <span class="stat__desc">продано экопакетов за 2018 г.</span>
+                                </div>
+                                <div class="col-12 col-xxs-6 col-sm">
+                                    <span class="stat__val"><span style="font-size: 0.6em;">₸</span> 36 647</span>
+                                    <span class="stat__desc">Пожертвовано благотворительными  организациями по вопросам сохранения экологии. </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="club" class="p-about__section">
+                <div class="l-wrapper">
+                    <div class="l-page__main l-page__main--offset">
+                        <h2 class="h2">Бонусный клуб</h2>
+                        <div class="row">
+                            <div class="col text text--lg">
+                                <p>Стань участником бонусного клуба INTERTOP PLUS!</p>
+                                <p>Пользоваться картой INTERTOP PLUS - комфортно!</p>
+                                <p>Бонусы начисляются за любые покупки, даже во время акций и сезонных распродаж. Накопленные бонусы вы сможете использовать как скидку на выбранный товар уже через 15 дней после начисления</p>
+                                <p>Всем нашим клиентам достаточно приобрести карту за 200 тг. и заполнить анкету участника в любом из наших магазинов.</p>
+                                <a href="#" class="btn btn--md btn--outline"><span>Перейти в бонусный клуб</span></a>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <img src="./assets/img/about-bonus.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="news" class="p-about__section p-about__section--bright">
+                <div class="l-wrapper">
+                    <div class="l-page__main l-page__main--offset">
+                        <h2 class="h2">Новости</h2>
+                        <div class="page__area">
+                            <div class="items-list">
+                                {% for i in range(1, 4) %}
+                                    {% set data = [
+                                    { t: 'Встречайте новый бренд Alpine Crown', d: 'Всемирно известный бред теперь в магазинах Intertop!' },
+                                    { t: 'Встречайте новый бренд Marina Volpe', d: 'Всемирно известный бред теперь в магазинах Intertop! Всемирно известный бред теперь в магазинах Intertop!' },
+                                    { t: 'Бонусная карта INTERTOP PLUS', d: 'Теперь в Вашем мобильном телефоне!' },
+                                    { t: 'Технология X-MOTION от LLOYD', d: 'LLOYD X_MOTION - будущее начинается сейчас' }
+                                    ] | random %}
+                                    {{ chunks.article(i, { t: data.t, d: data.d, img: 'news' }) }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="page__more">
+                            <a href="#" class="btn btn--md btn--outline"><span>Показать все новости</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="carrier" class="p-about__section">
+                <div class="l-wrapper">
+                    <div class="l-page__main l-page__main--offset">
+                        <h2 class="h2">Вакансии</h2>
+                        <div class="row">
+                            <div class="col text text--lg">
+                                <p>Создание 1500 новых рабочих мест в Казахстане.</p>
+                                <p>Пользоваться картой INTERTOP PLUS - комфортно!</p>
+                                <p>Бонусы начисляются за любые покупки, даже во время акций и сезонных распродаж. Накопленные бонусы вы сможете использовать как скидку на выбранный товар уже через 15 дней после начисления</p>
+                                <a href="#" class="btn btn--md btn--outline"><span>Перейти в вакансии</span></a>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <img src="./assets/img/about-vacancy.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="insoc" class="p-about__section">
+                <div class="l-wrapper">
+                    <div class="l-page__main l-page__main--offset">
+                        <h2 class="h2">Мы в соцсетях</h2>
+                        <div class="p-about__soc-stats">
+                            <div class="soc-stats">
+                                {% for i in [
+                                { i: 'instagram', t: '20,7k' },
+                                { i: 'twitter', t: '5 780' },
+                                { i: 'fb', t: '11 466' }
+                                ] %}
+                                    <div class="soc-stats__item">
+                                        <div class="soc-stat">
+                                            {{ mixins.icon(i.i) }}
+                                            <div class="soc-stat__info">
+                                                <div class="soc-stat__val">{{ i.t }}</div>
+                                                <span class="soc-stat__desc">подписчиков</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            {% for i in [
+                                'Модель спортивных полуботинок #flyroam от @timberland пожалуй, лучшее, что мы можем предложить на сегодняшний день. Подошва изготовленная по технологии AeroCore ™️ обеспечивает постоянную амортизацию, так что не устанут ноги от беготни по магазинам. Вся поверхность и подошва... водонепроницаемые, так что можно бегать и по лужам. Технология Ortholite®️ обеспечивает комфортный обхват ноги, так что можно ходить в них сутками не снимая. Найдите их по ссылке в стопим.',
+                                'Этой ночью скидки на новую коллекцию -20%. Пока идите по ссылке и в сторис, выбирайте и будьте готовы. Стартуем в 22:00 и будем держать до 10:00. водонепроницаемые, так что можно бегать и по лужам. Технология Ortholite®️ обеспечивает комфортный обхват ноги, так что можно ходить в них сутками не снимая. Найдите их по ссылке в стопим.',
+                                'Вечная классика уличного стиля @converse. Конечно же у вас есть конверсы, но на случай вдруг нет, идите к нам в сторис и подберите себе, обратите внимание на велюровые малинового цвета, они прекрасны.Смотрите подборку в сторис.Найдите их по ссылке в стопим.',
+                            'Модель спортивных полуботинок #flyroam от @timberland пожалуй, лучшее, что мы можем предложить на сегодняшний день. Подошва изготовленная по технологии AeroCore ™️ обеспечивает постоянную амортизацию, так что не устанут ноги от беготни по магазинам. Вся поверхность и подошва... водонепроницаемые, так что можно бегать и по лужам. Технология Ortholite®️ обеспечивает комфортный обхват ноги, так что можно ходить в них сутками не снимая. Найдите их по ссылке в стопим.',
+                            'Этой ночью скидки на новую коллекцию -20%. Пока идите по ссылке и в сторис, выбирайте и будьте готовы. Стартуем в 22:00 и будем держать до 10:00. водонепроницаемые, так что можно бегать и по лужам. Технология Ortholite®️ обеспечивает комфортный обхват ноги, так что можно ходить в них сутками не снимая. Найдите их по ссылке в стопим.',
+                            'Вечная классика уличного стиля @converse. Конечно же у вас есть конверсы, но на случай вдруг нет, идите к нам в сторис и подберите себе, обратите внимание на велюровые малинового цвета, они прекрасны.Смотрите подборку в сторис.Найдите их по ссылке в стопим.'
+                            ] %}
+                                <div class="col-12 col-xxs-6 col-sm-4">
+                                    <article class="soc-news">
+                                        <picture class="soc-news__pic"><img src="./temp/socnews/{{ loop.index }}.jpg"></picture>
+                                        <p class="soc-news__desc">{{ i | safe }}</p>
+                                    </article>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

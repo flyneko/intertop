@@ -1,0 +1,57 @@
+.catalog-menu
+  border: 1px solid #e3e8e4
+  padding: 20px
+  &__title
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 20px
+    font-weight: 600
+    margin-bottom: 15px
+    line-height: 1.4
+  &__title &__count
+    font-size: 14px
+  &__count
+    font-weight: 300
+    color: #939393
+    font-size: 13px
+    line-height: 1.4
+  &__item
+    //
+  &__item.is-open > &__row
+    padding: 15px 20px
+    background: $style-color
+    margin: 0 -20px
+    &:after
+      position: absolute
+      content: ''
+      display: block
+      top: 100%
+      left: 40px
+      +arr(18, 4, $style-color, b)
+  &__row
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 8px 0
+    position: relative
+  &__item.is-open > &__row > &__link, &__item.is-open > &__row > &__count
+    color: #ffffff
+  &__link
+    color: $font-color
+    line-height: 1.4
+  &__sub
+    width: 100%
+    flex-grow: 1
+    padding-top: 8px
+  &__sub &__item
+    padding-left: 14px
+    position: relative
+    &:before
+      position: absolute
+      left: 0
+      top: 15px
+      width: 4px
+      height: 4px
+      content: ''
+      background: $style-color

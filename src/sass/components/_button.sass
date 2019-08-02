@@ -1,0 +1,113 @@
+.btn
+  border: 2px solid $style-color
+  font-size: 16px
+  font-weight: 600
+  color: #fff
+  background: $style-color
+  display: inline-flex
+  min-height: 45px
+  line-height: $line-height
+  text-align: center
+  cursor: pointer
+  padding: 0 35px
+  align-items: center
+  justify-content: center
+  position: relative
+  +r($sm)
+    font-size: 14px
+  &:hover
+    &:before
+      height: 100%
+  &:before
+    bottom: 0
+    left: 0
+    width: 100%
+    content: ''
+    position: absolute
+    height: 0
+    transition: all ease .3s
+    z-index: 1
+  > span, .icon
+    position: relative
+    z-index: 2
+  > span
+    line-height: $line-height
+  .icon
+    font-size: 10px
+    top: 1px
+    &:first-child
+      margin-right: 10px
+    &:last-child
+      margin-left: 10px
+  &--block
+    width: 100%
+  &--arrow
+    padding: 0 20px
+    &:after
+      display: inline-block
+      vertical-align: middle
+      content: ''
+      +arr(4, 7, #fff, r)
+      margin-left: 15px
+  &--xs
+    min-height: 38px
+    font-size: 13px
+    padding: 0 15px
+  &--sm
+    min-height: 40px
+    font-size: 14px
+  &--thin
+    border-width: 1px
+    font-size: 14px
+    padding: 0 15px
+  &--md
+    min-height: 50px
+    font-size: 14px // ???
+  &--lg
+    font-size: 24px
+    min-height: 65px
+    +r($md)
+      min-height: 55px
+      font-size: 22px
+    +r($sm)
+      min-height: 45px
+      font-size: 18px
+    &.btn--arrow
+      padding: 0 30px
+  &--outline
+    background: transparent
+    color: $style-color4
+    border-color: #76ae99
+    .icon
+      fill: $style-color4
+    &:before
+      background: #76ae99
+    &:hover
+      color: #ffffff !important
+      .icon
+        fill: #fff !important
+  &--outline.btn--gray
+    border-color: #7c7c7c
+    color: #7c7c7c
+    &:before
+      background: #7c7c7c
+  &--white
+    border-color: #ffffff
+    color: #fff
+    &:before
+      background: #fff
+    &:hover
+      color: $font-color !important
+  &--black
+    border-color: $font-color
+    &:before
+      background: $font-color
+    &.btn--outline
+      color: $font-color
+  &[disabled]
+    background: #f0f0f0 !important
+    border-color: #9a9a9a !important
+    color: #9a9a9a !important
+    cursor: default
+    &:before
+      display: none

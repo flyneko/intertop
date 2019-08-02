@@ -1,0 +1,101 @@
+<div class="auth">
+    <div class="auth__main js-tabs">
+        {% set tabs = { 'auth': 'Авторизация', 'reg': 'Регистрация' } %}
+        <div class="tabs">
+            <div class="tabs__bar" data-tabs="bar"></div>
+            <ul class="tabs__list">
+                {% for k, v in tabs %}
+                    <li class="tabs__item">
+                        <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ k }}"><span>{{ v | safe }}</span></a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% for k, v in tabs %}
+            {% if k == 'reg' %}
+                <div id="{{ k }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                    <form autocomplete="off" class="form">
+                        <div class="form__row">
+                            <label class="form__label">E-mail <span class="form__hint">для уведомленй</span></label>
+                            <input class="input" type="text">
+                        </div>
+                        <div class="form__row">
+                            <div class="row">
+                                <div class="col-12 col-xxs-6">
+                                    <label class="form__label">Имя</label>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-12 col-xxs-6">
+                                    <label class="form__label">Фамилия</label>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <label class="form__label">Дата рождения</label>
+                            <input class="input" type="text">
+                        </div>
+                        <div class="form__row">
+                            <div class="row">
+                                <div class="col-12 col-xxs-6">
+                                    <label class="form__label">Пароль <span class="form__hint">не менее 6 символов</span></label>
+                                    <input class="input" type="text">
+                                </div>
+                                <div class="col-12 col-xxs-6">
+                                    <label class="form__label">Повторите пароль</label>
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <label class="form__label">Телефон <span class="form__hint">для уведомлений о поставке</span></label>
+                            <div class="input-row">
+                                <div style="width: 70px;" class="input-row__cell flex-grow-0">
+                                    <select class="js-select">
+                                        <option>+7</option>
+                                        <option>+375</option>
+                                    </select>
+                                </div>
+                                <div class="input-row__cell">
+                                    <input class="input js-phone-mask" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            {{ chunks.checkbox({ text: 'Соглашаюсь с <a class="link" href="#">условиями обработки персональных данных</a>' }) }}
+                        </div>
+                        <div class="form__row">
+                            <button class="btn btn--outline"><span>Зарегистрироваться</span></button>
+                        </div>
+                    </form>
+                    <div class="auth__footer">
+                        Я зарегистрирован (а) <a href="#auth">Перейти к авторизации</a>
+                    </div>
+                </div>
+            {% endif %}
+            {% if k == 'auth' %}
+                <div id="{{ k }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                    <form autocomplete="off" class="form">
+                        <div class="form__row">
+                            <label class="form__label">Логин</label>
+                            <input class="input" type="text">
+                        </div>
+
+                        <div class="form__row">
+                            <label class="form__label">Пароль</label>
+                            <input class="input" type="password">
+                        </div>
+
+                        <div class="form__row">
+                            <button class="btn btn--outline"><span>Войти</span></button>
+                        </div>
+                    </form>
+
+                    <div class="auth__footer">
+                        Я не зарегистрирован (а) <a href="#reg">Перейти к регистрации</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

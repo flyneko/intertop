@@ -1,0 +1,46 @@
+---
+title: Поиск по товарам
+viewed: true
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block main %}
+    <div class="l-wrapper">
+        <div class="m-b-20 d-none d-md-block">
+            {{ chunks.search() }}
+        </div>
+
+        <div class="page">
+            <div class="page__header">
+                <div class="page__header-left">
+                    <h2 class="h2">Поиск</h2>
+                    <div class="page__subtitle">По запросу <b class="text-style">женские сандалии</b> мы нашли 289 шт товаров</div>
+                </div>
+                <div class="page__header-view"> {{ chunks.count_view() }} </div>
+            </div>
+
+            {% include "partials/_filters.nunj" %}
+
+            <div class="page__area">
+                <div class="items">
+                    {% for q in range(1, 3) %}
+                        {% for i in range(0, 10) %}
+                            <div class="items__col five-item">
+                                {{ chunks.grid_product(i) }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="page__more">
+                <a href="#" class="btn btn--outline"><span>Показать еще товары</span> {{ mixins.icon('arrow-down') }}</a>
+            </div>
+            <div class="page__pagination">
+                <div class="page__pagination-center">
+                    {{ chunks.pagination({ label: '307 товаров' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

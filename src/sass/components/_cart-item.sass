@@ -1,0 +1,184 @@
+.cart-item
+  border-bottom: 1px solid #eaeaea
+  position: relative
+  &:last-child
+    margin-bottom: 0
+  &--static
+    border: 0
+    margin-bottom: 20px
+  &--static &__inn, &__footer
+    border: 1px solid $style-color6
+    padding: 25px 30px
+    +r($md)
+      padding: 15px 20px
+  &--static &__inn
+    > *
+      margin-right: 20px !important
+  &--static &__count
+    padding-left: 0
+    width: 70px
+  &--lg
+    border: 1px solid #eaeaea
+    margin-bottom: 20px
+    +r($mds)
+      margin-bottom: 10px
+  &--lg &__inn
+    padding: 40px
+    +r($lg)
+      padding: 20px
+    +r($mds)
+      padding: 10px
+  &__inn
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 30px 0
+    +r($xxs)
+      flex-direction: column
+      align-items: flex-start
+    > *
+      flex-shrink: 0
+      margin-right: 40px
+      +r($md)
+        margin-right: 20px
+      +r($mds)
+        margin-right: 10px
+      +r($xxs)
+        margin-right: 0
+      &:last-child
+        margin-right: 0 !important
+  &__img
+    width: 130px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-right: 50px !important
+    +r($md)
+      margin-right: 20px !important
+      width: 100px
+      align-self: flex-start
+    +r($xxs)
+      width: 100%
+      margin: 0 0 10px
+  &__info
+    flex-shrink: 1
+    max-width: 350px
+    width: 100%
+    +r($mds)
+      max-width: 100%
+    > *
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0 !important
+  &__name
+    font-size: 24px
+    color: $font-color
+    +r($md)
+      font-size: 20px
+    +r($mds)
+      font-size: 18px
+  &__id
+    font-size: 14px
+    color: $style-color8
+    display: block
+    +r($mds)
+      display: none
+  &__row
+    font-size: 14px
+    +r($mds)
+      display: flex
+      flex-wrap: nowrap
+      justify-content: space-between
+      align-items: center
+      border-bottom: 1px solid #efefef
+      padding-bottom: 10px
+      &:before
+        display: block
+      .input
+        width: 50px
+        padding: 0 5px
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+        height: 30px
+      .spinner
+        width: auto
+  &__label
+    color: $style-color8
+    font-weight: 600
+    display: block
+    margin-bottom: 5px
+    +r($mds)
+      margin-bottom: 0
+  &__value
+    font-weight: 600
+    display: flex
+    align-items: center
+    height: 35px
+    +r($mds)
+      height: auto
+      text-align: right
+  &__size, &__count
+    width: 70px
+    +r($mds)
+      display: none
+  &__count
+    width: 115px
+    padding-left: 30px
+    .spinner
+      margin-left: -30px
+  &__price
+    font-size: 26px
+    font-weight: bold
+    display: block
+    line-height: 1
+    +r($mds)
+      font-size: 22px
+      display: inline-block
+    &.old-price
+      font-size: 16px
+      color: #666666
+      display: inline-block
+      font-weight: normal
+      +r($mds)
+        font-size: 14px
+        margin-left: 5px
+  &__bonus
+    width: 120px
+    +r($mds)
+      display: none
+    .plus-bonus
+      height: 35px
+      line-height: 35px
+  &__cost
+    width: 120px
+    +r($xs)
+      display: none
+  &__remove
+    width: 30px
+    height: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    +r($xxs)
+      position: absolute
+      right: 0
+      top: 0
+    .icon
+      font-size: 13px
+      fill: $style-color
+  &__footer
+    border-top: 0
+    .row
+      margin: 0 -10px -10px
+      > *
+        padding: 0 10px 10px
+  &__footer .row > *:last-child &__row
+    border-bottom: 0
+    padding-bottom: 0
+  .input, .spinner__btn
+    border-color: #eaeaea !important
+  .input
+    text-align: center
+    font-weight: 600
+    font-size: 14px
+    border-radius: 0

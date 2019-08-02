@@ -1,0 +1,105 @@
+.footer
+  padding: 45px 0
+  background: $style-color2
+  font-size: 13px
+  +r($sm)
+    padding: 15px 0
+  +r($tiny)
+    padding: 0
+    background: transparent
+  &__inn
+    display: flex
+    flex-wrap: nowrap
+    align-items: flex-start
+    justify-content: space-between
+    +r($md)
+      flex-wrap: wrap
+    +r($sm)
+      margin: 0 -10px -20px
+    +r($tiny)
+      margin: 0 -#{$layout-padding}px
+  &__cell
+    flex: 1
+    padding-right: 20px
+    +r($sm)
+      width: 50%
+      flex: 1 0 auto
+      padding: 0 10px 20px
+    +r($tiny)
+      width: 100%
+      border-bottom: 1px solid #eaeaea
+      padding: 15px #{$layout-padding}px
+    &:last-child
+      padding-right: 0
+  &__info
+    max-width: 350px
+    width: 100%
+    flex:  0 0 auto
+    border-bottom: 0
+    +r($md)
+      order: 3
+      width: 100%
+      max-width: 100%
+      padding-top: 15px
+  &__copyright
+    color: #737373
+    line-height: $line-height
+    margin-bottom: 15px
+    +r($tiny)
+      margin-bottom: 7px
+    p
+      display: block
+      margin-bottom: 10px
+      +r($tiny)
+        margin-bottom: 5px
+      &:last-child
+        margin-bottom: 0
+  &__payments
+    display: flex
+    align-items: center
+    margin: 0 -6px 4px
+    +r($tiny)
+      margin-bottom: 0
+    &-item
+      font-size: 28px
+      padding: 0 6px 6px
+  &__title
+    margin-bottom: 15px
+    color: #737373
+    font-size: 16px
+  &__menu
+    &-item
+      margin-bottom: 11px
+    &-link
+      line-height: $line-height
+      color: #292a2f
+      position: relative
+      transition: all ease .3s
+      > span
+        position: relative
+        z-index: 1
+      &:hover
+        color: #ffffff
+        &:before
+          height: 100%
+          background: #292a2f
+      &:before
+        content: ''
+        position: absolute
+        left: -2px
+        bottom: 0
+        right: -2px
+        height: 1px
+        z-index: 0
+        transition: all ease .3s
+        background: #bdc1c1
+  &__denisov
+    font-size: 26px
+    transition: all ease-in-out .3s
+    > *
+      fill: #9a9b9a !important
+    &:hover > *
+      fill: #c23c38 !important
+      opacity: 1 !important
+  &__socials
+    margin-top: 15px

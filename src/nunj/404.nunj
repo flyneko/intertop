@@ -1,0 +1,35 @@
+---
+title: Страница 404
+viewed: true
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block main %}
+    <div class="l-wrapper">
+        <div class="page">
+            <div class="page__header"><h2 class="h2">Страница не найдена</h2></div>
+
+            <div class="page__area">
+               <div class="p-404">
+                   <figure class="p-404__img">
+                       <img src="./assets/img/404.jpg">
+                   </figure>
+                   <div class="p-404__main">
+                       <div class="p-404__num">404</div>
+                       <div class="p-404__base">
+                           <div class="p-404__title">страница не найдена</div>
+                           <div class="p-404__subtitle">Ошибка могла произойти по нескольким причинам: </div>
+                           <ul class="list">
+                               <li>Вы ввели неправильный адрес;</li>
+                               <li>Страница, на которую вы хотели зайти, устарела и была удалена;</li>
+                               <li>Акция, ранее действовавшая на сайте закончилась;</li>
+                               <li>На сервере произошла ошибка.</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

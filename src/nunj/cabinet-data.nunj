@@ -1,0 +1,142 @@
+---
+title: Редактирование данных
+---
+
+{% extends "layouts/_cabinet.nunj" %}
+
+{% block main %}
+    <div class="p-cabinet__block">
+        <h2 class="h2">Профиль</h2>
+        <div class="p-cabinet__social-hint">
+            <span>В 1 клик с любого устройства! Просто свяжите аккаунт</span>
+            <ul class="socials">
+                {% for i in ['vk', 'fb'] %}
+                    <li class="socials__item"><a href="#" class="socials__link socials__link--{{ i }}">{{ mixins.icon(i) }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="p-cabinet__group">
+        <h3 class="h3">Мой аккаунт</h3>
+
+        {% for k, v in { 'Ф.И.О.': 'Асель Назарбаева', 'Мобильный': '+7 477 466-44-44', 'Эл. почта': 'znazarba@gmail.com' } %}
+            <div class="p-cabinet__info">
+                <div class="p-cabinet__info-left">
+                    <span>{{ k }}</span><b>{{ v }}</b>
+                </div>
+                <a href="#" class="link link--u">Редактировать</a>
+            </div>
+        {% endfor %}
+
+        <div class="p-cabinet__info">
+            <div class="p-cabinet__info-left">
+                <span>Пароль</span><b>**************</b>
+            </div>
+            <a href="#" class="link link--u">Изменить пароль</a>
+        </div>
+    </div>
+    <div class="p-cabinet__group">
+        <h3 class="h3">Получить новую / Зарегистрировать бонусную карту</h3>
+
+        <div class="row align-items-end">
+            <div class="col-auto">
+                <picture class="plus-card plus-card--lg"><img src="./assets/img/plus-card.png"></picture>
+            </div>
+            <div class="col">
+                <a class="btn btn--md" href="#"><span>Получить карту</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-cabinet__group">
+        <h3 class="h3">Дата рождения</h3>
+        <span class="p-cabinet__group-desc"> Вы не останетесь без подарка </span>
+        <div class="row">
+            {% for i in ['Число', 'Месяц', 'Год'] %}
+                <div class="col-12 col-tiny-auto">
+                    <select data-placeholder="{{ i }}" class="js-select">
+                        <option></option>
+                        <option>10</option>
+                        <option>20</option>
+                    </select>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="p-cabinet__group">
+        <h3 class="h3">Ваш пол и семейное положение</h3>
+        <span class="p-cabinet__group-desc">На его основе мы подберем наилучшим способом обувь и одежду</span>
+        <div class="row">
+            {% for i in ['Пол', 'Семейное положение'] %}
+                <div class="col-12 col-tiny-auto">
+                    <select data-placeholder="{{ i }}" class="js-select">
+                        <option></option>
+                        <option>10</option>
+                        <option>20</option>
+                    </select>
+                </div>
+            {% endfor %}
+        </div>
+        <h4 class="h4">Дата рождения и пол ребенка</h4>
+        <span class="p-cabinet__group-desc">Еще больше мы любим детей и подскажем, когда не прогадать с лучшими ценами и новыми коллекциями</span>
+        <a href="#" class="link link--u">Добавить ребенка</a>
+    </div>
+
+
+    <div class="p-cabinet__group">
+        <h3 class="h3">Какой стиль предпочитае носить?</h3>
+        <div class="row">
+            {% for i in [['Модный', 'Классический'], ['Экстравагантный', 'Повседневный'], ['Молодежный', 'Спортивный']] %}
+                <div class="col-6 col-xxs-4 col-xs-3">
+                    {% for j in i %}
+                        {{ chunks.checkbox({ text: j }) }}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="p-cabinet__group">
+        <h3 class="h3">Адрес, где вы живете</h3>
+        <span class="p-cabinet__group-desc">Используется для доставки дверей, а также не более 1 раза в месяц рассылки коллекций под ваши предпочтения</span>
+        <div class="row">
+            <div class="col-12 col-sm-10">
+                <div class="row">
+                    {% for i in ['Выберите область', 'Район', 'Город, село, поселок'] %}
+                        <div class="col-12 col-xxs-6 col-xs-4">
+                            <select data-placeholder="{{ i }}" class="js-select">
+                                <option></option>
+                                <option>Раз</option>
+                                <option>Два</option>
+                            </select>
+                        </div>
+                    {% endfor %}
+                    <div class="col-12 col-xxs-6 col-xs-4">
+                        <input class="input" placeholder="Индекс">
+                    </div>
+                    <div class="col-12 col-xxs-6 col-xs-4">
+                        <select data-placeholder="Улица" class="js-select">
+                            <option></option>
+                            <option>Раз</option>
+                            <option>Два</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-xxs-6 col-xs-4">
+                        <div class="row">
+                            <div class="col-6"><input class="input" placeholder="Дом"></div>
+                            <div class="col-6"><input class="input" placeholder="Кв."></div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="m-t-10">
+                            {{ chunks.checkbox({ text: 'Соглашаюсь с <a class="link" href="#">условиями обработки персональных данных</a>' }) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn--md m-t-15"><span>Сохранить данные</span></button>
+    </div>
+{% endblock %}

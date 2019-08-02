@@ -1,0 +1,112 @@
+{% extends "layouts/_layout.nunj" %}
+
+{% block content %}
+    <section class="p-home__head">
+        <div class="l-wrapper l-wrapper--full">
+            {% block first %}{% endblock %}
+        </div>
+    </section>
+    <section class="p-home__features">
+        <div class="l-wrapper">
+            <div class="carousel">
+                <div class="swiper-container js-features-carousel">
+                    <div class="swiper-wrapper">
+                        {#
+
+                        'cash': { title: 'Товар в рассрочку', desc: 'на 3 месяца' },
+                        'shield':  { title: 'Гарантия качества', desc: '3 месяца' },
+                        'pig': { title: 'Бонусы за покупки', desc: 'кэшбек 5%' },
+                        'airplane':  { title: 'Экспресс-доставка', desc: 'доставка до 3 календарных дней' },
+                        'car': { title: 'Гарантия качества', desc: 'лучшие производители' },
+                        'present':  { title: 'Бонус за регистрацию', desc: 'бонусы и промокоды' },
+                        'card':  { title: '-5% при оплате онлайн', desc: 'оплачивать онлайн выгоднее' },
+                        'calendar':  { title: 'Резерв товара', desc: 'резерв товара в любом магазине' },
+                        'diamond': { title: 'Эксклюзивные бренды', desc: 'широкий ассортимент брендов' },
+                        'car-2':  { title: 'Самовывоз', desc: 'можете всегда сами забрать товар' }
+                        #}
+                        {% for k, v in {
+                        'ok': { title: 'Гарантия качества' },
+                        'wallet':  { title: 'Кэшбек'},
+                        'diamond': { title: 'Эксклюзивные бренды' },
+                        'clock':  { title: 'Рассрочка'},
+                        'cards': { title: '-5% при оплате онлайн' },
+                        'plane':  { title: 'Экспресс-доставка' },
+                        'present':  { title: 'Подарочные бонусы' },
+                        'click':  { title: 'Резерв товара' },
+                        'delivery': { title: 'Самовывоз' },
+                        'truck':  { title: 'Бесплатная доставка' },
+                        'present-card':  { title: 'Подарочная карта' }
+                        } %}
+                            <div class="swiper-slide">
+                                <div class="feature">
+                                    <div class="feature__inn">
+                                        <div class="feature__icon">{{ mixins.icon(k) }}</div>
+                                        <div class="feature__title">{{ v.title }}</div>
+                                        {% if v.desc %}<p class="feature__desc">{{ v.desc }}</p>{% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section p-home__actions">
+        <div class="l-wrapper">
+            {% block second %}{% endblock %}
+        </div>
+    </section>
+
+    <section class="section section--bright p-home__products">
+        <div class="l-wrapper">
+            <div class="js-tabs">
+                {% set tabs = { 'hit': 'Хит', 'advice': 'Советуем', 'new': 'Новинка', 'action': 'Акция' } %}
+                <div class="tabs">
+                    <div class="tabs__bar" data-tabs="bar"></div>
+                    <ul class="tabs__list">
+                        {% for k, v in tabs %}
+                            <li class="tabs__item">
+                                <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ k }}"><span>{{ v | safe }}</span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% for k, v in tabs %}
+                    <div id="{{ k }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                        <div class="items">
+                            {% for i in range(0, 10) %}
+                                <div class="items__col five-item">
+                                    {{ chunks.grid_product(i) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="l-wrapper">
+            <div class="carousel">
+                <div data-rows="3" class="swiper-container js-brands-carousel">
+                    <div class="swiper-wrapper">
+                        {% for i in range(1, 3) %}
+                            {% for i in ['ara', 'ax', 'braska', 'clarks', 'gabor', 'garvalin', 'geox', 'keddo', 'panama', 'picard', 'skechers', 'tamaris', 'th', 'timberland', 'vagabond'] %}
+                                <div class="swiper-slide">
+                                    <figure class="brand">
+                                        <img class="brand__img" src="./assets/img/brands/{{ i }}.png">
+                                    </figure>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+

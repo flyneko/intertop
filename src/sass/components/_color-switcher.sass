@@ -1,0 +1,26 @@
+.color-switcher
+  display: inline-flex
+  flex-wrap: wrap
+  margin: 0 -3px -5px
+  &__item
+    padding: 0 3px 5px
+  &__label
+    cursor: pointer
+    display: block
+    input
+      display: none
+  &__label input:checked + &__dot
+    &:before
+      border-color: #e0e0e0
+  &__dot
+    width: 10px
+    height: 10px
+    position: relative
+    &:before
+      position: absolute
+      top: -3px
+      left: -3px
+      bottom: -3px
+      right: -3px
+      content: ''
+      border: 1px solid transparent

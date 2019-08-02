@@ -1,0 +1,154 @@
+.filter
+  display: block
+  vertical-align: middle
+  color: #737373
+  position: relative
+  &.is-selected &__inn
+    animation: zoomIn .3s forwards
+    border-color: $style-color
+    display: block
+    +r($md)
+      border-color: $style-color2
+  &.is-selected &__remove
+    display: block
+  &.is-selected &__label
+    padding: 10px
+    padding-right: 45px
+    background: $style-color
+    color: #fff
+    +r($md)
+      color: #737373
+      background: transparent
+    &:after
+      display: none
+  &.is-active
+    //z-index: 99
+  &.is-active &__inn
+    border-color: $style-color
+  &.is-active &__dropdown
+    display: block
+  &__inn
+    position: relative
+    border: 1px solid #e4e9e5
+  &__label
+    cursor: pointer
+    height: 36px
+    padding: 7px 12px 5px
+    display: flex
+    align-items: center
+    justify-content: center
+    +r($md)
+      height: 28px
+      font-size: 12px
+    &:after
+      display: inline-block
+      vertical-align: middle
+      content: ''
+      +arr(5, 3, $style-color, b)
+      margin-left: 15px
+  &__dropdown
+    box-shadow: 0px 0px 6px 0px rgba(#000, 0.2)
+    background: #fff
+    padding: 20px
+    margin-top: 12px
+    width: 280px
+    position: absolute
+    z-index: 89
+    top: 100%
+    left: 50%
+    transform: translateX(-50%)
+    display: none
+    +r($md)
+      position: relative
+      left: auto
+      top: auto
+      transform: none
+      width: 100%
+      box-shadow: none
+      padding: 0
+      margin-top: 0
+      &:before
+        display: none
+    &:before
+      +arr(13, 9, #fff, t)
+      position: absolute
+      left: 50%
+      bottom: 100%
+      display: block
+      content: ''
+      transform: translateX(-50%)
+      z-index: 2
+    &:after
+      +arr(15, 11, rgba(#000, 0.07), t)
+      position: absolute
+      left: 50%
+      bottom: 100%
+      display: block
+      z-index: 1
+      content: ''
+      transform: translateX(-50%)
+    +r($sm)
+      animation: remodal-opening-keyframes .4s forwards
+    &--lg
+      width: 520px
+    .row
+      margin: 0 -25px -20px
+      > *
+        padding: 0 25px 20px
+    .color-switcher
+      margin: 0 -6px -5px
+      &__item
+        padding: 0 6px 5px
+      &__dot
+        width: 20px
+        height: 20px
+    .btn
+      display: block
+      margin: 15px auto 0
+      +r($md)
+        display: none
+    .input-range
+      margin-bottom: 10px
+  &__remove
+    position: absolute
+    right: -1px
+    top: -1px
+    bottom: -1px
+    display: none
+    font-size: 0
+    width: 36px
+    border-left: 1px solid #fff
+    transition: all ease .3s
+    cursor: pointer
+    +r($md)
+      border-color: $style-color2
+      width: 28px
+    &:hover
+      background: $style-color3
+      border-color: $style-color
+    &:before
+      @extend %ticon
+      content: $ticon-close-button
+      color: #ffffff
+      font-size: 10px
+      display: block
+      +vcenter
+      +r($md)
+        font-size: 8px
+        color: $style-color4
+  &__checkboxes
+    .checkbox
+      width: 100%
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 1px
+  &__scroll
+    max-height: 300px
+    +r($md)
+      max-height: 70vh
+      padding-right: 20px
+  &__title
+    font-weight: 600
+    font-size: 16px
+    margin-bottom: 15px
+    color: $font-color

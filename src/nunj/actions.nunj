@@ -1,0 +1,45 @@
+---
+title: Акции
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block main %}
+    <div class="l-wrapper">
+        {{ chunks.breadcrumbs(['Главная', 'Акции и скидки']) }}
+
+        <div class="page">
+            <div class="page__header">
+                <div class="page__header-left">
+                    <h2 class="h2">Акции и скидки</h2>
+                </div>
+                <div class="page__header-view"> {{ chunks.count_view() }} </div>
+            </div>
+
+            <div class="page__area">
+                <div class="items-list">
+                    {% for i in range(1, 10) %}
+                        {% set data = [
+                        { t: 'Скидки скидки скидки', d: 'На все товары' },
+                        { t: '−30% НА БРЕНД ARA', d: 'На эксклюзивную коллекцию обуви только в интернет магазине ' },
+                        { t: '−30% НА БРЕНД PIKOLINOS', d: 'С 19 по 21 июня скидка -30% на обувь бренда Pikolinos.' }
+                        ] | random %}
+                        {{ chunks.article(i, { t: data.t, d: data.d, img: 'actions', completed: (true if i == 5 else false) }) }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="page__more">
+                <a href="#" class="btn btn--outline"><span>Показать еще акции</span> {{ mixins.icon('arrow-down') }}</a>
+            </div>
+            <div class="page__pagination">
+                <div class="page__pagination-left"></div>
+                <div class="page__pagination-center">
+                    {{ chunks.pagination({ label: '307 акций' }) }}
+                </div>
+                <div class="page__pagination-right">
+                    {{ chunks.count_view() }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,165 @@
+
+<div class="page__mobile-actions">
+    <select class="js-select">
+        <option>По популярности</option>
+        <option>По цене</option>
+    </select>
+    <a href="#" class="btn btn--outline btn--xs js-mobile-filter-trigger">{{ mixins.icon('filter') }} <span>Фильтр</span></a>
+</div>
+
+<form autocomplete="off" class="page__filter js-filters">
+    <div class="page__filter-title">Фильтры</div>
+    <a href="#" class="page__filter-close js-filter-close">{{ mixins.icon('close-button') }}</a>
+    <div class="page__filter-area">
+        <div class="page__filter-list">
+            <div class="page__filter-item d-none d-md-block">
+                <select class="js-select">
+                    <option>По популярности</option>
+                    <option>По цене</option>
+                    <option>По скидке</option>
+                </select>
+            </div>
+            <div class="page__filter-item">
+                <div class="page__filter-label js-mobile-filter-label-trigger">Цена</div>
+                <div class="filter js-filter">
+                    <div class="filter__inn">
+                        <div class="filter__label">Цена</div>
+                    </div>
+                    <div class="filter__dropdown">
+                        <div class="input-range">
+                            <div class="input-range__label">От</div>
+                            <div class="input-range__input"><input data-type="from" type="text" class="input input--sm"></div>
+                            <div class="input-range__label">тг</div>
+                            <div class="input-range__label">До</div>
+                            <div class="input-range__input"><input data-type="to" type="text" class="input input--sm"></div>
+                            <div class="input-range__label">тг.</div>
+                        </div>
+                        <input data-step="1000" data-min="1000" data-max="1000000" class="js-range-slider" type="text" />
+                        <button class="btn btn--sm btn--outline"><span>Применить</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page__filter-item">
+                <div class="page__filter-label js-mobile-filter-label-trigger">Размер</div>
+                <div class="filter js-filter">
+                    <div class="filter__inn">
+                        <div class="filter__label">Размер</div>
+                    </div>
+                    <div class="filter__dropdown">
+                        <div class="input-range">
+                            <div class="input-range__label">От</div>
+                            <div class="input-range__input"><input data-type="from" type="text" class="input input--sm"></div>
+                            <div class="input-range__label">До</div>
+                            <div class="input-range__input"><input data-type="to" type="text" class="input input--sm"></div>
+                        </div>
+                        <input data-step="1" data-min="25" data-max="60" class="js-range-slider" type="text" />
+                        <button class="btn btn--sm btn--outline"><span>Применить</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page__filter-item">
+                <div class="page__filter-label js-mobile-filter-label-trigger">Бренд</div>
+                <div class="filter js-filter">
+                    <div class="filter__inn">
+                        <div data-many='["бренд", "бренда", "брендов"]' class="filter__label">Бренд</div>
+                    </div>
+                    <div class="filter__dropdown">
+                        <div class="filter__scroll js-scroll">
+                            <div class="filter__checkboxes">
+                                {% for j in range(0, 2) %}
+                                    {% for i in ['GEOX', 'CLARKS', 'SKECHERS', 'TIMBERLAND', 'TOMMY HILFIGER', 'KEDDO', 'PRIMIGI', 'BRASKA', 'IMAC' ,'BRASKA АСПЕКТ', 'GARVALIN', 'CROSBY', 'BIOMECANICS', 'BETSY'] %}
+                                        {{ chunks.checkbox({ text: i, count: true }) }}
+                                    {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <button class="btn btn--sm btn--outline"><span>Применить</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page__filter-item">
+                <div class="page__filter-label js-mobile-filter-label-trigger">Цвет</div>
+                <div class="filter js-filter">
+                    <div class="filter__inn">
+                        <div data-many='["цвет", "цвета", "цветов"]' class="filter__label">Цвет</div>
+                    </div>
+                    <div class="filter__dropdown">
+                        <ul class="color-switcher">
+                            {% for i in ['#f9c74d', '#ec7332', '#7770a4'] %}
+                                <li class="color-switcher__item">
+                                    <label class="color-switcher__label">
+                                        <input type="checkbox" name="color000">
+                                        <div style="background-color: {{ i }};" class="color-switcher__dot"></div>
+                                    </label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <button class="btn btn--sm btn--outline"><span>Применить</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page__filter-item">
+                <div class="page__filter-label js-mobile-filter-label-trigger">Сезон</div>
+                <div class="filter js-filter">
+                    <div class="filter__inn">
+                        <div data-many='["сезон", "сезона", "сезонов"]' class="filter__label">Сезон</div>
+                    </div>
+                    <div class="filter__dropdown">
+                        <div class="filter__scroll js-scroll">
+                            <div class="filter__checkboxes">
+                                {% for i in ['летний', 'осенний', 'зимний', 'весеений'] %}
+                                    {{ chunks.checkbox({ text: i, count: true }) }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <button class="btn btn--sm btn--outline"><span>Применить</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page__filter-item">
+                <div class="page__filter-label js-mobile-filter-label-trigger">Материал</div>
+                <div class="filter js-filter">
+                    <div class="filter__inn">
+                        <div data-many='["материал", "материала", "материалов"]' class="filter__label">Материал</div>
+                    </div>
+                    <div class="filter__dropdown filter__dropdown--lg">
+                        <div class="filter__scroll js-scroll">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="filter__title">Основной материал</div>
+                                    <div class="filter__checkboxes">
+                                        {% for i in ['GEOX', 'CLARKS', 'SKECHERS', 'TIMBERLAND', 'TOMMY HILFIGER', 'KEDDO', 'PRIMIGI', 'BRASKA', 'IMAC' ,'BRASKA АСПЕКТ', 'GARVALIN', 'CROSBY', 'BIOMECANICS', 'BETSY'] %}
+                                            {{ chunks.checkbox({ text: i, count: true }) }}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="filter__title">Материал верха</div>
+                                    <div class="filter__checkboxes">
+                                        {% for i in ['GEOX', 'CLARKS', 'SKECHERS', 'TIMBERLAND', 'TOMMY HILFIGER', 'KEDDO', 'PRIMIGI', 'BRASKA', 'IMAC' ,'BRASKA АСПЕКТ', 'GARVALIN', 'CROSBY', 'BIOMECANICS', 'BETSY'] %}
+                                            {{ chunks.checkbox({ text: i, count: true }) }}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn--sm btn--outline"><span>Применить</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-md-none">
+            <button type="button" class="btn btn--block btn--outline btn--xs js-filter-apply"><span>Применить фильтр</span></button>
+        </div>
+        <div class="col-auto">
+            <a href="#" class="page__filter-clear js-filters-clear">Очистить всё</a>
+        </div>
+    </div>
+</form>

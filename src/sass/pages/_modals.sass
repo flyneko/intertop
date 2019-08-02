@@ -1,0 +1,95 @@
+.md-available
+  &__info
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 20px
+    border-bottom: 1px solid #eaeaea
+    margin-bottom: 20px
+  &__product
+    max-width: 130px
+    max-height: 100px
+  &__map
+    height: 200px
+    margin-top: 20px
+  .tabs
+    margin-bottom: 15px
+  .dk-select
+    font-weight: 600
+
+.md-auth
+  padding: 0
+  .auth
+    position: static
+    box-shadow: none
+    display: block
+
+.md-cart
+  max-width: 1070px
+  &__footer
+    @extend %table
+    table-layout: fixed
+    margin-top: 30px
+    +r($xxs)
+      display: block
+      margin-top: 15px
+      > *
+        display: block
+        text-align: center !important
+    &-left, &-right
+      width: 220px
+      +r($xxs)
+        width: 100%
+    &-left
+      +r($md)
+        display: none
+    &-right
+      text-align: right
+    &-center
+      text-align: center
+      +r($md)
+        text-align: left
+      +r($xxs)
+        margin-bottom: 15px
+    &-info
+      display: inline-block
+      text-align: left
+      +r($xxs)
+        text-align: center
+  &__back
+    font-size: 16px
+    color: $style-color4
+    text-decoration: underline
+    padding-left: 23px
+    position: relative
+    display: inline-block
+    font-weight: 600
+    &:before
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      content: ''
+      +arr(4, 7, $style-color4, l)
+  &__sum
+    font-size: 20px
+    margin-bottom: 5px
+    font-weight: 600
+    +r($sm)
+      font-size: 16px
+    > span
+      font-size: 24px
+      color: $style-color3
+      font-weight: bold
+      +r($sm)
+        font-size: 20px
+
+.md-fast
+  max-width: 1070px
+  padding-bottom: 0
+  padding-top: 65px
+  .item__cart
+    margin-bottom: 0
+    margin-right: -25px
+    +r($md)
+      margin-right: 0

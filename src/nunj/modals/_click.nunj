@@ -1,0 +1,27 @@
+<div class="modal" id="oneclick" style="max-width: 470px;">
+    <div class="modal__title">Покупка в 1 клик</div>
+    <form autocomplete="off" class="form">
+        <div class="form__row">
+            <label class="form__label form__label--required">Ф.И.О.</label>
+            <input class="input" type="text">
+        </div>
+        <div class="form__row">
+            <label class="form__label form__label--required">Телефон</label>
+            <input class="input js-phone" type="text">
+        </div>
+        <div class="form__row">
+            <label class="form__label">Email</label>
+            <input class="input js-phone" type="email">
+        </div>
+        <div class="form__row">
+            <label class="form__label">Комментарий к заказу</label>
+            <textarea class="input"></textarea>
+        </div>
+        <div class="form__row">
+            {{ chunks.checkbox({ text: 'Соглашаюсь с <a class="link" href="#">условиями обработки персональных данных</a>' }) }}
+        </div>
+        <div class="form__row">
+            <button type="submit" class="btn btn--outline"> <span>Отправить</span></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="modal md-available" id="availability">
+    <div class="modal__title">Наличие товара в сети магазинов INTERTOP</div>
+    <div class="md-available__info">
+        <div class="md-available__left text">
+            <p>Sketchers</p>
+            <p>Полуботинки мужские</p>
+            <p>Модель KM2957</p>
+            <p>Размер 44</p>
+        </div>
+        <img class="md-available__product" src="./temp/products/1.jpg">
+    </div>
+    <div class="md-available__tabs js-tabs">
+        {% set cities = { 'Алматы': 'almaty', 'Актау': 'aktau', 'Актобэ': 'aktobe', 'Астана': 'astana', 'Костанай': 'kostanai', 'Караганда': 'karaganda' } %}
+        <div class="d-sm-none m-b-15">
+            <select data-tabs="select" class="js-select">
+                {% for k, v in cities %}
+                    <option value="{{ v }}">Город: {{ k }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="tabs d-none d-sm-block">
+            <div class="tabs__bar" data-tabs="bar"></div>
+            <ul class="tabs__list">
+                {% for k, v in cities %}
+                    <li class="tabs__item">
+                        <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ v }}"><span>{{ k | safe }}</span></a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% for k, v in cities %}
+            <div id="{{ v }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                <div class="text">
+                    <p>1. Алматы, ул. Розыбакиева, 263 ТРЦ "Мега 2"</p>
+                    <p>2. Алматы, пр. Туран, 37 ТРЦ "Хан Шатыр"</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="md-available__map" id="available-map"></div>
+</div>

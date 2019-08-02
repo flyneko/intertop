@@ -1,0 +1,91 @@
+{% if related %}
+    <section class="section section--border">
+        <div class="l-wrapper">
+            <h2 class="h2 section__title">С этим товаром покупают</h2>
+            <div class="carousel products-carousel">
+                <div data-rows="1" class="swiper-container js-products-carousel">
+                    <div class="swiper-wrapper">
+                        {% for i in range(0, 5) %}
+                            <div class="swiper-slide">
+                                {{ chunks.grid_product(i) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% if viewed %}
+    <section class="section section--border">
+        <div class="l-wrapper">
+            <h2 class="h2 section__title">Вы недавно просматривали</h2>
+            <div class="carousel products-carousel">
+                <div data-rows="1" class="swiper-container js-products-carousel">
+                    <div class="swiper-wrapper">
+                        {% for i in range(0, 10) %}
+                            <div class="swiper-slide">
+                                {{ chunks.grid_product(i) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+<section class="subscribe">
+    <form autocomplete="off" class="l-wrapper subscribe__inn">
+        <div class="subscribe__label">Всегда будьте в курсе новых акций и спецпредложений!</div>
+        <input class="input" placeholder="Введите свой e-mail...">
+        <button type="submit" class="btn btn--outline btn--sm btn--white"><span>Подписаться</span></button>
+    </form>
+</section>
+
+<footer class="footer">
+    <div class="l-wrapper">
+        <div class="footer__inn">
+            <div class="footer__cell footer__info">
+                <div class="footer__copyright">
+                    <p>Интернет-магазин обуви </p>
+                    <p>&copy; 2006-2018 INTERTOP Все права защищены</p>
+                    <p>Техподдержка ТОО « Интертоп Центральная Азия»</p>
+                    <p>г. Алматы, ул. Шевченко, 90</p>
+                </div>
+
+                <ul class="footer__payments">
+                    {% for i in ['money', 'mastercard', 'visa'] %}
+                        <li class="footer__payments-item">{{ mixins.icon(i) }}</li>
+                    {% endfor %}
+                </ul>
+
+                <a href="https://sdvv.ru" target="_blank" class="footer__denisov">{{ mixins.icon('denisov') }}</a>
+            </div>
+            {% for k, v in {
+            'Выбирайте': ['Женская обувь', 'Мужская обувь', 'Детская обувь', 'Одежда', 'Аксессуары', 'Уход', 'Бренды'],
+            'Экономьте': ['Бонусная программа', 'INTERTOP PLUS', 'Акции и скидки', 'Промо-код'],
+            'Покупателям': ['Резерв', 'Доставка', 'Возврат', 'Вопросы и ответы', 'Гарантии', 'Безопасность', 'Товары партнеров', 'Оферта'],
+            'INTERTOP': ['Магазины', 'Новости', 'Сотрудничество с нами', 'Работа', 'Обратная связь', 'Контакты']
+            } %}
+                <div class="footer__cell">
+                    <div class="footer__title">{{ k }}</div>
+                    <ul class="footer__menu">
+                        {% for i in v %}
+                            <li class="footer__menu-item"><a href="#" class="footer__menu-link"><span>{{ i }}</span></a></li>
+                        {% endfor %}
+                    </ul>
+
+                    {% if loop.last %}
+                        <ul class="footer__socials socials">
+                            {% for i in ['vk', 'fb', 'inst', 'yt'] %}
+                                <li class="socials__item"><a href="#" class="socials__link">{{ mixins.icon(i) }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</footer>

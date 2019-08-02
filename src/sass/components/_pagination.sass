@@ -1,0 +1,68 @@
+.pagination
+  text-align: center
+  &__list
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -2px -5px
+    align-items: center
+    justify-content: center
+  &__item
+    padding: 0 2px 5px
+  &__link, &__active, &__prev, &__next
+    height: 32px
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    font-size: 14px
+    color: $font-color
+  &__link, &__active
+    border: 1px solid #e3e8e4
+    width: 32px
+  &__link
+    position: relative
+    &:hover
+      color: #fff
+      &:before
+        opacity: 1
+        height: 100%
+    &:before
+      position: absolute
+      content: ''
+      bottom: 0
+      left: 0
+      z-index: -1
+      width: 100%
+      height: 0
+      transition: all ease .3s
+      opacity: 0
+      background: rgba($style-color, 0.8)
+  &__active
+    border-color: $style-color
+    background: $style-color
+    color: #ffffff
+  &__prev, &__next
+    width: 26px
+    font-size: 11px
+    &:before
+      @extend %ticon
+  &__prev
+    &:before
+      content: $ticon-chevron-left
+  &__next
+    &:before
+      content: $ticon-chevron-right
+  &__label
+    padding: 0 2px 5px
+    font-size: 14px
+    color: #939393
+    font-weight: 300
+    width: 120px
+    text-align: left
+    margin-right: -120px
+    +r($xxs)
+      width: 100%
+      margin-right: 0
+      text-align: center
+      margin-top: 10px

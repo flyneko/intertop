@@ -1,0 +1,9 @@
+<div class="modal" id="cart-modal-empty">
+    <div class="placeholder-block">
+        <div class="placeholder-block__inn">
+            <div class="placeholder-block__icon">{{ mixins.icon('cart-1') }}</div>
+            <div class="placeholder-block__title">Ваша корзина пуста!</div>
+            <a href="#" class="btn btn--arrow"><span>Перейти к выбору товаров</span></a>
+        </div>
+    </div>
+</div>

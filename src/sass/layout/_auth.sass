@@ -1,0 +1,50 @@
+@keyframes auth-show
+  0%
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg)
+    opacity: 0
+  100%
+    transform: perspective(400px) rotate3d(0, 1, 0, 0)
+    opacity: 1
+
+.auth
+  position: absolute
+  top: 100%
+  background: #ffffff
+  box-shadow: 0 0 6px 0 rgba(#000, 0.2)
+  font-size: 14px
+  display: none
+  width: 100%
+  max-width: 470px
+  right: 0
+  z-index: 9
+  animation: auth-show .4s forwards
+  +r($sm)
+    max-width: 100%
+  .dropdown-open &
+    display: block
+  &__main, &__footer
+    padding: 20px 30px
+    +r($sm)
+      padding: 20px
+  &__main
+    overflow: hidden
+  &__footer
+    background: $style-color2
+    margin: 20px -30px -20px
+    +r($sm)
+      margin-left: -20px
+      margin-right: -20px
+    a
+      text-decoration: underline
+      color: $style-color
+  .tabs
+    padding-bottom: 0
+    margin-bottom: 15px
+  .tabs__link
+    font-size: 20px
+    padding: 10px 0 5px
+    color: #b5b4b4
+    +r($sm)
+      font-size: 18px
+    &.is-active
+      color: $font-color

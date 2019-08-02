@@ -1,0 +1,33 @@
+.form
+  &__row
+    margin-bottom: 15px
+    &:last-child
+      margin-bottom: 0
+    .input + .form__hint
+      display: block
+      margin-top: 10px
+  &__label
+    color: #2d2e33
+    font-weight: 600
+    margin-bottom: 5px
+    line-height: $line-height
+    display: block
+    &.is-error
+      color: $error-color
+    &--required
+      &:after
+        content: '*'
+        color: $style-color
+        font-size: 20px
+        font-weight: 600
+    &--inline
+      display: inline-block
+      vertical-align: middle
+  &__hint
+    font-weight: normal
+    color: #737373
+  &__error
+    color: $error-color
+    font-size: 12px
+    margin-top: 5px
+    display: block

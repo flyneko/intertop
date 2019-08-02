@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('../fonts/iconfont/iconfont.eot?779811398');
+  src: url('../fonts/iconfont/iconfont.eot?779811398#iefix') format('eot'),
+    url('../fonts/iconfont/iconfont.woff2?779811398') format('woff2'),
+    url('../fonts/iconfont/iconfont.woff?779811398') format('woff'),
+    url('../fonts/iconfont/iconfont.ttf?779811398') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$ticon-arrow-down: "\EA01";
+$ticon-arrow-left: "\EA02";
+$ticon-arrow-right: "\EA03";
+$ticon-back: "\EA04";
+$ticon-bank: "\EA05";
+$ticon-bus: "\EA06";
+$ticon-car-1: "\EA07";
+$ticon-card-1: "\EA08";
+$ticon-cards: "\EA09";
+$ticon-cart-1: "\EA0A";
+$ticon-cart: "\EA0B";
+$ticon-check-circle: "\EA0C";
+$ticon-check: "\EA0D";
+$ticon-chevron-down: "\EA0E";
+$ticon-chevron-left: "\EA0F";
+$ticon-chevron-right: "\EA10";
+$ticon-chevron-top: "\EA11";
+$ticon-click: "\EA12";
+$ticon-clock: "\EA13";
+$ticon-close-button: "\EA14";
+$ticon-close: "\EA15";
+$ticon-comment: "\EA16";
+$ticon-delivery: "\EA17";
+$ticon-denisov: "\EA18";
+$ticon-diamond: "\EA19";
+$ticon-discount: "\EA1A";
+$ticon-enter: "\EA1B";
+$ticon-fb: "\EA1C";
+$ticon-filter: "\EA1D";
+$ticon-hamburger: "\EA1E";
+$ticon-heart: "\EA1F";
+$ticon-hexagon: "\EA20";
+$ticon-inst: "\EA21";
+$ticon-instagram: "\EA22";
+$ticon-login: "\EA23";
+$ticon-mastercard: "\EA24";
+$ticon-money-1: "\EA25";
+$ticon-money: "\EA26";
+$ticon-ok: "\EA27";
+$ticon-package: "\EA28";
+$ticon-phone: "\EA29";
+$ticon-pin-1: "\EA2A";
+$ticon-pin: "\EA2B";
+$ticon-plane: "\EA2C";
+$ticon-play: "\EA2D";
+$ticon-present-card: "\EA2E";
+$ticon-present: "\EA2F";
+$ticon-search: "\EA30";
+$ticon-star: "\EA31";
+$ticon-truck: "\EA32";
+$ticon-twitter: "\EA33";
+$ticon-user: "\EA34";
+$ticon-visa: "\EA35";
+$ticon-vk: "\EA36";
+$ticon-wallet: "\EA37";
+$ticon-writing: "\EA38";
+$ticon-yt: "\EA39";
+
+
+%ticon {
+  font-family: "iconfont";
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ticon {
+  @extend %ticon;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ticon-arrow-down:before { content: $ticon-arrow-down; }
+.ticon-arrow-left:before { content: $ticon-arrow-left; }
+.ticon-arrow-right:before { content: $ticon-arrow-right; }
+.ticon-back:before { content: $ticon-back; }
+.ticon-bank:before { content: $ticon-bank; }
+.ticon-bus:before { content: $ticon-bus; }
+.ticon-car-1:before { content: $ticon-car-1; }
+.ticon-card-1:before { content: $ticon-card-1; }
+.ticon-cards:before { content: $ticon-cards; }
+.ticon-cart-1:before { content: $ticon-cart-1; }
+.ticon-cart:before { content: $ticon-cart; }
+.ticon-check-circle:before { content: $ticon-check-circle; }
+.ticon-check:before { content: $ticon-check; }
+.ticon-chevron-down:before { content: $ticon-chevron-down; }
+.ticon-chevron-left:before { content: $ticon-chevron-left; }
+.ticon-chevron-right:before { content: $ticon-chevron-right; }
+.ticon-chevron-top:before { content: $ticon-chevron-top; }
+.ticon-click:before { content: $ticon-click; }
+.ticon-clock:before { content: $ticon-clock; }
+.ticon-close-button:before { content: $ticon-close-button; }
+.ticon-close:before { content: $ticon-close; }
+.ticon-comment:before { content: $ticon-comment; }
+.ticon-delivery:before { content: $ticon-delivery; }
+.ticon-denisov:before { content: $ticon-denisov; }
+.ticon-diamond:before { content: $ticon-diamond; }
+.ticon-discount:before { content: $ticon-discount; }
+.ticon-enter:before { content: $ticon-enter; }
+.ticon-fb:before { content: $ticon-fb; }
+.ticon-filter:before { content: $ticon-filter; }
+.ticon-hamburger:before { content: $ticon-hamburger; }
+.ticon-heart:before { content: $ticon-heart; }
+.ticon-hexagon:before { content: $ticon-hexagon; }
+.ticon-inst:before { content: $ticon-inst; }
+.ticon-instagram:before { content: $ticon-instagram; }
+.ticon-login:before { content: $ticon-login; }
+.ticon-mastercard:before { content: $ticon-mastercard; }
+.ticon-money-1:before { content: $ticon-money-1; }
+.ticon-money:before { content: $ticon-money; }
+.ticon-ok:before { content: $ticon-ok; }
+.ticon-package:before { content: $ticon-package; }
+.ticon-phone:before { content: $ticon-phone; }
+.ticon-pin-1:before { content: $ticon-pin-1; }
+.ticon-pin:before { content: $ticon-pin; }
+.ticon-plane:before { content: $ticon-plane; }
+.ticon-play:before { content: $ticon-play; }
+.ticon-present-card:before { content: $ticon-present-card; }
+.ticon-present:before { content: $ticon-present; }
+.ticon-search:before { content: $ticon-search; }
+.ticon-star:before { content: $ticon-star; }
+.ticon-truck:before { content: $ticon-truck; }
+.ticon-twitter:before { content: $ticon-twitter; }
+.ticon-user:before { content: $ticon-user; }
+.ticon-visa:before { content: $ticon-visa; }
+.ticon-vk:before { content: $ticon-vk; }
+.ticon-wallet:before { content: $ticon-wallet; }
+.ticon-writing:before { content: $ticon-writing; }
+.ticon-yt:before { content: $ticon-yt; }

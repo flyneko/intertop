@@ -1,0 +1,44 @@
+---
+title: Корзина
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block main %}
+    <div class="l-wrapper">
+        {{ chunks.breadcrumbs(['Главная', 'Корзина']) }}
+
+        <div class="page p-cart">
+            <div class="page__header">
+                <h2 class="h2">Корзина</h2>
+            </div>
+
+            <div class="page__area">
+                {% for i in range(1, 4) %}
+                    {{ chunks.cart_item(i, { mod: 'lg', static_size: true }) }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="order-info order-info--bright">
+        <div class="l-wrapper">
+            <div class="order-info__top">
+                <div class="order-info__row order-info__row--lg">Товаров на сумму: <span> 53 970 тг</span></div>
+                <div class="plus-bonus">Бонусов на карту INTERTOP PLUS: <b>105</b></div>
+            </div>
+        </div>
+        <div class="order-info__bottom">
+            <div class="l-wrapper">
+                <div class="order-info__bottom-inn">
+                    <div class="order-info__bottom-right">
+                        <div class="order-info__sum">Сумма заказа:	<span>53 970 тг</span></div>
+                        <a href="#" class="btn btn--lg btn--arrow"><span>Перейти к оформлению</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

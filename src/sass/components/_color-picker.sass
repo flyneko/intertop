@@ -1,0 +1,26 @@
+.color-variations
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin: 0 -5px -10px
+  &__item
+    padding: 0 5px 10px
+
+.color-picker
+  display: block
+  cursor: pointer
+  input
+    display: none
+  input:checked + &__img
+    border-color: $style-color
+  &__img
+    width: 70px
+    height: 70px
+    border-radius: 50%
+    border: 1px solid #e2e2e2
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 7px
+    overflow: hidden
+    transition: all ease .3s

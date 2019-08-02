@@ -1,0 +1,37 @@
+<div class="m-nav js-m-nav">
+    <a data-fancybox data-src="#mauth" href="#" class="m-nav__item"> {{ mixins.icon('login') }} Авторизация </a>
+    <a href="#" class="m-nav__item"> {{ mixins.icon('pin') }} Наши магазины </a>
+    <div class="m-nav__catalog">
+        <div class="m-catalog js-m-catalog">
+            <ul class="m-catalog__list">
+
+
+                {% for i in ['Женская обувь', 'Мужская обувь', 'Детская обувь', 'Одежда', 'Аксессуары', 'Распродажа %', 'Уход', 'Бренды'] %}
+                    <li class="m-catalog__item m-catalog__item--has-sub">
+                        <a data-id="{{ loop.index }}" href="#" class="m-catalog__link js-m-catalog-link {% if i == 'Распродажа %' %}m-catalog__link--bright{% endif %}">
+                            {{ i }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="m-nav__item">
+        {{ mixins.icon('package', 'font-size: 14px;') }}
+        Бесплатная доставка от 20000 тг
+    </div>
+    <div class="m-nav__item">
+        {{ mixins.icon('phone') }}
+        <div>
+            <a href="#" class="link">+7 727 338-20-28</a> /
+            <a href="#" class="link">+7 909 332-11-99</a>
+        </div>
+    </div>
+    <div class="m-nav__item m-nav__socials">
+        <ul class="socials">
+            {% for i in ['vk', 'fb', 'inst', 'yt'] %}
+                <li class="socials__item"><a href="#" class="socials__link">{{ mixins.icon(i) }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

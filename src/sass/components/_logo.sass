@@ -1,0 +1,81 @@
+$logo-colors: darken($style-color, 5) darken($style-color, 10) darken($style-color, 15) darken($style-color, 20)
+@keyframes animate-logo
+  0%
+    width: 0
+    height: 100%
+    background: nth($logo-colors, 1)
+    left: 0
+    top: 0
+    right: auto
+    bottom: auto
+  25%
+    width: 100%
+    height: 100%
+    background: $style-color
+  25.01%
+    background: nth($logo-colors, 2)
+    height: 0
+  50%
+    height: 100%
+    width: 100%
+    background: $style-color
+    left: 0
+    top: 0
+    right: auto
+    bottom: auto
+  50.01%
+    bottom: 0
+    top: auto
+    left: auto
+    right: 0
+    width: 0
+    background: nth($logo-colors, 3)
+  75%
+    width: 100%
+    height: 100%
+    background: $style-color
+  75.01%
+    background: nth($logo-colors, 4)
+    height: 0
+  100%
+    width: 100%
+    height: 100%
+    background: $style-color
+    top: auto
+    left: auto
+    right: 0
+    bottom: 0
+
+.logo
+  height: 65px
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 0 40px
+  background: $style-color
+  position: relative
+  overflow: hidden
+  z-index: 9
+  transition: background ease .3s
+  &:hover
+    //background: $style-color3
+  &:before
+    display: block
+    position: absolute
+    content: ''
+    width: 0
+    height: 0
+    left: 0
+    top: 0
+    animation: animate-logo 8s forwards infinite
+    z-index: 2
+  +r($md)
+    background: transparent
+    padding: 0
+    height: 40px
+    &:before
+      display: none
+  &__img
+    width: 130px
+    position: relative
+    z-index: 3

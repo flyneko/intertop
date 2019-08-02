@@ -1,0 +1,51 @@
+---
+title: Мои заказы
+---
+
+{% extends "layouts/_cabinet.nunj" %}
+
+{% block main %}
+    {% for i in range(1, 5) %}
+        <div class="order">
+            <div class="order__head">
+                <span class="order__id">N-288291120</span>
+                <div class="order__head-info">
+                    <div class="order__info">
+                        {% for k, v in {
+                        'Дата:': ' 16 сентября 20:48',
+                        'Сумма:': '57 800 тг.',
+                        'Доставка:': '1 500 тг.'
+                        } %}
+                            <dl class="order__value">
+                                <dt>{{ k }}</dt>
+                                <dd>{{ v }}</dd>
+                            </dl>
+                        {% endfor %}
+                    </div>
+                    <dl class="order__value">
+                        <dt>Статус заказа:</dt>
+                        <dd class="order__status">Выполнен</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="order__inn">
+                <div class="order__items">
+                    <div class="carousel">
+                        <div class="swiper-container js-order-items-carousel">
+                            <div class="swiper-wrapper">
+                                {% for i in range(1, 4) %}
+                                    <div class="swiper-slide">
+                                        <a href="#" class="order__item"><img src="./temp/products/{{ i }}.jpg"></a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order__more">
+                    <a href="#" class="btn btn--outline"><span>Подробнее о заказе</span></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

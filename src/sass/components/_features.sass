@@ -1,0 +1,43 @@
+.feature
+  height: 100%
+  padding: 25px 15px 10px //40px 15px 10px
+  text-align: center
+  min-height: 180px
+  border: 1px solid #e5e5e5
+  +r($md)
+    min-height: 150px
+    padding: 30px 10px 10px //30px 10px 10px
+  +r($xxs)
+    min-height: 110px
+    padding-top: 20px // 20
+  &__inn
+    display: inline-block
+  &__icon
+    font-size: 80px // 50
+    margin-bottom: 15px
+    line-height: 1
+    +r($md)
+      font-size: 50px
+      margin-bottom: 10px
+    +r($xxs)
+      //font-size: 30px
+      //margin-bottom: 0
+    .icon
+      fill: $style-color4
+  &__title
+    font-size: 16px //18px
+    font-weight: 600
+    line-height: $line-height
+    +r($md)
+      //font-size: 16px
+    +r($xxs)
+      font-size: 14px //12px
+  &__desc
+    font-size: 14px
+    line-height: $line-height
+    color: #5d5d5d
+    margin-top: 7px
+    +r($md)
+      font-size: 12px
+    +r($xxs)
+      margin-bottom: 5px

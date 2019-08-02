@@ -1,0 +1,76 @@
+.nav
+  position: relative
+  +r($md)
+    display: none
+  &__inn
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 0 -10px
+    height: 65px
+  &__bar
+    position: absolute
+    height: 1px
+    background: #2d2e33
+    top: 100%
+    transition: all ease .3s
+    z-index: 8
+  &__item
+    height: 100%
+  &__link
+    font-size: 16px
+    color: $font-color
+    text-transform: uppercase
+    display: inline-flex
+    height: 100%
+    width: 100%
+    padding: 0 10px
+    align-items: center
+    justify-content: center
+    &--red
+      font-weight: 600
+      color: #f24c12
+
+
+.m-nav
+  position: fixed
+  top: 0
+  height: 100%
+  overflow: auto
+  background: $style-color2
+  width: 280px
+  left: 0
+  display: none
+  z-index: 99
+  transition: all ease .5s
+  border-right: 1px solid #fff
+  font-size: 14px
+  .slideout-open &
+    display: block
+  &__item
+    color: #2d2e33
+    position: relative
+    padding-left: 40px
+    display: block
+    min-height: 40px
+    display: flex
+    align-items: center
+    border-bottom: 1px solid #fff
+    &:last-child
+      border-bottom: 0
+    > .icon
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      font-size: 18px
+      fill: $style-color
+      left: 12px
+  &__catalog
+    padding: 5px 0
+    border-bottom: 1px solid #fff
+  &__socials
+    padding: 13px 0
+    padding-left: 12px
+    .socials__link
+      background-color: transparent
+      border-color: #ffffff

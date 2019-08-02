@@ -1,0 +1,86 @@
+.order-info
+  margin-top: 30px
+  +r($sm)
+    margin-top: 20px
+  +r($xxs)
+    text-align: center
+    margin-top: 15px
+  &--bright &__bottom
+    background: $style-color2
+    padding: 30px 0
+    margin-top: 30px
+    +r($sm)
+      padding: 20px 0
+      margin-top: 20px
+    +r($xxs)
+      margin-top: 15px
+    &-inn
+      padding-top: 0
+      margin-top: 0
+      border-top: 0
+  &__top
+    text-align: right
+    +r($xxs)
+      text-align: left
+  &__bottom
+    &-inn
+      margin-top: 25px
+      padding-top: 20px
+      border-top: 1px solid $style-color2
+      display: flex
+      justify-content: space-between
+      align-items: center
+      flex-direction: row-reverse
+      +r($xs)
+        flex-direction: column-reverse
+        align-items: center
+    &-left
+      flex-grow: 1
+      flex-shrink: 0
+      padding-right: 10px
+      +r($xs)
+        padding-right: 0
+        margin-bottom: 15px
+    &-right
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      +r($md)
+        flex-wrap: wrap
+      +r($sm)
+        flex-direction: column
+  &__row
+    font-weight: 600
+    margin-bottom: 5px
+    font-size: 16px
+    > span
+      font-weight: 600
+      font-size: 20px
+    &--lg
+      font-size: 20px
+      +r($sm)
+        font-size: 16px
+      > span
+        font-size: 24px
+        font-weight: bold
+        +r($sm)
+          font-size: 20px
+  &__sum
+    $fs: 30
+    font-weight: 600
+    font-size: #{$fs}px
+    +r($md)
+      font-size: 26px
+    +r($sm)
+      margin-right: 0
+      font-size: 22px
+    > span
+      font-size: +em(40, $fs)
+      font-weight: bold
+      color: $style-color3
+  .btn
+    margin-left: 35px
+    +r($md)
+      margin-left: 20px
+    +r($sm)
+      margin-left: 0

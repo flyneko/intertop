@@ -1,0 +1,53 @@
+---
+title: INTERTOP PLUS
+gmaps: true
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block scripts %}
+    <script>
+        function mapInit() {
+            var map = createMap(document.getElementById('contacts-map'), {lat: 44.044652, lng: 67.427335}, 10);
+            var markers = [
+                [44.044652, 67.427335]
+            ];
+            for (var i in markers) {
+                createSimpleMarker(markers[i], map);
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="p-contacts">
+        <div class="l-wrapper">
+            <div class="page">
+                <div class="page__header">
+                    <h2 class="h2"> Контакты</h2>
+                </div>
+            </div>
+        </div>
+        <div id="contacts-map" class="p-contacts__map"></div>
+        <div class="l-wrapper">
+            <div class="p-contacts__text text">
+                <p>
+                    По вопросам заказа в онлайн-магазине <br>
+                    intertop.kz <br>
+                    тел: +7 (727) 338 20 28 <br>
+                    Режим работы: 10:00-22:00 <br>
+                    <a href="#">Написать нам</a>
+                </p>
+                <p>
+                    Головной офис <br>
+                    ИНТЕРТОП ЦЕНТРАЛЬНАЯ АЗИЯ <br>
+                    Республика Казахстан, 050012 г. Алматы, ул. Шевченко, 90 <br>
+                    тел: +7 727 313 76 67 <br>
+                    Отдел маркетинга - <a href="#">adv@intertop.kz</a> <br>
+                    Отдел оптовых продаж <a href="#">buying@intertop.kz</a> <br>
+                    <a href="#">Написать нам</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

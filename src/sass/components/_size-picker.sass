@@ -1,0 +1,28 @@
+.size-variations
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin: 0 -5px -10px
+  &__item
+    padding: 0 5px 10px
+
+
+.size-picker
+  input
+    display: none
+  input:checked + &__label
+    border-color: $style-color
+    color: #ffffff
+    background: $style-color
+  &__label
+    border: 1px solid #e3e8e4
+    width: 45px
+    height: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 14px
+    font-weight: 600
+    color: #b0b8b9
+    transition: all ease .3s
+    cursor: pointer

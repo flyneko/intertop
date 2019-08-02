@@ -1,0 +1,27 @@
+.hamburger
+  width: 1.2em
+  height: 1em
+  display: inline-flex
+  align-items: center
+  vertical-align: middle
+  flex-wrap: wrap
+  overflow: hidden
+  transition: all ease .3s
+  &:before, &:after
+    content: ''
+  &:before, &:after, span
+    height: 2px
+    background: $style-color
+    margin-bottom: 5px
+    border: 0 solid
+    display: block
+    box-sizing: content-box
+    position: relative
+    width: 100%
+    transition: all ease .3s
+    &:last-child
+      margin-bottom: 0
+  &.is-active
+    transform: rotate(90deg)
+    &:before, &:after, span
+      background: #3a3b42

@@ -1,0 +1,122 @@
+.cabinet-menu
+  background: $style-color
+  color: #fff
+  margin-bottom: 20px
+  &__inn
+    display: flex
+    align-items: center
+    height: 65px
+    position: relative
+    +r($md)
+      height: 50px
+    +r($xs)
+      justify-content: space-between
+  &__mobile
+    border-radius: 50%
+    width: 30px
+    height: 30px
+    display: none
+    align-items: center
+    justify-content: center
+    background: $style-color4
+    transition: all ease .3s
+    .dropdown-open &
+      background: $style-color3
+    +r($xs)
+      display: flex
+    .icon
+      fill: #fff
+      font-size: 14px
+  &__label
+    width: 370px
+    +r($layout-width)
+      width: 270px
+    +r($lg)
+      display: none
+    +r($xs)
+      display: block
+  &__base
+    padding-left: 30px
+    flex-grow: 1
+    align-items: center
+    justify-content: space-between
+    height: 100%
+    +rmin($xs)
+      display: flex !important
+    +r($md)
+      padding-left: 0
+    +r($xs)
+      display: block !important
+      opacity: 0
+      visibility: hidden
+      transform: translateY(15px)
+      transition: all ease .3s
+      pointer-events: none
+      position: absolute
+      top: 100%
+      left: -#{$layout-padding}px
+      right: -#{$layout-padding}px
+      z-index: 9
+      background: $style-color4
+      flex-direction: column
+      height: auto
+      .dropdown-open &
+        visibility: visible
+        opacity: 1
+        pointer-events: auto
+        transform: translateY(0)
+  &__list
+    display: flex
+    margin: 0 -30px
+    height: 100%
+    +r($layout-width)
+      margin: 0 -15px
+    +r($md)
+      margin: 0 -7px
+    +r($xs)
+      margin: 0
+      flex-direction: column
+      height: auto
+      text-align: center
+  &__item
+    padding: 0 30px
+    +r($layout-width)
+      padding: 0 15px
+    +r($md)
+      padding: 0 7px
+    +r($xs)
+      padding: 0
+  &__item.is-active &__link
+    +r($xs)
+      background: #fff
+      color: $style-color4
+    &:before
+      display: block
+      +r($xs)
+        display: none
+  &__link
+    font-size: 16px
+    color: #ffffff
+    position: relative
+    display: flex
+    align-items: center
+    text-transform: uppercase
+    height: 100%
+    text-align: center
+    +r($md)
+      font-size: 14px
+    +r($xs)
+      justify-content: center
+      height: 40px
+    &:before
+      position: absolute
+      content: ''
+      bottom: 0
+      display: none
+      left: 50%
+      transform: translateX(-50%)
+      +arr(23, 8, #fff, t)
+      +r($md)
+        +arr(15, 5, #fff, t)
+
+

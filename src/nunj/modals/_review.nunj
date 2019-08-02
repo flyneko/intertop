@@ -1,0 +1,20 @@
+<div class="modal" id="review" style="max-width: 470px;">
+    <div class="modal__title">Написать отзыв</div>
+    <form autocomplete="off" class="form">
+        <div class="form__row">
+            <label class="form__label">Имя и фамилия</label>
+            <input class="input" type="text">
+        </div>
+        <div class="form__row">
+            <label class="form__label form__label--inline m-r-5">Оцените товар</label>
+            {{ chunks.rate({ pick: true }) }}
+        </div>
+        <div class="form__row">
+            <label class="form__label">Текст отзыва</label>
+            <textarea class="input"></textarea>
+        </div>
+        <div class="form__row">
+            <button type="submit" class="btn btn--outline"> <span>Оставить отзыв</span></button>
+        </div>
+    </form>
+</div>

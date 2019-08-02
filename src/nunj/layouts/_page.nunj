@@ -1,0 +1,25 @@
+{% extends "layouts/_layout.nunj" %}
+
+{% block content %}
+    <div class="l-wrapper">
+        <div class="l-inner">
+            <div data-sticky_parent class="l-page">
+                <div class="l-page__main l-page__main--offset">
+                    <h2 class="h2">{{ title }}</h2>
+                </div>
+                <div class="l-page__inn">
+                    <aside class="l-page__aside">
+                        <div class="js-aside">
+                            {% block aside %}{% endblock %}
+                        </div>
+                    </aside>
+                    <main class="l-page__main">
+                        {% block main %}{% endblock %}
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

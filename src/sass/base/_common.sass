@@ -1,0 +1,35 @@
+*
+  box-sizing: border-box
+
+html, body
+  //height: 100%
+
+html
+  -webkit-font-smoothing: antialiased
+
+body
+  min-width: 320px
+  color: $font-color
+  font-family: $font, Arial, -apple-system-body, sans-serif
+  font-weight: normal
+  background: $bg-color
+  line-height: normal
+  position: relative
+  font-size: #{$font-size}px
+  .slideout-open &
+    overflow: hidden
+  +r($sm)
+    font-size: 12px
+
+a
+  text-decoration: none
+  color: $link-color
+  transition: color ease .3s
+  .icon
+    fill: $link-color
+
+img
+  max-width: 100%
+  max-height: 100%
+  display: inline-block
+  vertical-align: top

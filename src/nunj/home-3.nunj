@@ -1,0 +1,59 @@
+---
+title: Главная - Вариант 3
+---
+{% extends "layouts/_home.nunj" %}
+{% block first %}
+    <div class="cards">
+        <div class="cards__row row">
+            <div class="col-6 col-xxs-4 cards__col">
+                <div class="cards__container">
+                    {{ chunks.card({ img: '13', pos: 'l' }) }}
+                </div>
+            </div>
+            <div class="col-6 col-xxs-4 cards__col">
+                <div class="cards__container">
+                    {{ chunks.card({ img: '14', pos: 'l' }) }}
+                </div>
+            </div>
+            <div class="col-4 d-none d-xxs-block cards__col">
+                <div class="cards__container">
+                    {{ chunks.card({ img: '9', pos: 'l' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block second %}
+    <div class="cards d-none d-xxs-block">
+        <div class="cards__row cards__container cards__container--v row">
+            <div class="col-12 cards__col">
+                <div class="carousel">
+                    <div class="swiper-container js-single-carousel">
+                        <div class="swiper-wrapper">
+                            {% for i in range(1, 5) %}
+                                <div class="swiper-slide">
+                                    {{ chunks.card({ img: '15' }) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 cards__col">
+                <div class="carousel">
+                    <div class="swiper-container js-single-carousel">
+                        <div class="swiper-wrapper">
+                            {% for i in range(1, 5) %}
+                                <div class="swiper-slide">
+                                    {{ chunks.card({ img: '16' }) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,115 @@
+html
+  +selection
+    background: $style-color
+    color: #fff
+
+input
+  font-family: 'Proxima Nova', sans-serif
+
+b
+  font-weight: 600
+
+.h1, .h2, .h3, .h4
+  font-weight: 600
+  line-height: 1.4
+
+.h2, h2
+  font-size: 26px
+  +r($md)
+    font-size: 24px
+  +r($sm)
+    font-size: 20px
+  +r($xxs)
+    font-size: 18px
+
+.h3, h3
+  font-size: 24px
+  +r($md)
+    font-size: 22px
+  +r($sm)
+    font-size: 18px
+
+.h4, h4
+  font-size: 20px
+  +r($md)
+    font-size: 18px
+  +r($sm)
+    font-size: 16px
+  +r($xxs)
+    font-size: 14px
+
+.text-style
+  color: $style-color
+
+.text-gray
+  color: #737373
+
+.text-black
+  color: #000 !important
+
+.text-normal
+  font-weight: normal
+
+.text
+  font-size: 13px
+  color: #737373
+  &, p
+    line-height: 1.6
+  h3
+    margin-bottom: 15px
+    color: $font-color
+  p
+    display: block
+    margin-bottom: +em(9, 13)
+    &:last-child
+      margin-bottom: 0
+  &--lg
+    font-size: 16px
+    +r($md)
+      font-size: 14px
+    &, p
+      line-height: 1.8
+
+.list
+  li
+    position: relative
+    padding-left: 10px
+    margin-bottom: 15px
+    &:last-child
+      margin-bottom: 0
+    &:before
+      position: absolute
+      content: ''
+      background: $style-color
+      width: 4px
+      height: 4px
+      left: 0
+      top: +em(6, 14)
+
+.link
+  transition: color ease .3s
+  transition-property: color, border-color
+  &:hover
+    color: $style-color
+  &--u
+    color: $style-color4
+    text-decoration: underline
+  &--border
+    padding-top: 1px
+    color: $style-color !important
+    border-bottom: 1px dotted $style-color
+    &:hover
+      border-color: $style-color3
+      color: $style-color3 !important
+
+.old-price
+  color: #666666
+  position: relative
+  &:before
+    top: 50%
+    content: ''
+    width: 110%
+    left: -5%
+    background: #666666
+    height: 1px
+    position: absolute

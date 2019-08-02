@@ -1,0 +1,240 @@
+{% import "_mixins.nunj" as mixins %}
+
+{% macro checkbox(opts) %}
+    <label class="checkbox">
+        <input type="checkbox" {% if opts.inputAttr %}{{ opts.inputAttr | safe }}{% endif %}>
+        <div class="checkbox__i"></div>
+        {% if opts.text %}
+            <div class="checkbox__text">
+                <span>{{ opts.text | safe }}</span>
+                {% if opts.count %}
+                    <div class="checkbox__count">{{ [1412, 24, 234, 212, 123, 645, 732] | random }}</div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </label>
+{% endmacro %}
+
+{% macro grid_product(n) %}
+    {% set titles = ['Кроссовки мужские Geox', 'Ботинки Clarks', 'Кроссовки Clarks', 'Босоножки Clarks', 'Полуботинки Keddo', 'Босоножки Clarks', 'Полуботинки детские Keddo', 'Кроссовки мужские Geox', 'Сандалии Menghi', 'Полуботинки Keddo', 'Кроссовки мужские Geox'] %}
+    <div class="product">
+        <a href="#" class="fav-btn"></a>
+        <div class="product__inn">
+            {% if n in [2,5,6,9] %}
+                <ul class="product__badges">
+                    {% if n in [2, 6, 9] %}<li class="product__badge product__badge--discount">35%</li>{% endif %}
+                    {% if n in [6] %}<li class="product__badge product__badge--new"></li>{% endif %}
+                    {% if n in [2,5] %}<li class="product__badge product__badge--hit"></li>{% endif %}
+                </ul>
+            {% endif %}
+            <div class="product__photo">
+                <div class="product__fast">
+                    <a data-fancybox data-src="#fast" href="#" class="btn btn--outline btn--black btn--thin"><span>Быстрый просмотр</span></a>
+                </div>
+                <div class="product__carousel carousel">
+                    <div data-gallery="./temp/products/1.jpg,./temp/products/2.jpg,./temp/products/3.jpg" class="swiper-container js-grid-product-gallery">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./temp/products/{{ n + 1 }}.jpg" class="product__img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__info">
+                <a href="#" class="product__name link">{{ titles[n] }}</a>
+                <div class="product__meta">
+                    <ul class="color-switcher">
+                        {% for i in ['#f9c74d', '#ec7332', '#7770a4'] %}
+                            <li class="color-switcher__item">
+                                <label class="color-switcher__label">
+                                    <input type="radio" name="color{{ n }}" {% if loop.first %}checked{% endif %}>
+                                    <div style="background-color: {{ i }};" class="color-switcher__dot"></div>
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="product__sizes">
+                        {% for i in range(37, 45) %}
+                            <li>{{ i }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="product__price">
+                    <span class="product__price-default">{{ ['99 000', '30 000', '24 500', '3 500', '4 000'] | random }} тг</span>
+                    {% if n % 3 == 0 %}
+                        <span class="product__price-old old-price">45 000 тг</span>
+                    {% endif %}
+                </div>
+                <div class="product__more">
+                    <a href="#" class="btn btn--outline"><span>Подробнее</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro card(opts) %}
+    <div class="card {% if opts.pos %}card--{{ opts.pos }}{% endif %}">
+        <div class="card__img" style="background-image: url('./temp/banners/{{ opts.img }}.jpg');"></div>
+        <a href="#" class="card__btn">{% if opts.btn %}{{ opts.btn }}{% else %}Посмотреть{% endif %}</a>
+    </div>
+{% endmacro %}
+
+{% macro rate(opts) %}
+    {% set r = random %}
+    <div class="rate {% if opts.pick %}rate--picker{% endif %}">
+        {% if opts.pick %}
+            {% for i in range(1, 6) %}
+                <label class="rate__label js-rate">
+                    <input value="{{ 5 - i + 1 }}" type="radio" name="rate{{ r }}">
+                    <span class="rate__star"></span>
+                </label>
+            {% endfor %}
+        {% else %}
+            {% for i in range(1, 6) %}
+                <span class="rate__star"></span>
+            {% endfor %}
+            <div style="width: {{ opts.width }}%" class="rate__active">
+                {% for i in range(1, 6) %}
+                    <span class="rate__star"></span>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro pagination(opts) %}
+    <div class="pagination">
+        <ul class="pagination__list">
+            <li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+            <li class="pagination__item"><span class="pagination__active">2</span></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__next"></a></li>
+            <li class="pagination__label">{{ opts.label | safe }}</li>
+        </ul>
+    </div>
+{% endmacro %}
+
+{% macro count_view() %}
+    <div class="count-view">
+        <span>Показывать по:</span>
+        <a href="#" class="link link--border">20</a>
+        <a href="#">40</a>
+        <a href="#">60</a>
+    </div>
+{% endmacro %}
+
+{% macro breadcrumbs(arr, opts) %}
+    <ul class="breadcrumbs">
+        {% for i in arr %}
+            <li class="breadcrumbs__item {% if loop.last and opts.mobile_hide_last %}d-none d-md-block{% endif %}"><a href="#" class="breadcrumbs__link">{{ i }}</a></li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro article(i, opts) %}
+    <div class="col-12 col-xxs-6 items-list__item">
+        <article class="article {% if opts.completed %}article--completed{% endif %}">
+            <a class="article__img" href="#">
+                {% if opts.completed %}<span class="article__status">Завершена</span>{% endif %}
+                <img src="./temp/{{ opts.img }}/{{ i }}.jpg">
+            </a>
+            <time class="article__date">18 июня 2018</time>
+            <a href="#" class="article__title link">{{ opts.t }}</a>
+            <p class="article__desc">{{ opts.d }}</p>
+        </article>
+    </div>
+{% endmacro %}
+
+{% macro search() %}
+    <form autocomplete="off" class="search">
+        <input class="input" type="text" placeholder="Введите поисковую фразу...">
+        <button class="search__btn" type="submit">{{ mixins.icon('search') }}</button>
+    </form>
+{% endmacro %}
+
+{% macro cart_item(i, opts) %}
+    <div class="cart-item {% if opts.mod %}cart-item--{{ opts.mod }}{% endif %}">
+        <div class="cart-item__inn">
+            <a href="#" class="cart-item__img"><img src="./temp/products/{{ i }}.jpg"></a>
+            <div class="cart-item__info">
+                <div><a href="#" class="cart-item__name link">Полуботинки мужские Skechers KM2957</a></div>
+                <span class="cart-item__id">Артикул: KM2957</span>
+                <div class="js-cart-size-place"></div>
+                <div class="js-cart-count-place"></div>
+                <div class="js-cart-bonus-place"></div>
+                <div class="js-cart-price-place"></div>
+            </div>
+            <div class="cart-item__size">
+                <div class="cart-item__row js-replace" data-width="860" data-place=".js-cart-size-place" data-parent=".cart-item">
+                    <span class="cart-item__label">Размер:</span>
+                    {% if not opts.static and not opts.static_size %}
+                        <input class="input input--sm" type="text" value="42">
+                    {% else %}
+                        <span class="cart-item__value">42</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="cart-item__count">
+                <div class="cart-item__row js-replace" data-width="860" data-place=".js-cart-count-place" data-parent=".cart-item">
+                    <span class="cart-item__label">Кол-во:</span>
+                    {% if not opts.static %}
+                        <input class="input input--sm js-spinner" type="text" value="42">
+                    {% else %}
+                        <span class="cart-item__value">3</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="cart-item__bonus">
+                <div class="cart-item__row js-replace" data-width="860" data-place=".js-cart-bonus-place" data-parent=".cart-item">
+                    <span class="cart-item__label">Бонусы на карту:</span>
+                    {% if not opts.static %}
+                        <span class="plus-bonus"><b>41.37</b></span>
+                    {% else %}
+                        <span class="cart-item__value">41.37</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="cart-item__cost">
+                <div class="js-replace" data-width="640" data-place=".js-cart-price-place" data-parent=".cart-item">
+                    <span class="cart-item__price">17 990 тг</span>
+                    <span class="cart-item__price old-price">39 990 тг</span>
+                </div>
+            </div>
+            {% if not opts.static %}
+                <a href="#" class="cart-item__remove">{{ mixins.icon('close-button') }}</a>
+            {% endif %}
+        </div>
+        {% if opts.footer %}
+            <div class="cart-item__footer">
+                <div class="row">
+                    {% for k, v in { 'Отгрузка:': 'N-466472', 'Дата отгрузки:': '02.03.2018', 'Город отправки:': 'Атырау', 'Статус отгрузки:': 'На складе, ожидает отправки' } %}
+                        <div class="col-12 col-xs-6 col-mds-3">
+                            <div class="cart-item__row">
+                                <span class="cart-item__label">{{ k }}</span>
+                                <span class="cart-item__value">{{ v }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro info(title, data) %}
+    <div class="info">
+        <div class="info__title">{{ title }}</div>
+        <div class="info__inn">
+            {% for k, v in data %}
+                <dl class="info__row">
+                    <dt class="info__label">{{ k }}</dt>
+                    <dd class="info__value">{{ v }}</dd>
+                </dl>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

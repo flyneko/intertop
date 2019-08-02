@@ -1,0 +1,180 @@
+.page
+  &__header
+    display: flex
+    align-items: flex-end
+    margin-bottom: 15px
+    justify-content: space-between
+    &-left
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      +r($xxs)
+        width: 100%
+        justify-content: space-between
+    &-view
+      padding-bottom: 2px
+      +r($xxs)
+        display: none
+  &__subtitle
+    width: 100%
+    font-size: 20px
+    margin-top: 5px
+  &__count
+    font-size: 16px
+    color: #939393
+    font-weight: 300
+    margin-left: 20px
+    padding-top: +em(5, 16)
+    +r($xxs)
+      font-size: 13px
+      padding-top: 0
+  &__more
+    text-align: center
+    margin-top: 40px
+    +r($sm)
+      margin-top: 20px
+  &__pagination
+    margin-top: 30px
+    @extend %table
+    table-layout: fixed
+    +r($sm)
+      margin-top: 20px
+    &-left, &-right
+      width: 200px
+      +r($sm)
+        display: none
+    &-right
+      text-align: right
+  &__mobile-actions, &__filter, &__block
+    margin-bottom: 20px
+    .select2-selection__rendered
+      height: 38px
+      background: $style-color
+      border-color: $style-color
+      border-radius: 0
+      color: #ffffff
+      .dk-select-open-down &
+        &:before
+          +arr(5, 3, #fff, b)
+      &:before
+        +arr(5, 3, #fff, b)
+    .select2-selection__arrow:before
+      +arr(5, 3, #fff, b)
+  &__mobile-actions
+    display: none
+    justify-content: space-between
+    align-items: center
+    +r($md)
+      display: flex
+    .select2-container
+      max-width: 200px
+      margin-right: 10px
+      +r($xxs)
+        flex-grow: 1
+  &__filter
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    margin-bottom: 20px
+    +r($md)
+      display: none
+      position: fixed
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      z-index: 1009 //99
+      background: #fff
+      padding: 20px
+    &-title
+      font-size: 24px
+      font-weight: 600
+      color: #000
+      display: none
+      +r($md)
+        display: block
+    &-close
+      @extend .modal__close
+      +rmin($md)
+        display: none
+    &-label
+      display: none
+      color: #737373
+      font-size: 16px
+      align-items: center
+      height: 55px
+      padding-left: 15px
+      position: relative
+      &:before
+        position: absolute
+        content: ''
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        +arr(3, 5, $style-color4, r)
+      +r($md)
+        display: flex
+    &-area
+      position: relative
+      transition: all ease .5s
+      //margin: 0 auto
+      +r($md)
+        margin-bottom: 15px
+        overflow: hidden
+    &-open-filter
+      transition: all ease .5s
+    &-list
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      margin: 0 -4px -8px
+      transition: all ease .5s
+      position: relative
+      left: 0
+      +r($md)
+        display: block
+        margin: 0
+    &-back
+      position: relative
+      font-size: 16px
+      color: #000
+      padding-left: 15px
+      margin: 20px 0 15px
+      &:before
+        @extend %ticon
+        content: $ticon-back
+        font-size: 8px
+        color: $style-color4
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+    &-item
+      padding: 0 4px 8px
+      +r($md)
+        padding: 0
+    &-clear
+      height: 38px
+      font-size: 14px
+      font-weight: 600
+      color: #7b7b7b
+      display: inline-flex
+      align-items: center
+      border: 2px solid #7b7b7b
+      padding: 0 15px
+      white-space: nowrap
+      transition: all ease .3s
+      &:hover
+        background: #7b7b7b
+        color: #fff
+    .search
+      max-width: 360px
+    .select2-container
+      width: 200px !important
+    .filter
+      &__inn
+        +r($md)
+          position: absolute
+          top: 3px
+          right: 0
+          display: none

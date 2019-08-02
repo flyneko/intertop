@@ -1,0 +1,58 @@
+.dk-select, .dk-select-multi
+  line-height: 1
+  text-align: left
+  &--full
+    width: 100%
+
+.dk-selected
+  @extend .input
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+  padding-left: 15px
+  padding-right: 25px
+  display: flex
+  align-items: center
+  &:hover
+    border-color: $style-color
+  .dk-select-open-down &
+    border-color: $style-color
+    &:before
+      +arr(5, 3, $style-color, b)
+  &:before
+    content: ''
+    +arr(5, 3, $style-color, b)
+    line-height: 1
+    margin: 1px 0 0
+    transform: translateY(-50%)
+    right: 10px
+    .dk-select-open-down &
+      transform: rotate(180deg) translateY(50%)
+  &:after
+    display: none
+
+
+.dk-select-options
+  border-color: $style-color !important
+  padding: 0
+  border-radius: 0 !important
+  .dk-option-selected
+    background: $style-color
+    color: #ffffff
+    display: none
+  .dk-option-highlight
+    background: $style-color2
+    color: $font-color
+
+.dk-option
+  padding: 10px 15px
+  &.hidden-option
+    display: none
+
+.dk-select-options .dk-option-highlight
+
+.dk-select-disabled
+  opacity: 1
+  .dk-selected
+    &, &:before
+      color: #9f9f9f

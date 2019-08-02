@@ -1,0 +1,38 @@
+.tabs
+  position: relative
+  padding-bottom: 8px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin: 0 -11px
+    +r($sm)
+      margin: 0 -6px
+  &__bar
+    position: absolute
+    bottom: 0
+    left: 0
+    background: $font-color
+    height: 3px
+    transition: all ease .3s
+  &__item
+    padding: 0 11px
+    +r($sm)
+      padding: 0 6px
+  &__link
+    font-size: 22px
+    color: $font-color
+    position: relative
+    text-align: center
+    display: block
+    font-weight: 600
+    +r($md)
+      font-size: 20px
+    +r($sm)
+      font-size: 18px
+
+[data-tabs="pane"]
+  display: none
+  transition: all ease .3s
+  &.is-active
+    display: block

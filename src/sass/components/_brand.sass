@@ -1,0 +1,27 @@
+.brand
+  display: flex
+  width: 100%
+  align-items: center
+  justify-content: center
+  padding: 20px
+  height: 115px
+  border: 1px solid #e5e5e5
+  transition: all ease .3s
+  position: relative
+  +r($xxs)
+    border: 0
+    padding: 0 15px
+    height: 65px
+  &:before
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    border: 3px solid transparent
+    content: ''
+    transition: all ease .3s
+  &:hover
+    border-color: $style-color4
+    &:before
+      border-color: $style-color4

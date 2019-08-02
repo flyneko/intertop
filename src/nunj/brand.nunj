@@ -1,0 +1,48 @@
+---
+title: Поиск по товарам
+viewed: true
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block main %}
+    <div class="l-wrapper">
+        {{ chunks.breadcrumbs(['Каталог', 'Бренд KEDDO']) }}
+
+        <div class="page">
+            <div class="page__header">
+                <div class="page__header-left">
+                    <h2 class="h2">Бренд KEDDO</h2>
+                </div>
+                <div class="page__header-view"> {{ chunks.count_view() }} </div>
+            </div>
+            <div class="page__block">
+                <div class="brand-about">
+                    <picture class="brand">
+                        <img class="brand__img" src="./assets/img/brands/keddo.png">
+                    </picture>
+                    <div class="text">Основанный в начале 1990-х годов бренд давно получил культовый статус не только у себя на родине в Великобритании, но и далеко за ее пределами. На сегодняшний день по объему продаж KEDDO уверенно входит в число 20 лидеров сегмента Fashion Casual Footwear Market. Залог успеха KEDDO заключается в наилучшем сочетании цены и качества, воплощенном в широком ассортименте обуви для мужчин, женщин и детей. Из сезона в сезон над оригинальным дизайном нашей обуви работает международный штат дизайнеров со всех уголков планеты. Это делает наши коллекции по-настоящему яркими и эклектичными.</div>
+                </div>
+            </div>
+            <div class="page__area">
+                <div class="items">
+                    {% for q in range(1, 3) %}
+                        {% for i in range(0, 10) %}
+                            <div class="items__col five-item">
+                                {{ chunks.grid_product(i) }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="page__more">
+                <a href="#" class="btn btn--outline"><span>Показать еще товары</span> {{ mixins.icon('arrow-down') }}</a>
+            </div>
+            <div class="page__pagination">
+                <div class="page__pagination-center">
+                    {{ chunks.pagination({ label: '307 товаров' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

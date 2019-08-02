@@ -1,0 +1,44 @@
+---
+title: Главная - Вариант 4
+---
+{% extends "layouts/_home.nunj" %}
+{% block first %}
+    <div class="cards">
+        <div class="cards__row row">
+            <div class="cards__col col-6">
+                <div class="cards__container">
+                    {{ chunks.card({ img: '9', pos: 'l' }) }}
+                </div>
+            </div>
+            <div class="cards__col col-6">
+                <div class="cards__container">
+                    {{ chunks.card({ img: '17', pos: 'lt' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block second %}
+    <div class="cards">
+        <div class="cards__row row">
+            <div class="cards__col col-12 col-xxs-6 col-md-3">
+                <div class="cards__container cards__container--v">
+                    {{ chunks.card({ img: '7', pos: 'lt' }) }}
+                    {{ chunks.card({ img: '4', pos: 'l' }) }}
+                </div>
+            </div>
+            <div class="cards__col d-none d-md-block col-6">
+                <div class="cards__container">
+                    {{ chunks.card({ img: '18', pos: 'lt' }) }}
+                </div>
+            </div>
+            <div class="cards__col col-12 col-xxs-6 col-md-3">
+                <div class="cards__container cards__container--v">
+                    {{ chunks.card({ img: '3', pos: 'l' }) }}
+                    {{ chunks.card({ img: '8', pos: 'l' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

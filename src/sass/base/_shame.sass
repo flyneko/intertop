@@ -1,0 +1,188 @@
+.scroll-lock
+  overflow: hidden
+
+.items
+  =q($breakpoint, $val)
+    +r($breakpoint)
+      margin: 0 -#{$val / 2}px -#{$val}px
+      &__col
+        padding: 0 #{$val / 2}px #{$val}px
+  margin: 0 -15px -30px
+  display: flex
+  flex-wrap: wrap
+  &__col
+    padding: 0 15px 30px
+    &.col20
+  +q($md, 20)
+  +q($sm, 15)
+  +q($xxs, 10)
+
+.five-item
+  width: 20%
+  +r($lg)
+    width: 25%
+  +r($md)
+    width: 33.333%
+  +r($sm)
+    width: 50%
+
+.fav-btn
+  transition: all ease .3s
+  z-index: 11
+  color: $style-color
+  font-size: 0
+  &:hover
+    color: $style-color3
+  &:before
+    font-size: 23px
+    @extend %ticon
+    content: $ticon-heart
+
+.subscribe
+  background: $style-color
+  padding: 13px 0
+  color: #fff
+  &__inn
+    display: flex
+    align-items: center
+    justify-content: center
+    +r($sm)
+      flex-wrap: wrap
+  &__label
+    font-size: 20px
+    font-weight: 600
+    margin-right: 65px
+    +r($sm)
+      width: 100%
+      margin-right: 0
+      margin-bottom: 12px
+      text-align: center
+    +r($xxs)
+      font-size: 18px
+  .input
+    max-width: 400px
+    width: 100%
+    margin-right: 20px
+    border: 0
+    border-radius: 0
+    padding: 0 20px
+    min-width: 200px
+    flex: 1
+    +r($xxs)
+      max-width: 100%
+      margin-bottom: 8px
+      margin-right: 0
+      flex: 1 0 auto
+
+.count-marker
+  width: 22px
+  height: 28px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #ffffff
+  font-size: 13px
+  background: url('../img/map-pin.svg') no-repeat center
+  background-size: 100% 100%
+
+.plus-bonus
+  font-size: 14px
+  color: #737373
+  padding-left: 40px
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  background: url("../img/plus.png") no-repeat center left
+  b
+    color: #34353a
+
+.items-list
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -15px -30px
+  &__item
+    padding: 0 15px 30px
+
+.brand-item
+  width: 20%
+
+.product-item
+  width: 20%
+  padding: 0 10px 20px
+
+.plus-card
+  max-width: 140px
+  display: inline-block
+  &--lg
+    max-width: 240px
+    +r($sm)
+      max-width: 180px
+  &--md
+    max-width: 180px
+
+.back-btn
+  @extend .link
+  color: $font-color
+  position: relative
+  padding-left: 20px
+  display: inline-block
+  margin-bottom: 15px
+  &:before
+    @extend %ticon
+    position: absolute
+    left: 0
+    color: $style-color4
+    content: $ticon-arrow-left
+    font-size: 10px
+    top: 50%
+    transform: translateY(-50%)
+    margin-top: +em(-2, 14)
+
+.brand-about
+  display: flex
+  +r($sm)
+    flex-direction: column
+    align-items: center
+  .brand
+    width: 300px
+    flex-shrink: 0
+    margin-right: 15px
+    +r($lg)
+      width: 250px
+    +r($md)
+      width: 200px
+    +r($sm)
+      width: 100%
+      margin-bottom: 15px
+      margin-right: 0
+
+
+.play
+  border-radius: 50%
+  width: 28px
+  height: 28px
+  background: $style-color
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #fff
+  font-size: 14px
+  cursor: pointer
+  &:before
+    @extend %ticon
+    content: $ticon-play
+    position: relative
+
+.play-btn
+  background: $style-color2
+  border-radius: 4px
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 46px
+  font-weight: 600
+  color: #777777
+  margin-top: 15px
+  font-size: 16px
+  .play
+    margin-right: 10px

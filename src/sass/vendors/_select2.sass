@@ -1,0 +1,134 @@
+.select2-container
+  box-sizing: border-box
+  display: inline-block
+  margin: 0
+  position: relative
+  vertical-align: middle
+  .select2-selection--single
+    box-sizing: border-box
+    cursor: pointer
+    display: block
+    user-select: none
+  .select2-selection__rendered
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+  .select2-selection__clear
+    position: relative
+
+
+@import "../../../node_modules/select2/src/scss/dropdown"
+
+.select2-dropdown
+  border-bottom: 0
+  z-index: 995
+
+.select2-close-mask
+  border: 0
+  margin: 0
+  padding: 0
+  display: block
+  position: fixed
+  left: 0
+  top: 0
+  min-height: 100%
+  min-width: 100%
+  height: auto
+  width: auto
+  opacity: 0
+  z-index: 99
+  background-color: #fff
+  filter: alpha(opacity=0)
+
+.select2-hidden-accessible
+  border: 0 !important
+  clip: rect(0 0 0 0) !important
+  clip-path: inset(50%) !important
+  height: 1px !important
+  overflow: hidden !important
+  padding: 0 !important
+  position: absolute !important
+  width: 1px !important
+  white-space: nowrap !important
+
+
+.select2-icon-container
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  padding-left: 25px
+  .icon
+    font-size: 12px
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+.select2-selection__rendered
+  @extend .input
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+  padding-left: 15px
+  padding-right: 25px
+  display: flex
+  align-items: center
+  color: #515968
+  .select2-container--below &
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+  .select2-container--disabled &
+    @extend .input[disabled]
+  .icon
+    left: 0
+    transform: none
+    top: 9px
+
+.select2-selection__arrow
+  &:before
+    content: ''
+    +arr(5, 3, $style-color, b)
+    position: absolute
+    top: 50%
+    line-height: 1
+    margin: 1px 0 0
+    right: 10px
+    transform: translateY(-50%)
+    transition: all ease .3s
+    .select2-container--open &
+      transform: rotate(180deg) translateY(50%)
+
+.select2-dropdown
+  background: #fff
+  border: 1px solid #9a9a9a
+  animation: aa .3s forwards
+  border-radius: 0
+
+@keyframes aa
+  0%
+    opacity: 0
+    transform: scale(.95) rotateX(30deg) translateY(10px)
+  100%
+    opacity: 1
+    transform:  scale(1) rotateX(0) translateY(0)
+
+
+.select2-results
+  &__options
+    position: relative
+    max-height: 225px
+    overflow: auto
+  &__option
+    height: 45px
+    display: flex
+    align-items: center
+    position: relative
+    padding: 0 15px
+    font-size: 13px
+    &[aria-selected="true"]
+      display: none
+    &--highlighted
+      background: #f7f8fd
+      &:before, &:after
+        background: #f7f8fd
+    .icon
+      left: 15px

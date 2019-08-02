@@ -1,0 +1,77 @@
+.order
+  border: 1px solid $style-color6
+  & + &
+    margin-top: 20px
+  &__head, &__inn
+    padding-left: 30px
+    padding-right: 30px
+  &__head
+    display: flex
+    align-items: center
+    height: 60px
+    +r($sm)
+      height: auto
+      padding-top: 10px
+      padding-bottom: 10px
+      flex-direction: column
+    &-info
+      display: flex
+      align-items: center
+      flex-grow: 1
+      justify-content: space-between
+      +r($xxs)
+        flex-direction: column
+        width: 100%
+  &__info
+    display: flex
+    align-items: center
+    margin: 0 -10px -7px
+    flex-wrap: wrap
+    +r($xxs)
+      width: 100%
+      margin: 0 0 10px
+      flex-direction: column
+    > *
+      padding: 0 10px 7px
+      +r($xxs)
+        padding: 0
+  &__value
+    font-size: 14px
+    white-space: nowrap
+    display: flex
+    +r($xxs)
+      width: 100%
+      margin: 0 0 10px
+      justify-content: space-between
+      &:last-child
+        margin-bottom: 0
+    dt
+      padding-right: 5px
+  &__id, &__status
+    font-size: 24px
+  &__id
+    width: 280px
+    +r($layout-width)
+      width: 200px
+    +r($sm)
+      width: 100%
+      text-align: center
+      margin-bottom: 10px
+  &__status
+    line-height: 14px
+  &__inn
+    border-top: 1px solid $style-color6
+    padding-top: 25px
+    padding-bottom: 25px
+  &__more
+    text-align: right
+    margin-top: 25px
+    +r($sm)
+      text-align: left
+    .btn
+      font-size: 14px
+      +r($xxs)
+        width: 100%
+  &__item
+    max-width: 150px
+    display: block

@@ -1,0 +1,41 @@
+.breadcrumbs
+  display: flex
+  align-items: center
+  margin: 0 -12px 25px
+  flex-wrap: wrap
+  +r($md)
+    margin-bottom: 15px
+  +r($sm)
+    margin-bottom: 0
+  +r($xxs)
+    margin: 0 -6px 0
+  &__item
+    padding: 0 12px 10px
+    +r($xxs)
+      padding: 0 6px 5px
+  &__item:first-child &__link:before
+    display: none
+  &__link
+    font-size: 13px
+    color: #737373
+    position: relative
+    transition: all ease .3s
+    +r($xxs)
+      font-size: 12px
+    &:hover
+      color: $style-color
+    &:before
+      content: ''
+      position: absolute
+      background: $style-color
+      width: 3px
+      height: 3px
+      top: 50%
+      left: -12px
+      transform: translate(-50%, -50%)
+      display: block
+      +r($xxs)
+        width: 2px
+        height: 2px
+        left: -6px
+        margin-top: -1px

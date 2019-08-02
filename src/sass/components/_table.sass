@@ -1,0 +1,38 @@
+.table
+  overflow: auto
+  &.is-mobile
+    table, thead, tbody, tr, td, th
+      display: block
+    thead
+      display: none
+    tr
+      &:nth-child(2n + 1)
+        background: $style-color2
+    td
+      display: flex
+      border: 0
+      justify-content: space-between
+      align-items: center
+      height: 40px
+      font-size: 14px
+      padding: 5px 10px
+      &:before
+        content: attr(data-title)
+        font-weight: 600
+        color: $font-color
+  table
+    width: 100%
+    border-collapse: collapse
+    border: 1px solid $style-color2
+  td, th
+    font-size: 16px
+    color: $style-color8
+    height: 60px
+    padding: 10px 30px
+    vertical-align: middle
+    text-align: left
+  td
+    border-bottom: 1px solid $style-color2
+  th
+    background: $style-color2
+    font-weight: 600

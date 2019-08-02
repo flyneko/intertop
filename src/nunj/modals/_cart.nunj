@@ -1,0 +1,22 @@
+<div class="modal md-cart" id="cart-modal">
+    <div class="modal__title">В корзине</div>
+    <div class="md-cart__list">
+        {% for i in range(1, 4) %}
+            {{ chunks.cart_item(i, { static_size: true }) }}
+        {% endfor %}
+    </div>
+    <div class="md-cart__footer">
+        <div class="md-cart__footer-left">
+            <a href="#" class="md-cart__back">Вернуться к покупкам</a>
+        </div>
+        <div class="md-cart__footer-center">
+            <div class="md-cart__footer-info">
+                <div class="md-cart__sum">Сумма заказа:	<span>17 990 тг</span></div>
+                <span class="plus-bonus">Бонусов на карту INTERTOP PLUS: <b>25</b></span>
+            </div>
+        </div>
+        <div class="md-cart__footer-right">
+            <a href="#" class="btn btn--arrow"><span>Перейти в корзину</span></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+.l-main
+  overflow: hidden
+  .slideout-open &
+    position: relative
+    z-index: 101
+    background: $bg-color
+    &:before
+      z-index: 9999
+      width: 100%
+      height: 100%
+      content: ''
+      display: block
+      left: 0
+      top: 0
+      position: absolute
+
+.l-body
+  .slideout-open &
+    overflow: hidden
+
+.l-wrapper
+  max-width: #{$layout-width + ($layout-padding * 2)}px
+  margin: 0 auto
+  padding: 0 #{$layout-padding}px
+  &--full
+    +r($md)
+      padding: 0
+
+.l-inner
+  padding: 10px 0 50px
+  +r($md)
+    padding-bottom: 40px
+  +r($sm)
+    padding-bottom: 30px
+  +r($xxs)
+    padding-bottom: 20px
+
+.l-product
+  &__inn
+    @extend %table
+    table-layout: fixed
+    +r($sm)
+      display: block
+      > *
+        display: block
+    > *
+      vertical-align: top
+  &__left
+    padding-right: 15px
+    +r($sm)
+      padding-right: 0
+  &__right
+    padding-left: 15px
+    +r($sm)
+      padding-left: 0
+
+.l-catalog
+  @extend %table
+  table-layout: fixed
+  > *
+    vertical-align: top
+  &__aside
+    width: 280px
+    +r($md)
+      display: none
+  &__main
+    padding-left: 30px
+    +r($md)
+      padding-left: 0
+
+.l-order
+  @extend %table
+  table-layout: fixed
+  > *
+    vertical-align: top
+  &__aside
+    width: 370px
+    +r($layout-width)
+      width: 270px
+      display: none
+  &__main
+    padding-right: 30px
+    +r($md)
+      padding-right: 0
+
+.l-cabinet
+  @extend %table
+  table-layout: fixed
+  > *
+    vertical-align: top
+  &__aside
+    width: 370px
+    +r($lg)
+      display: none
+    > *
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+  &__main
+    padding-left: 30px
+    +r($lg)
+      padding-left: 0
+
+.l-page
+  &__inn
+    @extend %table
+    table-layout: fixed
+    > *
+      vertical-align: top
+  &__aside
+    width: 270px
+    padding-top: 5px
+    +r($lg)
+      width: 230px
+    +r($md)
+      display: none
+  &__main
+    padding-left: 30px
+    &--offset
+      padding-left: 300px
+      padding-bottom: 20px
+      +r($lg)
+        padding-left: 260px
+      +r($md)
+        padding-left: 0
+    +r($md)
+      padding-left: 0

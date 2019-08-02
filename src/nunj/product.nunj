@@ -1,0 +1,192 @@
+---
+title: Товар
+related: true
+viewed: true
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block scripts %}
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADgOdY3bLje-BaCx-NdoiazWLtZn9n1TU&callback=mapInit"> </script>
+    <script>
+        function mapInit() {
+            var map = createMap(document.getElementById('available-map'), {lat: 51.157856, lng: 71.471126}, 13);
+
+            var markers = [
+                { pos: [51.162330, 71.470118], count: 9 },
+                { pos: [51.161099, 71.455197], count: 2 }
+            ];
+
+            for (var i in markers) {
+                var m = markers[i];
+                new CustomMarker(m.pos, map, {count: m.count});
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+    {% include "modals/_review.nunj" %}
+    {% include "modals/_availability.nunj" %}
+    {% include "modals/_click.nunj" %}
+
+    <div class="l-wrapper">
+        {{ chunks.breadcrumbs(['Каталог', 'Мужская обувь', 'Мужская обувь Skechers', 'Полуботинки', 'Полуботинки Skechers', 'Skechers', 'Полуботинки мужские модель KM2957'], { mobile_hide_last: true }) }}
+
+        <div class="l-product item">
+            <div class="l-product__inn">
+                <div class="l-product__left">
+                    <div class="item-gallery">
+                        <a href="#" class="fav-btn"></a>
+                        <div class="item-gallery__carousel carousel">
+                            <div>
+                                <div class="swiper-container js-item-gallery" data-video="http://techslides.com/demos/sample-videos/small.mp4">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="./temp/products_full/1.jpg"></div>
+                                        <div class="swiper-slide"><img src="./temp/products_full/2.jpg"></div>
+                                        <div class="swiper-slide"><img src="./temp/products_full/3.jpg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="js-product-mobile-info"></div>
+
+                    <div class="item__info">
+                        {% for i in ['Детали', 'О бренде Skechers', 'Доставка', 'Оплата', 'Возврат'] %}
+                            <div class="accordion js-accordion">
+                                <div data-accordion="trigger" class="accordion__head">
+                                    {{ i }}
+                                    <svg class="accordion__indicator" width="1em" height="1em" viewBox="0 0 26 26"> <path d="M11,1 L21,11 L11,21 L1,11"></path> </svg>
+                                </div>
+                                <div data-accordion="content" class="accordion__content">
+                                    <div class="accordion__box">
+                                        <div class="text">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque deleniti dolorem excepturi explicabo ipsa ipsam maiores minima nostrum officia perspiciatis quas repellendus reprehenderit, tenetur vel veniam vero vitae voluptas.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consectetur consequatur deleniti dolorem eaque ipsa omnis optio perferendis perspiciatis quaerat quos sapiente, sit sunt tenetur unde vel, vitae. Accusantium consectetur consequuntur, cum nulla obcaecati quo quod sed veniam? Accusantium autem deserunt distinctio inventore molestiae natus odit quas quidem sunt velit.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid consectetur dolores ea eaque nulla odio quia quod rem, sint?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="l-product__right">
+                    <div class="js-replace" data-parent=".item" data-width="767" data-place=".js-product-mobile-info">
+                        <div class="item__meta">
+                            <div class="item__header">
+                                <div class="item__title">Полуботинки мужские Skechers KM2957</div>
+                                <div class="item__brand"><img src="./assets/img/brands/picard.png"></div>
+                            </div>
+                            <div class="js-product-mobile-meta"></div>
+                            <div class="item__id">Артикул: KM2957</div>
+                            <div class="item__desc text">
+                                <p>Будущее обуви наступает сейчас вместе со Skechers Energy Lights! Нажмите на кнопку на язычке, выберите свой любимый цвет и зажгите ночь. С каждым нажатием кнопки цвет меняется: огненный красный, холодный синий, кислотный зелёный, желтый, фиолетовый, зелёный, белый. Меняйте режимы, удивляйте, танцуйте! Привлекайте внимание всех на протяжении 6 часов без подзарядки! Енерджи Лайтс – это 7 разных цветов, 4 режима подсветки, до 6 часов непрерывной работы, кнопка вкл./выкл., USB подзарядка в комплекте.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus at commodi, deserunt dolor doloremque esse eum expedita explicabo fuga, in ipsam molestiae necessitatibus nemo nihil odit officia porro quam ratione recusandae rerum tempora tempore veritatis voluptas voluptate voluptates voluptatum. Deserunt dolores ducimus eaque laboriosam vel. Ipsum quibusdam vel veniam.</p>
+                            </div>
+                            <div class="item__color"><span class="item__label">Цвет:</span> Черный</div>
+                            <div class="item__colors">
+                                <div class="color-variations">
+                                    {% for i in range(1, 3) %}
+                                        <div class="color-variations__item">
+                                            <label class="color-picker">
+                                                <input type="radio" name="item_color">
+                                                <figure class="color-picker__img"><img src="./temp/products/{{ i }}.jpg"></figure>
+                                            </label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="item__sizes">
+                                <div class="item__sizes-header">
+                                    <span class="item__label">Размер:</span>
+                                    <a href="#" class="link link--border">Как определить свой размер?</a>
+                                </div>
+                                <div class="size-variations">
+                                    {% for i in range(39, 48) %}
+                                        <div class="size-variations__item">
+                                            <label class="size-picker">
+                                                <input type="radio" name="item_size">
+                                                <span class="size-picker__label">{{ i }}</span>
+                                            </label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item__cart">
+                            <div class="item__cart-row">
+                                <div class="row">
+                                    <div class="col-auto d-none d-sm-block">
+                                        <div class="js-replace" data-parent=".item" data-width="767" data-place=".js-product-mobile-meta">
+                                            <span class="item__price">17 890 тг</span> <span class="item__price old-price">39 999 тг</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-auto">
+                                        <a data-fancybox data-src="#oneclick" href="#" class="btn btn--outline p-l-r-20"><span>Купить в 1 клик</span></a>
+                                        <a data-fancybox data-src="#review" href="#" class="btn"><span>Купить</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__cart-row">
+                                <div class="row">
+                                    <div class="col-auto d-none d-sm-block">
+                                        <div data-parent=".item"  data-width="767" data-place=".js-product-mobile-meta" class="item__bonus js-replace">41.37 бонусов на карту INTERTOP PLUS</div>
+                                    </div>
+                                    <div class="col-12 col-sm-auto text-center">
+                                        <a data-fancybox data-src="#availability" href="#" class="link link--border">Наличие в магазинах</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item__comments">
+                        <div class="item__comments-title">Отзывы о товаре</div>
+                        <div class="item__rate">
+                            Средняя оценка: <b>4.6</b>
+                            {{ chunks.rate({ width: 67 }) }}
+                        </div>
+                        <form class="item__comments-form">
+                            <button type="submit" class="item__comments-submit">{{ mixins.icon('comment') }}</button>
+                            <textarea rows="1" class="input js-autoheight" placeholder="Напишите свой отзыв"></textarea>
+                        </form>
+                        <div class="comments">
+                            <div class="comments__list">
+                                <div class="carousel">
+                                    <div class="swiper-container js-reviews-carousel">
+                                        <div class="swiper-wrapper">
+                                            {% for i in range(1, 6) %}
+                                                <div class="swiper-slide">
+                                                    <div class="comments__item">
+                                                        <div class="comment">
+                                                            <div class="comment__head">
+                                                                {{ chunks.rate({ width: ([23, 46, 87, 92, 39, 74] | random) }) }}
+                                                                <div class="comment__author">Сивасова ольга</div>
+                                                                <time class="comment__date">2 сентбря в 21:33</time>
+                                                            </div>
+                                                            <div class="comment__text text">
+                                                                Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий представляет собой интересный эксперимент... повседневной работы по формированию позиции позволяет выполнять важные задания по разработке модели развития.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comments__more">
+                                <a href="#" class="link link--border">Показать все отзывы (14)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

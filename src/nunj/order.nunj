@@ -1,0 +1,453 @@
+---
+title: Оформление заказа
+gmaps: true
+---
+{% extends "layouts/_inner.nunj" %}
+
+{% macro order_bonus() %}
+    <div class="order-step__bonus">
+        <span class="order-step__bonus-label">Применить купон</span>
+        <div class="order-step__bonus-input">
+            <input class="input">
+            <button type="button" class="order-step__bonus-btn">{{ mixins.icon('enter') }}</button>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro order_actions(opts) %}
+    <div class="order-step__actions">
+        {% if not opts.without_prev %}
+            <a href="#" class="order-step__btn order-step__btn--prev js-order-prev-step"><span>Назад</span></a>
+        {% endif %}
+        {% if not opts.without_next %}
+            <a href="#" class="order-step__btn order-step__btn--next js-order-next-step"><span>Далее</span></a>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% block scripts %}
+    <script>
+        function mapInit() {
+            var map = createMap(document.getElementById('pickup-map'), {lat: 48.964503, lng: 66.909742}, 6);
+            var markers = [
+                [44.044652, 67.427335],
+                [46.783487, 70.899546],
+                [50.554253, 67.330529]
+            ];
+            for (var i in markers) {
+                createSimpleMarker(markers[i], map);
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="l-wrapper">
+        <div class="page">
+            <div class="page__header">
+                <h2 class="h2">Оформление заказа</h2>
+            </div>
+            <div class="page__area p-order">
+                <div class="l-order">
+                    <main class="l-order__main">
+                        <form autocomplete="off" class="form">
+                            <div class="order-step is-active">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('pin-1') }}</div>
+                                        <div class="order-step__title">Регион доставки</div>
+                                    </div>
+                                    <a href="#" class="order-step__edit js-order-step-edit">Изменить</a>
+                                </div>
+                                <div class="order-step__inn" style="display: block;">
+                                    <div class="form__row">
+                                        <label class="form__label form__label--required">Местоположение <span class="form__hint">(Казахстан)</span>:</label>
+                                        <select data-placeholder="Выберите местоположение..." class="js-select">
+                                            <option></option>
+                                            <option>Алматы</option>
+                                            <option>Минск</option>
+                                            <option>Киев</option>
+                                            <option>Москва</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form__row">
+                                        <label class="form__label form__label--required">Индекс:</label>
+                                        <input class="input" type="text">
+                                        <span class="form__hint">Выберите свой город в списке. Если вы не нашли свой город, выберите "другое местоположение", а город впишите в поле "Город"</span>
+                                    </div>
+
+                                    {{ order_actions({ without_prev: true }) }}
+                                </div>
+                            </div>
+
+                            <div class="order-step">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('bus') }}</div>
+                                        <div class="order-step__title">Доставка</div>
+                                    </div>
+                                    <a href="#" class="order-step__edit js-order-step-edit">Изменить</a>
+                                </div>
+                                <div class="order-step__inn">
+                                    <div class="row justify-content-between">
+                                        <div class="col-12 col-xs-5 order-xs-2 d-none d-xs-block">
+                                            <div class="p-order__delivery js-delivery-info">
+                                                <div data-delivery-icon class="p-order__delivery-icon"></div>
+                                                <div data-delivery-name class="p-order__delivery-name"></div>
+                                                <div data-delivery-desc class="p-order__delivery-desc"></div>
+                                                <div class="p-order__delivery-price">Стоимость: <span data-delivery-price></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xs-7 order-xs-1">
+                                            <div class="row">
+                                                {% for i in [
+                                                { i: mixins.icon('car-1'), v: 'pickup', p: 0, t: 'Самовывоз', d: 'Lorem ipsum dolor sit amet.'},
+                                                { i: '<img src="./assets/img/delivery-companies/kazpost.png">', v: '', p: '999', t: 'EMS КазПочта', d: 'Lorem ipsum dolor sit amet, consectetur adipisicing.'},
+                                                { i: '<img src="./assets/img/delivery-companies/kazpost.png">', v: '', p: '1500', t: 'EMS КазПочта до ближайшего пункта выдачи', d: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem!'},
+                                                { i: '<img src="./assets/img/delivery-companies/ponyexpress.png">', v: '', p: '0', t: 'Pony Express', d: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aspernatur, molestiae.'},
+                                                { i: '<img src="./assets/img/delivery-companies/ponyexpress.png">', v: '', p: '2990', t: 'Pony Express до ближайшего пункта выдачи', d: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa deleniti illo maxime quisquam.'}
+                                                ] %}
+                                                    <div class="col-6 col-xs-12">
+                                                        <label class="lg-checkbox lg-checkbox--icon">
+                                                            <input data-desc="{{ i.d }}" type="radio" name="delivery" value="{{ i.v }}">
+                                                            <div class="lg-checkbox__box">
+                                                                <div data-delivery-icon class="lg-checkbox__content"> {{ i.i | safe }} </div>
+                                                                <div data-delivery-price class="lg-checkbox__footer"> {{ i.p }} тг.</div>
+                                                            </div>
+                                                            <span data-delivery-name class="lg-checkbox__outside-label">{{ i.t }}</span>
+                                                        </label>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    {{ order_bonus() }}
+
+                                    {{ order_actions() }}
+                                </div>
+                            </div>
+
+                            <div id="pickup-step" class="order-step d-none">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('car-1') }}</div>
+                                        <div class="order-step__title">Самовывоз</div>
+                                    </div>
+                                    <a href="#" class="order-step__edit js-order-step-edit">Изменить</a>
+                                </div>
+                                <div class="order-step__inn p-order__pickup">
+                                    <div id="pickup-map" class="p-order__pickup-map"></div>
+                                    <div class="p-order__pickup-group">
+                                        <div class="p-order__pickup-title">Пункт самовывоза</div>
+                                        <a href="#" class="p-order__pickup-link">{{ mixins.icon('pin') }} <span>г. Алматы, пр. Москвоский д. 51</span></a>
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <picture class="p-order__pickup-img"><img src="./temp/stock.jpg"></picture>
+                                            </div>
+                                            <div class="col">
+                                                <div class="text">
+                                                    <p>
+                                                        <b class="text-black"> Адрес:</b> пр. Москвоский д. 51
+                                                    </p>
+                                                    <p>
+                                                        <b class="text-black"> Телефон:</b> +7 977 770-44-33
+                                                    </p>
+                                                    <p>
+                                                        <b class="text-black"> Режим работы:</b> <br> Пн-Пт. с 9:00 до 20:00, Cб-Вс. с 11:00 до 18:00
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{ order_bonus() }}
+                                    {{ order_actions() }}
+                                </div>
+                            </div>
+
+                            <div class="order-step">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('wallet') }}</div>
+                                        <div class="order-step__title">Оплата</div>
+                                    </div>
+                                    <a href="#" class="order-step__edit js-order-step-edit">Изменить</a>
+                                </div>
+                                <div class="order-step__inn">
+                                    <div class="row">
+                                        {% for i in [
+                                        { i: 'card-1', t: 'Банковские карты', d: 'Мы принимаем онлайн-платежи через систему ePay по всем видам банковских карт Visa, MasterCard и American Express' },
+                                        { i: 'money-1', t: 'Наличные курьеру', d: 'Оплата наличными при получении заказа курьеру.' },
+                                        { i: 'bank', t: 'Банковский перевод', d: 'Банковский перевод средств. В комментарии к платежу обязательно указывайте номер заказа.' }
+                                        ] %}
+                                            <div class="col-12 col-xs-6">
+                                                <label class="lg-checkbox">
+                                                    <input type="radio" name="pay">
+                                                    <div class="lg-checkbox__box">
+                                                        <div class="lg-checkbox__icon">{{ mixins.icon(i.i) }}</div>
+                                                        <div class="lg-checkbox__info">
+                                                            <span class="lg-checkbox__title">{{ i.t }}</span>
+                                                            <p class="lg-checkbox__desc">{{ i.d }}</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+
+                                    {{ order_bonus() }}
+
+                                    {{ order_actions() }}
+                                </div>
+                            </div>
+
+                            <div class="order-step">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('user') }}</div>
+                                        <div class="order-step__title">Покупатель</div>
+                                    </div>
+                                    <a href="#" class="order-step__edit js-order-step-edit">Изменить</a>
+                                </div>
+                                <div class="order-step__inn">
+                                    {% for i in ['Ф.И.О.', 'E-mail', 'Телефон'] %}
+                                        <div class="form__row">
+                                            <label class="form__label form__label--required">{{ i }}:</label>
+                                            <input class="input {% if i == 'Телефон' %}js-phone-mask{% endif %}" type="text">
+                                        </div>
+                                    {% endfor %}
+
+                                    <div class="form__row">
+                                        <label class="form__label form__label--required">Адрес доставки:</label>
+                                        <textarea class="input" rows="5"></textarea>
+                                    </div>
+
+                                    <div class="form__row">
+                                        <label class="form__label">Комментарий к заказу:</label>
+                                        <textarea class="input" rows="5"></textarea>
+                                    </div>
+
+                                    {{ order_bonus() }}
+
+                                    {{ order_actions() }}
+                                </div>
+                            </div>
+
+
+                            <div class="order-step">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('discount') }}</div>
+                                        <div class="order-step__title">Бонус</div>
+                                    </div>
+                                    <a href="#" class="order-step__edit js-order-step-edit">Изменить</a>
+                                </div>
+                                <div class="order-step__inn">
+                                    <div class="form__row">
+                                        <div class="row justify-content-end">
+                                            <div class="col-12 col-xxs-6 d-flex flex-column justify-content-between">
+                                                <label class="form__label">Номер бонусной карты:</label>
+                                                <input class="input" type="text" value="234766578775" readonly>
+                                            </div>
+                                            <div class="col-12 col-xxs-6 d-flex flex-column justify-content-between">
+                                                <label class="form__label">Сумма бонусов на счету INTERTOP PLUS</label>
+                                                <input class="input" type="text" value="7 700.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form__row">
+                                        <label class="form__label">Укажите количество бонусов, которые вы хотите списать</label>
+                                        <div class="row justify-content-between">
+                                            <div class="col-12 col-xxs">
+                                                <div class="row">
+                                                    <div class="col-auto  p-order__bonus-spinner"><input value="5000" data-step="100" class="input js-spinner"></div>
+                                                    <div class="col-auto"><button class="btn btn--md"><span>Использовать бонусы</span></button></div>
+                                                </div>
+                                                <div class="text m-t-5">
+                                                    <p>
+                                                        Использовано бонусов: <b class="text-style">5900</b> <br>
+                                                        Осталось бонусов: <b class="text-style">3100</b> <br>
+                                                        Вы можете использовать при покупке товаров только 50% активных бонусов от общей суммы
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xxs-auto text-center">
+                                                <picture class="plus-card plus-card--md"><img src="./assets/img/plus-card.png"></picture>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{ order_bonus() }}
+
+                                    {{ order_actions() }}
+                                </div>
+                            </div>
+
+                            <div class="order-step">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('discount') }}</div>
+                                        <div class="order-step__title">Бонус</div>
+                                    </div>
+                                    <a href="#" class="order-step__edit js-order-step-edit">Изменить</a>
+                                </div>
+                                <div class="order-step__inn">
+                                    <div class="connect-bonus">
+                                        <div id="bonus1" class="row">
+                                            <div class="col-12 col-xs-auto text-center">
+                                                <picture class="plus-card plus-card--lg"><img src="./assets/img/plus-card.png"></picture>
+                                            </div>
+                                            <div class="col-12 col-xs text">
+                                                <p>
+                                                    Присоединяйся к бонусному клубу <b>INTERTOP PLUS</b> <br>
+                                                    и получай 5% бонус с каждой покупки. <br>
+                                                    <b class="text-style">+3000 подарочных бонусов в подарок</b> <br>
+                                                </p>
+                                                <div class="row">
+                                                    <div class="col-auto"><a href="#" class="btn js-bonus-join"><span>Присоединиться</span></a></div>
+                                                    <div class="col-auto"><a href="#" class="btn btn--outline btn--gray js-order-next-step"><span>Пропустить</span></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="bonus2" class="d-none">
+                                            <div class="text">
+                                                Для регистрации в бонусном клубе <b>INTERTOP PLUS</b>, вам будет отправлено СМС сообщение с кодом подтверждения
+                                            </div>
+                                            <div class="form__row m-t-15">
+                                                <label class="form__label">Телефон <span class="form__hint">который вы указали</span></label>
+                                                <div class="input-row connect-bonus__phone">
+                                                    <div style="width: 70px;" class="input-row__cell flex-grow-0">
+                                                        <select class="js-select js-bonus-control">
+                                                            <option>+7</option>
+                                                            <option>+375</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-row__cell">
+                                                        <input class="input js-bonus-control js-phone-mask" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form__row">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto"><button type="button" class="btn btn--outline js-bonus-sms"><span>Отправить смс</span></button></div>
+                                                    <div class="col-auto d-none js-bonus-sms-block connect-bonus__sms-alert"><b>Повторное сообщение можно будет отправить через 30 секунд</b></div>
+                                                </div>
+                                            </div>
+                                            <div class="form__row d-none js-bonus-sms-block">
+                                                <label class="form__label">Код подтверждения <span class="form__hint">состоит из 4х цифр</span></label>
+                                                <input style="max-width: 410px;" class="input" type="text">
+                                            </div>
+                                            <div class="form__row d-none js-bonus-sms-block">
+                                                <button type="button" class="btn btn--outline js-bonus-accept-code"><span>Подтвердить код</span></button>
+                                            </div>
+                                        </div>
+
+                                        <div id="bonus3" class="d-none">
+                                            <div class="row">
+                                                <div class="col-12 col-xs-auto text-center">
+                                                    <picture class="plus-card plus-card--lg"><img src="./assets/img/plus-card.png"></picture>
+                                                </div>
+                                                <div class="col-12 col-xs-auto text">
+                                                    <p>
+                                                        Поздравляем с регистрацией в бонусном клубе <b>INTERTOP PLUS</b>! <br>
+                                                        На ваш счет зачислено <span class="text-style">3000 подарочных бонусов</span> <br>
+                                                        Теперь с каждой покупки вы будете получать бонусы <br>
+                                                        Номер бонусного счета: <b>434652352</b> <br>
+                                                        Баланс бонусного счета: <b>0</b> <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{ order_bonus() }}
+
+                                    {{ order_actions() }}
+                                </div>
+                            </div>
+
+
+                            <div data-escape class="order-step">
+                                <div class="order-step__header">
+                                    <div class="order-step__header-base">
+                                        <div class="order-step__icon">{{ mixins.icon('cart-1') }}</div>
+                                        <div class="order-step__title">Товары в заказе</div>
+                                    </div>
+                                </div>
+                                <div style="display: block;" class="order-step__inn p-0">
+                                    {% for i in range(1, 4) %}
+                                        {{ chunks.cart_item(i) }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="order-info js-order-info">
+                                <div class="order-info__top">
+                                    <div class="order-info__row order-info__row--lg">Товаров на сумму: <span>53 970 тг</span></div>
+                                    <div class="order-info__row">Оплата бонусами: <span>5900</span></div>
+                                    <div class="order-info__row">Бонусов на карту INTERTOP PLUS: <span>105</span></div>
+                                </div>
+                                <div class="order-info__bottom">
+                                    <div class="order-info__bottom-inn">
+
+                                        <div class="order-info__bottom-right">
+                                            <div class="order-info__sum">К оплате:	<span>53 970 тг</span></div>
+                                            <a href="#" class="btn btn--lg btn--arrow d-none js-order-submit"><span>Оформить заказ</span></a>
+                                        </div>
+                                        <div class="order-info__bottom-left">
+                                            {{ chunks.checkbox({ text: 'Я согласен с <a class="link" href="#">условиями оферты</a>', inputAttr: 'name="order_agree"' }) }}
+                                            {{ chunks.checkbox({ text: 'Я согласен с <a class="link" href="#">условиями возврата</a>', inputAttr: 'name="order_agree"' }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </main>
+
+                    <aside data-sticky_parent class="l-order__aside">
+                        <div class="p-order__total js-order-total">
+                            <div class="p-order__total-head">
+                                <div class="p-order__total-title">Ваш заказ</div>
+                                <a href="#" class="p-order__total-edit">Изменить</a>
+                            </div>
+                            <div class="p-order__total-info">
+                                <dl class="p-order__total-row">
+                                    <dt class="p-order__total-label">Товаров на:</dt>
+                                    <dd class="p-order__total-value">53 970 тг.</dd>
+                                </dl>
+                                <dl class="p-order__total-row">
+                                    <dt class="p-order__total-label">Бонусов потрачено</dt>
+                                    <dd class="p-order__total-value">585 000 р.</dd>
+                                </dl>
+                                <dl class="p-order__total-row">
+                                    <dt class="p-order__total-label">Доставка</dt>
+                                    <dd class="p-order__total-value">Бесплатно <s>1500 тг.</s></dd>
+                                </dl>
+                                <dl class="p-order__total-row p-order__total-row--bright">
+                                    <dt class="p-order__total-label">Экономия</dt>
+                                    <dd class="p-order__total-value">1500 тг.</dd>
+                                </dl>
+                                <dl class="p-order__total-row p-order__total-row--lg">
+                                    <dt class="p-order__total-label">Итого</dt>
+                                    <dd class="p-order__total-value">53 970 тг.</dd>
+                                </dl>
+                                <dl class="p-order__total-row">
+                                    <dt class="p-order__total-label">Бонусы INTERTOP PLUS:</dt>
+                                    <dd class="p-order__total-value">41.37</dd>
+                                </dl>
+                                <button type="button" class="btn btn--block d-none js-order-submit"><span>Оформить заказ</span></button>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

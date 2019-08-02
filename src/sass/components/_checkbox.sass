@@ -1,0 +1,59 @@
+.checkbox
+  cursor: pointer
+  display: flex
+  color: #000
+  margin: 0 -7px
+  & + &
+    margin-top: 10px
+  a
+    text-decoration: underline
+  input
+    display: none
+  input:checked + &__i
+    &:before
+      height: +em(10, 17)
+      transform: rotate(45deg)
+    &:after
+      height: +em(5, 17)
+      transform: rotate(-45deg)
+  &__i
+    flex-grow: 0
+    flex-shrink: 0
+  &__text
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-grow: 1
+  &__i
+    $fs: 17
+    font-size: #{$fs}px
+    background: #fff
+    display: inline-block
+    font-style: normal
+    width: 1em
+    height: 1em
+    margin: 0 7px
+    position: relative
+    vertical-align: middle
+    border: 1px solid #9a9a9a
+    border-radius: 2px
+    transition: all ease .2s
+    &:before, &:after
+      background-color: $style-color
+      position: absolute
+      transition: all ease-out 0.3s
+      content: ""
+      display: block
+      width: 2px
+      height: 0
+      transform: rotate(0)
+    &:before
+      left: +em(8, $fs)
+      top: +em(3, $fs)
+    &:after
+      left: +em(3, $fs)
+      top: +em(7, $fs)
+  &__count
+    font-size: 13px
+    color: #939393
+    font-weight: 300

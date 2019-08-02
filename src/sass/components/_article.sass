@@ -1,0 +1,143 @@
+.article
+  &--completed &__img
+    &:before
+      opacity: 1
+      height: 100%
+      background: rgba($style-color7, 0.3)
+  &__img
+    position: relative
+    overflow: hidden
+    padding-top: 55%
+    border-radius: 5px
+    margin-bottom: 10px
+    display: block
+    width: 100%
+    &:hover:before
+      height: 100%
+      opacity: 1
+    &:before
+      background: rgba($style-color, 0.4)
+      position: absolute
+      content: ''
+      left: 0
+      height: 0
+      opacity: 0
+      bottom: 0
+      transition: all ease .3s
+      z-index: 2
+      width: 100%
+    img
+      +img-cover
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 1
+  &__date
+    font-style: normal
+    display: block
+    color: $style-color
+    margin-bottom: 10px
+    +r($xxs)
+      margin-bottom: 5px
+  &__title
+    font-size: 18px
+    font-weight: 600
+    +r($xxs)
+      font-size: 16px
+  &__desc
+    color: #737373
+    display: block
+    margin-top: 8px
+    line-height: 1.6
+    +r($xxs)
+      margin-top: 3px
+  &__status
+    border-radius: 0 5px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    right: 0
+    top: 0
+    background: $style-color7
+    color: #ffffff
+    font-size: 14px
+    font-weight: bold
+    padding: 0 30px
+    z-index: 3
+    text-transform: uppercase
+    +r($sm)
+      font-size: 12px
+      height: 30px
+      padding: 0 15px
+
+
+.head-article
+  display: flex
+  flex-wrap: wrap
+  background: $style-color2
+  +r($xxs)
+    margin: 0 -#{$layout-padding}px
+  &__img
+    position: relative
+    overflow: hidden
+    display: block
+    padding: 0
+    padding-right: 10px
+    height: 460px
+    +r($md)
+      height: 360px
+    +r($sm)
+      height: 250px
+      padding-right: 15px
+    +r($xxs)
+      padding: 0
+      height: 200px
+    &:hover:before
+      height: 100%
+      opacity: 1
+    &:before
+      background: rgba($style-color, 0.4)
+      position: absolute
+      content: ''
+      left: 0
+      height: 0
+      opacity: 0
+      bottom: 0
+      transition: all ease .3s
+      z-index: 2
+      right: 10px
+      +r($sm)
+        right: 15px
+    img
+      +img-cover
+  &__info
+    display: flex
+    justify-content: center
+    flex-direction: column
+    padding: 20px
+    +r($sm)
+      padding: 20px 15px
+    +r($xxs)
+      padding: 25px #{$layout-padding}px
+  &__date
+    display: block
+    color: $style-color4
+    font-size: 18px
+    margin-bottom: 10px
+    +r($md)
+      font-size: 16px
+    +r($sm)
+      font-size: 14px
+      margin-bottom: 5px
+  &__title
+    margin-bottom: 10px
+    +r($sm)
+      margin-bottom: 5px
+  &__desc
+    font-size: 16px
+    color: $style-color8
+    line-height: 1.6
+    +r($md)
+      font-size: 14px

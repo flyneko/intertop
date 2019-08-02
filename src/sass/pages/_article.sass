@@ -1,0 +1,22 @@
+.p-article
+  font-size: 14px
+  &__ill
+    float: left
+    margin-right: 15px
+    margin-bottom: 5px
+    max-width: 400px
+    display: block
+    +r($xs)
+      max-width: 100%
+      float: none
+      margin: 0 0 15px
+  &__pic
+    height: 300px
+    position: relative
+    display: block
+    +r($sm)
+      height: 250px
+    +r($xxs)
+      height: 200px
+    img
+      +img-cover

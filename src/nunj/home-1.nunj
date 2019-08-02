@@ -1,0 +1,47 @@
+---
+title: Главная - Вариант 1
+---
+{% extends "layouts/_home.nunj" %}
+{% block first %}
+    <div class="cards">
+        <div class="cards__row row">
+            <div class="col-12 col-xxs-8 cards__col">
+                <div class="carousel">
+                    <div class="swiper-container js-single-carousel">
+                        <div class="swiper-wrapper">
+                            {% for i in range(1, 5) %}
+                                <div class="swiper-slide cards__container">
+                                    {{ chunks.card({ img: '8', pos: 'l' }) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-none d-xxs-block cards__col">
+                <div class="cards__container cards__container--v">
+                    {{ chunks.card({ img: '2', pos: 'l' }) }}
+                    {{ chunks.card({ img: '3', pos: 'l' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block second %}
+    <div class="cards">
+        <div class="cards__row row">
+            <div class="cards__col col-12 col-xxs-5">
+                <div class="cards__container cards__container--v">
+                    {{ chunks.card({ img: '7', pos: 'l' }) }}
+                    {{ chunks.card({ img: '4', pos: 'l' }) }}
+                </div>
+            </div>
+            <div class="cards__col col-12 col-xxs-7">
+                <div class="cards__container">
+                    {{ chunks.card({ img: '6', pos: 't' }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

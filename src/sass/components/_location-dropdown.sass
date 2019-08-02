@@ -1,0 +1,29 @@
+.location-dropdown
+  position: absolute
+  top: 100%
+  left: 0
+  background: #4a4a4e
+  color: #fff
+  padding: 25px 30px
+  width: 320px
+  z-index: 12
+  +r($md)
+    display: none
+  &:before
+    position: absolute
+    content: ''
+    +arr(8, 4, #4a4a4e, t)
+    bottom: 100%
+    left: 55px
+  &__label
+    font-size: 18px
+    font-weight: 600
+    line-height: 1.4
+    margin-bottom: 15px
+  &__actions
+    display: flex
+    justify-content: space-between
+  &__link
+    color: #fff
+    display: block
+    border-bottom: 1px solid rgba(#fff, 0.4)

@@ -1,0 +1,104 @@
+{% set title = 'Intertop' %}
+{% set  list = [
+	{
+        url: 'home.html',
+		title: 'Главная - Стандартная'
+	},
+    {
+        url: 'home-1.html',
+		title: 'Главная - Вариант 1'
+	},
+    {
+        url: 'home-2.html',
+		title: 'Главная - Вариант 2'
+	},
+    {
+        url: 'home-3.html',
+		title: 'Главная - Вариант 3'
+	},
+    {
+        url: 'home-4.html',
+		title: 'Главная - Вариант 4'
+	},
+    {
+        url: 'home-5.html',
+		title: 'Главная - Вариант 5'
+	},
+    {
+        url: 'product.html',
+		title: 'Товар'
+	},
+    {
+        url: 'catalog.html',
+		title: 'Каталог'
+	},
+    {
+        url: 'actions.html',
+		title: 'Акции и скидки'
+	},
+    {
+        url: 'news.html',
+		title: 'Новости'
+	},
+    {
+        url: '404.html',
+		title: 'Страница 404'
+	},
+    {
+        url: 'brands.html',
+		title: 'Бренды'
+	},
+    {
+        url: 'shops.html',
+		title: 'Магазины'
+	},
+    {
+        url: 'search.html',
+		title: 'Поиск'
+	},
+    {
+        url: 'cart.html',
+		title: 'Корзина'
+	},
+    {
+        url: 'order.html',
+		title: 'Заказ товара'
+	},
+    {
+        url: 'cabinet-orders.html',
+		title: 'Кабинет - Заказы'
+	},
+    {
+        url: 'cabinet-order.html',
+		title: 'Кабинет - Детальный заказ'
+	},
+    {
+        url: 'cabinet-bonus.html',
+		title: 'Кабинет - Бонусы'
+	},
+    {
+        url: 'cabinet-data.html',
+		title: 'Кабинет - Данные'
+	},
+    {
+        url: 'bonus.html',
+		title: 'ИНТЕРТОП Бонусы'
+	},
+    {
+        url: 'about.html',
+		title: 'О нас'
+	},
+    {
+        url: 'article.html',
+		title: 'Детальная'
+	},
+    {
+        url: 'brand.html',
+		title: 'Страница бренда'
+	},
+    {
+        url: 'contacts.html',
+		title: 'Контакты'
+	}
+] 
+%}

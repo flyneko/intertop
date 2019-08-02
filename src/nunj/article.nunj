@@ -1,0 +1,38 @@
+---
+title: Детальная
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block main %}
+    <div class="l-wrapper">
+        {{ chunks.breadcrumbs(['Главная', 'Новости', 'Встречайте новый бренд Alpine Crown']) }}
+
+        <div class="page">
+            <div class="page__header">
+                <h2 class="h2">Встречайте новый бренд Alpine Crown</h2>
+            </div>
+
+            <div class="page__area p-article text">
+                <picture class="p-article__ill"><img src="./temp/socnews/1.jpg"></picture>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio ea eius excepturi exercitationem iste modi, molestiae nostrum quaerat voluptates?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, unde.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis dicta ducimus earum ex non quae, velit. Accusantium exercitationem impedit nostrum quaerat repellendus, rerum. In?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur cupiditate dolorem ex facere fuga hic illo laboriosam, magnam obcaecati praesentium, quis quo sunt? Doloremque impedit perferendis placeat porro sequi!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deserunt fuga illum ipsum itaque labore neque nobis nostrum optio provident quaerat quam saepe sapiente, vel, voluptatibus. Cum deserunt ea enim facilis hic quis repudiandae sapiente tempora velit veritatis. Amet assumenda, deserunt. Doloribus inventore mollitia natus nisi obcaecati perspiciatis voluptate voluptatibus?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda atque blanditiis, consequatur ea, eius eligendi eveniet ex, facilis hic molestiae mollitia natus repellendus similique suscipit velit veniam. Aperiam asperiores at autem consectetur, consequatur dolor eligendi eum harum minus necessitatibus nemo nihil officia quas ratione ullam unde vero vitae voluptatum! Beatae earum eum non sit tempore? Beatae dicta dignissimos ducimus fugit, illo inventore iusto magnam numquam quo, soluta temporibus ut! A ab accusamus adipisci alias amet assumenda at beatae corporis dolorem dolores doloribus exercitationem explicabo laborum libero, nesciunt nostrum nulla numquam obcaecati officia pariatur quasi quidem repudiandae sunt voluptas voluptatum!</p>
+                <div class="row">
+                    <div class="col-12 col-xxs-4 col-md-3">
+                        <picture class="p-article__pic"><img src="./temp/socnews/2.jpg"></picture>
+                    </div>
+                    <div class="col-12 col-xxs-4 col-md-4">
+                        <picture class="p-article__pic"><img src="./temp/socnews/3.jpg"></picture>
+                    </div>
+                    <div class="col-12 col-xxs-4 col-md-5">
+                        <picture class="p-article__pic"><img src="./temp/socnews/4.jpg"></picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,211 @@
+.item
+  color: #737373
+  &__header
+    display: flex
+    flex-wrap: nowrap
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 25px
+    +r($sm)
+      margin-bottom: 15px
+  &__label
+    font-weight: 600
+    color: $font-color
+    font-size: 16px
+    display: inline-block
+  &__title
+    font-size: 24px
+    line-height: 1.4
+    color: $font-color
+    +r($sm)
+      font-weight: 600
+      font-size: 20px
+      color: $font-color
+    +r($xxs)
+      font-size: 18px
+    +r($tiny)
+      font-size: 14px
+  &__brand
+    width: 130px
+    margin-left: 30px
+    +r($sm)
+      display: none
+  &__meta
+    position: relative
+  &__id
+    font-size: 14px
+    margin-bottom: 25px
+    +r($sm)
+      margin-top: 10px
+  &__desc
+    margin-bottom: 25px
+    +r($sm)
+      display: none
+  &__color
+    font-size: 16px
+    margin-bottom: 15px
+  &__colors
+    margin-bottom: 25px
+    +r($sm)
+      margin-bottom: 20px
+    +r($xxs)
+      margin-bottom: 15px
+  &__sizes
+    margin-bottom: 30px
+    +r($sm)
+      margin-bottom: 20px
+    &-header
+      margin-bottom: 15px
+      .item__label
+        margin-right: 15px
+  &__info
+    +r($sm)
+      margin: 0 -#{$layout-padding}px
+  &__cart
+    padding: 30px
+    background: $style-color2
+    margin-bottom: 25px
+    +r($sm)
+      padding: 0
+      background-color: transparent
+      margin-bottom: 20px
+    &-row
+      margin-bottom: 25px
+      +r($sm)
+        margin-bottom: 15px
+      &:last-child
+        margin-bottom: 0
+      .row
+        align-items: center
+        justify-content: space-between
+    .btn
+      font-size: 16px
+    .link
+      font-size: 14px
+  &__price
+    font-size: 30px
+    font-weight: bold
+    color: $style-color3
+    display: inline-block
+    vertical-align: middle
+    +r($sm)
+      vertical-align: inherit
+      font-size: 26px
+    &.old-price
+      font-size: 16px
+      color: #666666
+      margin-left: 15px
+      font-weight: normal
+  &__bonus
+    color: #737373
+    font-size: 14px
+    padding-left: 43px
+    position: relative
+    +r($sm)
+      margin-top: 10px
+      padding-left: 0
+      &:before
+        display: none
+    &:before
+      position: absolute
+      content: ''
+      font-size: 36px
+      width: 1em
+      height: 1em
+      background: url('../img/plus-hexagon.png') no-repeat center
+      background-size: 100% 100%
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+  &__comments
+    +r($sm)
+      padding-top: 15px
+    &-title
+      font-weight: 600
+      font-size: 24px
+      margin-bottom: 10px
+      color: $font-color
+      +r($md)
+        font-size: 22px
+      +r($sm)
+        font-size: 20px
+      +r($xxs)
+        font-size: 18px
+    &-form
+      background: $style-color
+      padding: 20px
+      padding-left: 55px
+      position: relative
+      +r($sm)
+        margin: 0 -#{$layout-padding}px
+      .input
+        border: 0
+    &-submit
+      position: absolute
+      font-size: 24px
+      top: 50%
+      left: 20px
+      transform: translateY(-50%)
+      border: 0
+      background-color: transparent
+      cursor: pointer
+      .icon
+        fill: #fff
+    .comments
+      margin-top: 20px
+  &__rate
+    margin-bottom: 15px
+    .rate
+      margin-left: 10px
+  .fav-btn
+    position: absolute
+    right: 0
+    top: 7px
+
+.item-gallery
+  position: relative
+  &__carousel
+    position: relative
+    padding: 0 80px
+    +r($md)
+      padding: 0 20px
+      padding-left: 40px
+    +r($sm)
+      padding: 0
+      margin-bottom: 15px
+    .swiper-container, .swiper-slide
+      height: 550px
+      +r($layout-width)
+        height: 400px
+      +r($sm)
+        height: 350px
+      +r($xxs)
+        height: 200px
+    .swiper-slide
+      display: flex
+      align-items: center
+      justify-content: center
+      transition-property: opacity, transform
+      opacity: 0
+      transition-duration: 600ms
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1)
+      &-active
+        opacity: 1
+    .swiper-container
+      width: 100%
+    .swiper-dots
+      +rmin($sm)
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        position: absolute
+        margin: 0
+        width: auto
+        bottom: auto
+    .swiper-dot
+      +rmin($sm)
+        margin-right: 0
+        margin-bottom: 10px
+        display: block
+        &:last-child
+          margin-bottom: 0

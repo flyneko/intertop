@@ -1,0 +1,148 @@
+.header
+  background: $style-color2
+  &.compensate-for-scrollbar:not(.is-fixed)
+    margin-right: 0 !important
+  &.is-fixed
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    z-index: 999
+  &__inn
+    height: 65px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+    +r($md)
+      flex-wrap: wrap
+      height: auto
+  &__logo
+    position: relative
+    height: 100%
+    +r($md)
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 60px
+    +r($xxs)
+      height: 40px
+    &:before
+      position: absolute
+      top: 0
+      content: ''
+      right: 0
+      height: 100%
+      width: 99999%
+      background: $style-color
+      z-index: 1
+      +r($md)
+        display: none
+    .logo
+      margin-left: -40px
+      +r($md)
+        margin: 0
+  &__shops
+    +r($lg)
+      display: none
+  &__phones
+    +r($md)
+      display: none
+  &__search
+    width: 470px
+    flex: 0 0 auto
+    +r($layout-width)
+      width: 270px
+    +r($md)
+      order: 3
+      width: 100%
+      .search
+        margin: 0 -#{$layout-padding}px
+        width: auto
+        border-bottom: 1px solid #e5e5e5
+        .input
+          border: 0
+          border-radius: 0
+  &__link
+    position: relative
+    padding-left: 25px
+    font-size: 14px
+    &, a
+      color: $font-color
+    &--bold
+      font-weight: 600
+    .icon
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      font-size: 19px
+      fill: $style-color
+  &__hamburger
+    transition: all ease .3s
+    &.is-active
+      transform: rotate(90deg)
+  &__actions
+    display: flex
+    flex-wrap: nowrap
+    margin: 0 -15px
+    +r($md)
+      margin: 0 -10px
+    +r($xxs)
+      margin: 0 -6px
+    &-item
+      padding: 0 10px //0 15px
+      +r($md)
+        padding: 0 10px
+      +r($xxs)
+        padding: 0 6px
+    &-link
+      display: block
+      color: $style-color
+      font-size: 23px
+      line-height: 0
+      position: relative
+      +r($xxs)
+        font-size: 20px
+      .icon
+        fill: $style-color
+        path
+          stroke: $style-color
+      .icon-cart
+        font-size: +em(30, 27)
+        margin-top: +em(-3, 27)
+    &-count
+      position: absolute
+      right: -5px
+      top: -4px
+      font-size: 9px
+      font-weight: bold
+      color: #fff
+      width: 17px
+      height: 17px
+      line-height: 17px
+      vertical-align: middle
+      text-align: center
+      border-radius: 50%
+      background: $style-color3
+      +r($xs)
+        width: 14px
+        height: 14px
+        line-height: 14px
+        font-size: 8px
+    .dropdown-arrow
+      position: absolute
+      z-index: 11
+      display: block
+      bottom: 0
+      &:before
+        content: ""
+        display: block
+        width: 0
+        height: 0
+        border: 5px solid black
+        border-color: transparent transparent #fff #fff
+        transform: rotate(135deg)
+        box-shadow: -2px 2px 6px 0 rgba(0, 0, 0, 0.1)
+        position: relative
+        top: 5px

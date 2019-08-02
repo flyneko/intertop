@@ -1,0 +1,66 @@
+.p-bonus
+  &__img
+    margin-bottom: 30px
+    display: block
+    img
+      width: 100%
+    +r($sm)
+      margin-bottom: 15px
+  &__desc
+    margin-bottom: 20px
+  &__tabs
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    +r($sm)
+      flex-direction: column
+    &-item:first-child &-link
+      border-left-width: 1px
+    &-item:last-child &-link
+      border-right-width: 1px
+      +r($sm)
+        border-bottom-width: 1px
+    &-item
+      flex: 1
+      +r($sm)
+        width: 100%
+    &-link
+      border: 1px solid #d7e0dd
+      border-width: 1px 0
+      font-weight: 600
+      font-size: 24px
+      padding: 0 40px
+      height: 72px
+      display: flex
+      color: $font-color
+      align-items: center
+      text-align: center
+      justify-content: center
+      position: relative
+      white-space: nowrap
+      +r($layout-width)
+        font-size: 20px
+        padding: 0 20px
+      +r($lg)
+        white-space: normal
+      +r($md)
+        font-size: 18px
+        padding: 0 20px
+      +r($sm)
+        border-width: 1px 1px 0
+        height: 60px
+        font-size: 16px
+      &.is-active
+        color: #fff
+        background: $style-color
+        border-color: $style-color
+        &:before
+          position: absolute
+          content: ''
+          +arr(44, 6, $style-color, b)
+          top: 100%
+          left: 50%
+          transform: translateX(-50%)
+          display: none
+          +rmin($sm)
+            display: block

@@ -1,0 +1,71 @@
+<div class="notification">
+    <div class="l-wrapper notification__inn">
+        <div class="notification__desc">
+            Доставка свыше 20 000 тенге осуществляется бесплатно (кроме доставки заказов, включающих в себя транзит товаров из разных магазинов и экспресс-доставки)
+        </div>
+        <a href="#" class="notification__close">{{ mixins.icon('close') }}</a>
+    </div>
+</div>
+
+<header class="header compensate-for-scrollbar js-header">
+    <div class="l-wrapper">
+        <div class="header__inn">
+            <ul class="header__actions d-md-none">
+                <li class="header__actions-item"><a href="#" class="header__actions-link header__hamburger js-nav-toggle">{{ mixins.icon('hamburger') }}</a></li>
+                <li class="header__actions-item">
+                    <a href="#" class="header__actions-link">
+                        {{ mixins.icon('heart') }}
+                        <span class="header__actions-count">99</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="header__logo">
+                <a href="." class="logo">
+                    <img class="logo__img d-none d-md-block" src="./assets/img/logo.svg">
+                    <img class="logo__img d-md-none" src="./assets/img/logo-color.svg">
+                </a>
+                <div class="location-dropdown js-location-drop">
+                    <div class="location-dropdown__label"> Вы действительно находитесь в г. Астана?</div>
+                    <div class="location-dropdown__actions">
+                        <a onclick="$('.js-location-drop').hide(); return false;" class="location-dropdown__link" href="#">Да, все верно</a>
+                        <a class="location-dropdown__link" href="#">Нет, сменить город</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="header__link header__shops link">
+                {{ mixins.icon('pin') }} Наши магазины
+            </a>
+            <div class="header__link header__link--bold header__phones">
+                {{ mixins.icon('phone') }}
+                <a href="#" class="link">+7 727 338-20-28</a> /
+                <a href="#" class="link">+7 909 332-11-99</a>
+            </div>
+            <div class="header__search">
+                {{ chunks.search() }}
+            </div>
+            <ul class="header__actions">
+                <li class="header__actions-item js-dropdown d-none d-md-block" data-dropdown-options='{ "arrow": "true" }'>
+                    <a data-dropdown="trigger" href="#" class="header__actions-link">{{ mixins.icon('login') }}</a>
+                    <div data-dropdown="drop">
+                        <div class="js-replace" data-width="992" data-place=".js-auth-mobile-place">
+                            {% include "../partials/_auth.nunj" %}
+                        </div>
+                    </div>
+                </li>
+                <li class="header__actions-item d-md-none"><a data-fancybox data-src="#mauth" href="#" class="header__actions-link">{{ mixins.icon('login') }}</a></li>
+                <li class="header__actions-item d-none d-md-block">
+                    <a data-fancybox data-src="#cart-modal-empty" href="#" class="header__actions-link">
+                        {{ mixins.icon('heart') }}
+                        <span class="header__actions-count">99</span>
+                    </a>
+                </li>
+                <li class="header__actions-item">
+                    <a data-fancybox data-src="#cart-modal" href="#" class="header__actions-link">
+                        {{ mixins.icon('cart') }}
+                        <span class="header__actions-count">99</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

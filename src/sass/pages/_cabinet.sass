@@ -1,0 +1,85 @@
+.p-cabinet
+  &__block
+    margin-bottom: 25px
+    &:last-child
+      margin-bottom: 0
+    .h2
+      margin-bottom: 15px
+  > .h2, &__title
+    margin-bottom: 10px
+  &__title
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    margin-left: -5px
+    margin-right: -5px
+    > *
+      padding: 0 5px
+  &__social-hint
+    font-size: 16px
+    font-weight: 600
+    padding: 20px 20px 10px
+    background: $style-color2
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    +r($sm)
+      margin: 0 -#{$layout-padding}px
+    > span
+      margin-right: 15px
+      margin-bottom: 10px
+    .socials
+      margin-bottom: 5px
+  &__group
+    border-bottom: 1px solid #e5e5e5
+    padding-bottom: 25px
+    margin-bottom: 15px
+    color: $style-color8
+    &:last-child
+      margin-bottom: 0
+      padding-bottom: 0
+      border-bottom: 0
+    &-desc
+      display: block
+      margin-bottom: 15px
+      margin-top: -10px
+    .h3, .h4
+      margin-bottom: 15px
+      color: $font-color
+    .h4
+      margin-top: 20px
+      &:first-child
+        margin-top: 0
+    .row
+      margin: 0 -5px -10px
+      > *
+        padding: 0 5px 10px
+    .checkbox
+      color: $style-color8
+      font-size: 16px
+      +r($md)
+        font-size: 14px
+  &__info
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-size: 16px
+    margin-bottom: 20px
+    +r($xs)
+      font-size: 14px
+      justify-content: flex-end
+      flex-wrap: wrap
+      align-items: flex-start
+    &-left
+      display: flex
+      justify-content: space-between
+      align-items: center
+      width: 100%
+      max-width: 660px
+      +r($md)
+        max-width: 350px
+      +r($xs)
+        max-width: 100%
+    a
+      font-size: 14px

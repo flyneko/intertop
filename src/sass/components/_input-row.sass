@@ -1,0 +1,22 @@
+.input-row
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+  &__cell
+    flex: 1 0 auto
+    margin-left: -1px
+    &:first-child
+      .dk-select, .input
+        border-top-right-radius: 0
+        border-bottom-right-radius: 0
+    &:last-child
+      .dk-select, .input
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+    &:not(:first-child):not(:last-child)
+      .dk-select, .input
+        border-radius: 0
+    &--tiny
+      flex: 0
+  .dk-select, .input
+    width: 100%

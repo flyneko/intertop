@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>Icon kit preview</title>
+    <style type="text/css" rel="stylesheet">
+    body {
+        padding: 0;
+        margin: 0;
+        color: #666;
+        background: #fafafa;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 1.4
+    }
+
+    header {
+        display: block;
+        padding: 3em 3em 2em 3em;
+        background-color: #fff
+    }
+
+    header p {
+        margin: 0 0 0 0;
+    }
+
+    nav {
+        font-size: .7em;
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0
+    }
+
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 2em;
+        color: #0f7595;
+        white-space: nowrap
+    }
+
+    nav a:hover {
+        text-decoration: underline
+    }
+
+    nav a.current {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #666
+    }
+
+    section {
+        border-top: 1px solid #eee;
+        padding: 2em 3em 0 3em
+    }
+
+    ul {
+        margin: 0;
+        padding: 0
+    }
+
+    .icon-boxes li {
+        display: inline-block;
+        background-color: #fff;
+        position: relative;
+        margin: 0 2em 2em 0;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        padding: 1em 1em 1em 1em;
+        cursor: default
+    }
+
+    .icon-box {
+        margin: 0;
+        width: 144px;
+        height: 144px;
+        position: relative;
+        background: #ccc url(data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=) top left repeat;
+        border: 1px solid #ccc;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 25px;
+        color: #000;
+    }
+
+    .icon-box.inverted {
+        background: black;
+    }
+
+    .snippet-popover {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 16px;
+        z-index: 1;
+        transition: all .3s;
+    }
+
+    .snippet-popover.active {
+        display: block;
+        opacity: 1;
+    }
+
+    pre {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 5px 0;
+        font-size: 1em;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    footer {
+        display: block;
+        margin: 0;
+        padding: 0 3em 3em 3em
+    }
+
+    footer p {
+        margin: 0;
+        font-size: .7em
+    }
+
+    footer a {
+        color: #0f7595;
+        margin-left: 0
+    }
+
+    .icon {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+        transition: all ease .3s;
+    }
+
+    .icon-arrow-down {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-arrow-left {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-arrow-right {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-back {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-bank {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-bus {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-car-1 {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-card-1 {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-cards {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-cart-1 {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-cart {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-check-circle {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-check {
+        width: 1.42em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-chevron-down {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-chevron-left {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-chevron-right {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-chevron-top {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-click {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-clock {
+        width: 1.01em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-close-button {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-close {
+        width: 1em;
+        height: 1em;
+        fill: #aa2f2b;
+    }
+    .icon-comment {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-delivery {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-denisov {
+        width: 2.68em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-diamond {
+        width: 1.06em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-discount {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-enter {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-fb {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-filter {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-hamburger {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-heart {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-hexagon {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-inst {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-instagram {
+        width: 1em;
+        height: 1em;
+        fill: url(#a);
+    }
+    .icon-login {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-mastercard {
+        width: 1em;
+        height: 1em;
+        fill: #e2574c;
+    }
+    .icon-money-1 {
+        width: 1.05em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-money {
+        width: 1em;
+        height: 1em;
+        fill: #ecb45c;
+    }
+    .icon-ok {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-package {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-phone {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-pin-1 {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-pin {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-plane {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-play {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-present-card {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-present {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-search {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-star {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-truck {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-twitter {
+        width: 1em;
+        height: 1em;
+        fill: #03a9f4;
+    }
+    .icon-user {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-visa {
+        width: 1em;
+        height: 1em;
+        fill: #2394bc;
+    }
+    .icon-vk {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-wallet {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-writing {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    .icon-yt {
+        width: 1em;
+        height: 1em;
+        fill: initial;
+    }
+    
+    </style>
+</head>
+<body>
+<header>
+    <h1 id="logo">Gulp sprite icons
+        <small>(57 icons)</small>
+    </h1>
+</header>
+<section>
+    <ul class="icon-boxes">
+        
+            <li title="icon-arrow-down">
+                <div class="icon-box" id="icon-box-icon-arrow-down">
+                    <svg class="icon icon-arrow-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-arrow-down"></use></svg>
+                </div>
+                <h2>icon-arrow-down</h2>
+                <button onclick="showPopover('snippet-icon-arrow-down')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-arrow-down')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-arrow-down">
+                    <pre><code>&lt;svg class=&quot;icon icon-arrow-down&quot;&gt;&lt;use xlink:href=&quot;#icon-arrow-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-arrow-left">
+                <div class="icon-box" id="icon-box-icon-arrow-left">
+                    <svg class="icon icon-arrow-left"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-arrow-left"></use></svg>
+                </div>
+                <h2>icon-arrow-left</h2>
+                <button onclick="showPopover('snippet-icon-arrow-left')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-arrow-left')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-arrow-left">
+                    <pre><code>&lt;svg class=&quot;icon icon-arrow-left&quot;&gt;&lt;use xlink:href=&quot;#icon-arrow-left&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-arrow-right">
+                <div class="icon-box" id="icon-box-icon-arrow-right">
+                    <svg class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-arrow-right"></use></svg>
+                </div>
+                <h2>icon-arrow-right</h2>
+                <button onclick="showPopover('snippet-icon-arrow-right')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-arrow-right')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-arrow-right">
+                    <pre><code>&lt;svg class=&quot;icon icon-arrow-right&quot;&gt;&lt;use xlink:href=&quot;#icon-arrow-right&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-back">
+                <div class="icon-box" id="icon-box-icon-back">
+                    <svg class="icon icon-back"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-back"></use></svg>
+                </div>
+                <h2>icon-back</h2>
+                <button onclick="showPopover('snippet-icon-back')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-back')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-back">
+                    <pre><code>&lt;svg class=&quot;icon icon-back&quot;&gt;&lt;use xlink:href=&quot;#icon-back&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-bank">
+                <div class="icon-box" id="icon-box-icon-bank">
+                    <svg class="icon icon-bank"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-bank"></use></svg>
+                </div>
+                <h2>icon-bank</h2>
+                <button onclick="showPopover('snippet-icon-bank')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-bank')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-bank">
+                    <pre><code>&lt;svg class=&quot;icon icon-bank&quot;&gt;&lt;use xlink:href=&quot;#icon-bank&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-bus">
+                <div class="icon-box" id="icon-box-icon-bus">
+                    <svg class="icon icon-bus"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-bus"></use></svg>
+                </div>
+                <h2>icon-bus</h2>
+                <button onclick="showPopover('snippet-icon-bus')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-bus')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-bus">
+                    <pre><code>&lt;svg class=&quot;icon icon-bus&quot;&gt;&lt;use xlink:href=&quot;#icon-bus&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-car-1">
+                <div class="icon-box" id="icon-box-icon-car-1">
+                    <svg class="icon icon-car-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-car-1"></use></svg>
+                </div>
+                <h2>icon-car-1</h2>
+                <button onclick="showPopover('snippet-icon-car-1')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-car-1')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-car-1">
+                    <pre><code>&lt;svg class=&quot;icon icon-car-1&quot;&gt;&lt;use xlink:href=&quot;#icon-car-1&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-card-1">
+                <div class="icon-box" id="icon-box-icon-card-1">
+                    <svg class="icon icon-card-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-card-1"></use></svg>
+                </div>
+                <h2>icon-card-1</h2>
+                <button onclick="showPopover('snippet-icon-card-1')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-card-1')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-card-1">
+                    <pre><code>&lt;svg class=&quot;icon icon-card-1&quot;&gt;&lt;use xlink:href=&quot;#icon-card-1&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-cards">
+                <div class="icon-box" id="icon-box-icon-cards">
+                    <svg class="icon icon-cards"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-cards"></use></svg>
+                </div>
+                <h2>icon-cards</h2>
+                <button onclick="showPopover('snippet-icon-cards')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-cards')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-cards">
+                    <pre><code>&lt;svg class=&quot;icon icon-cards&quot;&gt;&lt;use xlink:href=&quot;#icon-cards&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-cart-1">
+                <div class="icon-box" id="icon-box-icon-cart-1">
+                    <svg class="icon icon-cart-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-cart-1"></use></svg>
+                </div>
+                <h2>icon-cart-1</h2>
+                <button onclick="showPopover('snippet-icon-cart-1')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-cart-1')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-cart-1">
+                    <pre><code>&lt;svg class=&quot;icon icon-cart-1&quot;&gt;&lt;use xlink:href=&quot;#icon-cart-1&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-cart">
+                <div class="icon-box" id="icon-box-icon-cart">
+                    <svg class="icon icon-cart"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-cart"></use></svg>
+                </div>
+                <h2>icon-cart</h2>
+                <button onclick="showPopover('snippet-icon-cart')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-cart')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-cart">
+                    <pre><code>&lt;svg class=&quot;icon icon-cart&quot;&gt;&lt;use xlink:href=&quot;#icon-cart&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-check-circle">
+                <div class="icon-box" id="icon-box-icon-check-circle">
+                    <svg class="icon icon-check-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-check-circle"></use></svg>
+                </div>
+                <h2>icon-check-circle</h2>
+                <button onclick="showPopover('snippet-icon-check-circle')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-check-circle')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-check-circle">
+                    <pre><code>&lt;svg class=&quot;icon icon-check-circle&quot;&gt;&lt;use xlink:href=&quot;#icon-check-circle&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-check">
+                <div class="icon-box" id="icon-box-icon-check">
+                    <svg class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-check"></use></svg>
+                </div>
+                <h2>icon-check</h2>
+                <button onclick="showPopover('snippet-icon-check')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-check')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-check">
+                    <pre><code>&lt;svg class=&quot;icon icon-check&quot;&gt;&lt;use xlink:href=&quot;#icon-check&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-chevron-down">
+                <div class="icon-box" id="icon-box-icon-chevron-down">
+                    <svg class="icon icon-chevron-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-chevron-down"></use></svg>
+                </div>
+                <h2>icon-chevron-down</h2>
+                <button onclick="showPopover('snippet-icon-chevron-down')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-chevron-down')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-chevron-down">
+                    <pre><code>&lt;svg class=&quot;icon icon-chevron-down&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-chevron-left">
+                <div class="icon-box" id="icon-box-icon-chevron-left">
+                    <svg class="icon icon-chevron-left"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-chevron-left"></use></svg>
+                </div>
+                <h2>icon-chevron-left</h2>
+                <button onclick="showPopover('snippet-icon-chevron-left')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-chevron-left')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-chevron-left">
+                    <pre><code>&lt;svg class=&quot;icon icon-chevron-left&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-left&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-chevron-right">
+                <div class="icon-box" id="icon-box-icon-chevron-right">
+                    <svg class="icon icon-chevron-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-chevron-right"></use></svg>
+                </div>
+                <h2>icon-chevron-right</h2>
+                <button onclick="showPopover('snippet-icon-chevron-right')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-chevron-right')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-chevron-right">
+                    <pre><code>&lt;svg class=&quot;icon icon-chevron-right&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-right&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-chevron-top">
+                <div class="icon-box" id="icon-box-icon-chevron-top">
+                    <svg class="icon icon-chevron-top"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-chevron-top"></use></svg>
+                </div>
+                <h2>icon-chevron-top</h2>
+                <button onclick="showPopover('snippet-icon-chevron-top')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-chevron-top')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-chevron-top">
+                    <pre><code>&lt;svg class=&quot;icon icon-chevron-top&quot;&gt;&lt;use xlink:href=&quot;#icon-chevron-top&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-click">
+                <div class="icon-box" id="icon-box-icon-click">
+                    <svg class="icon icon-click"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-click"></use></svg>
+                </div>
+                <h2>icon-click</h2>
+                <button onclick="showPopover('snippet-icon-click')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-click')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-click">
+                    <pre><code>&lt;svg class=&quot;icon icon-click&quot;&gt;&lt;use xlink:href=&quot;#icon-click&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-clock">
+                <div class="icon-box" id="icon-box-icon-clock">
+                    <svg class="icon icon-clock"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-clock"></use></svg>
+                </div>
+                <h2>icon-clock</h2>
+                <button onclick="showPopover('snippet-icon-clock')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-clock')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-clock">
+                    <pre><code>&lt;svg class=&quot;icon icon-clock&quot;&gt;&lt;use xlink:href=&quot;#icon-clock&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-close-button">
+                <div class="icon-box" id="icon-box-icon-close-button">
+                    <svg class="icon icon-close-button"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-close-button"></use></svg>
+                </div>
+                <h2>icon-close-button</h2>
+                <button onclick="showPopover('snippet-icon-close-button')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-close-button')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-close-button">
+                    <pre><code>&lt;svg class=&quot;icon icon-close-button&quot;&gt;&lt;use xlink:href=&quot;#icon-close-button&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-close">
+                <div class="icon-box" id="icon-box-icon-close">
+                    <svg class="icon icon-close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-close"></use></svg>
+                </div>
+                <h2>icon-close</h2>
+                <button onclick="showPopover('snippet-icon-close')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-close')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-close">
+                    <pre><code>&lt;svg class=&quot;icon icon-close&quot;&gt;&lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-comment">
+                <div class="icon-box" id="icon-box-icon-comment">
+                    <svg class="icon icon-comment"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-comment"></use></svg>
+                </div>
+                <h2>icon-comment</h2>
+                <button onclick="showPopover('snippet-icon-comment')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-comment')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-comment">
+                    <pre><code>&lt;svg class=&quot;icon icon-comment&quot;&gt;&lt;use xlink:href=&quot;#icon-comment&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-delivery">
+                <div class="icon-box" id="icon-box-icon-delivery">
+                    <svg class="icon icon-delivery"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-delivery"></use></svg>
+                </div>
+                <h2>icon-delivery</h2>
+                <button onclick="showPopover('snippet-icon-delivery')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-delivery')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-delivery">
+                    <pre><code>&lt;svg class=&quot;icon icon-delivery&quot;&gt;&lt;use xlink:href=&quot;#icon-delivery&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-denisov">
+                <div class="icon-box" id="icon-box-icon-denisov">
+                    <svg class="icon icon-denisov"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-denisov"></use></svg>
+                </div>
+                <h2>icon-denisov</h2>
+                <button onclick="showPopover('snippet-icon-denisov')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-denisov')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-denisov">
+                    <pre><code>&lt;svg class=&quot;icon icon-denisov&quot;&gt;&lt;use xlink:href=&quot;#icon-denisov&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-diamond">
+                <div class="icon-box" id="icon-box-icon-diamond">
+                    <svg class="icon icon-diamond"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-diamond"></use></svg>
+                </div>
+                <h2>icon-diamond</h2>
+                <button onclick="showPopover('snippet-icon-diamond')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-diamond')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-diamond">
+                    <pre><code>&lt;svg class=&quot;icon icon-diamond&quot;&gt;&lt;use xlink:href=&quot;#icon-diamond&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-discount">
+                <div class="icon-box" id="icon-box-icon-discount">
+                    <svg class="icon icon-discount"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-discount"></use></svg>
+                </div>
+                <h2>icon-discount</h2>
+                <button onclick="showPopover('snippet-icon-discount')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-discount')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-discount">
+                    <pre><code>&lt;svg class=&quot;icon icon-discount&quot;&gt;&lt;use xlink:href=&quot;#icon-discount&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-enter">
+                <div class="icon-box" id="icon-box-icon-enter">
+                    <svg class="icon icon-enter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-enter"></use></svg>
+                </div>
+                <h2>icon-enter</h2>
+                <button onclick="showPopover('snippet-icon-enter')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-enter')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-enter">
+                    <pre><code>&lt;svg class=&quot;icon icon-enter&quot;&gt;&lt;use xlink:href=&quot;#icon-enter&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-fb">
+                <div class="icon-box" id="icon-box-icon-fb">
+                    <svg class="icon icon-fb"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-fb"></use></svg>
+                </div>
+                <h2>icon-fb</h2>
+                <button onclick="showPopover('snippet-icon-fb')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-fb')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-fb">
+                    <pre><code>&lt;svg class=&quot;icon icon-fb&quot;&gt;&lt;use xlink:href=&quot;#icon-fb&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-filter">
+                <div class="icon-box" id="icon-box-icon-filter">
+                    <svg class="icon icon-filter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-filter"></use></svg>
+                </div>
+                <h2>icon-filter</h2>
+                <button onclick="showPopover('snippet-icon-filter')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-filter')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-filter">
+                    <pre><code>&lt;svg class=&quot;icon icon-filter&quot;&gt;&lt;use xlink:href=&quot;#icon-filter&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-hamburger">
+                <div class="icon-box" id="icon-box-icon-hamburger">
+                    <svg class="icon icon-hamburger"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-hamburger"></use></svg>
+                </div>
+                <h2>icon-hamburger</h2>
+                <button onclick="showPopover('snippet-icon-hamburger')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-hamburger')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-hamburger">
+                    <pre><code>&lt;svg class=&quot;icon icon-hamburger&quot;&gt;&lt;use xlink:href=&quot;#icon-hamburger&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-heart">
+                <div class="icon-box" id="icon-box-icon-heart">
+                    <svg class="icon icon-heart"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-heart"></use></svg>
+                </div>
+                <h2>icon-heart</h2>
+                <button onclick="showPopover('snippet-icon-heart')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-heart')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-heart">
+                    <pre><code>&lt;svg class=&quot;icon icon-heart&quot;&gt;&lt;use xlink:href=&quot;#icon-heart&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-hexagon">
+                <div class="icon-box" id="icon-box-icon-hexagon">
+                    <svg class="icon icon-hexagon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-hexagon"></use></svg>
+                </div>
+                <h2>icon-hexagon</h2>
+                <button onclick="showPopover('snippet-icon-hexagon')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-hexagon')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-hexagon">
+                    <pre><code>&lt;svg class=&quot;icon icon-hexagon&quot;&gt;&lt;use xlink:href=&quot;#icon-hexagon&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-inst">
+                <div class="icon-box" id="icon-box-icon-inst">
+                    <svg class="icon icon-inst"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-inst"></use></svg>
+                </div>
+                <h2>icon-inst</h2>
+                <button onclick="showPopover('snippet-icon-inst')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-inst')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-inst">
+                    <pre><code>&lt;svg class=&quot;icon icon-inst&quot;&gt;&lt;use xlink:href=&quot;#icon-inst&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-instagram">
+                <div class="icon-box" id="icon-box-icon-instagram">
+                    <svg class="icon icon-instagram"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-instagram"></use></svg>
+                </div>
+                <h2>icon-instagram</h2>
+                <button onclick="showPopover('snippet-icon-instagram')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-instagram')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-instagram">
+                    <pre><code>&lt;svg class=&quot;icon icon-instagram&quot;&gt;&lt;use xlink:href=&quot;#icon-instagram&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-login">
+                <div class="icon-box" id="icon-box-icon-login">
+                    <svg class="icon icon-login"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-login"></use></svg>
+                </div>
+                <h2>icon-login</h2>
+                <button onclick="showPopover('snippet-icon-login')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-login')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-login">
+                    <pre><code>&lt;svg class=&quot;icon icon-login&quot;&gt;&lt;use xlink:href=&quot;#icon-login&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-mastercard">
+                <div class="icon-box" id="icon-box-icon-mastercard">
+                    <svg class="icon icon-mastercard"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-mastercard"></use></svg>
+                </div>
+                <h2>icon-mastercard</h2>
+                <button onclick="showPopover('snippet-icon-mastercard')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-mastercard')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-mastercard">
+                    <pre><code>&lt;svg class=&quot;icon icon-mastercard&quot;&gt;&lt;use xlink:href=&quot;#icon-mastercard&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-money-1">
+                <div class="icon-box" id="icon-box-icon-money-1">
+                    <svg class="icon icon-money-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-money-1"></use></svg>
+                </div>
+                <h2>icon-money-1</h2>
+                <button onclick="showPopover('snippet-icon-money-1')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-money-1')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-money-1">
+                    <pre><code>&lt;svg class=&quot;icon icon-money-1&quot;&gt;&lt;use xlink:href=&quot;#icon-money-1&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-money">
+                <div class="icon-box" id="icon-box-icon-money">
+                    <svg class="icon icon-money"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-money"></use></svg>
+                </div>
+                <h2>icon-money</h2>
+                <button onclick="showPopover('snippet-icon-money')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-money')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-money">
+                    <pre><code>&lt;svg class=&quot;icon icon-money&quot;&gt;&lt;use xlink:href=&quot;#icon-money&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-ok">
+                <div class="icon-box" id="icon-box-icon-ok">
+                    <svg class="icon icon-ok"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-ok"></use></svg>
+                </div>
+                <h2>icon-ok</h2>
+                <button onclick="showPopover('snippet-icon-ok')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-ok')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-ok">
+                    <pre><code>&lt;svg class=&quot;icon icon-ok&quot;&gt;&lt;use xlink:href=&quot;#icon-ok&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-package">
+                <div class="icon-box" id="icon-box-icon-package">
+                    <svg class="icon icon-package"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-package"></use></svg>
+                </div>
+                <h2>icon-package</h2>
+                <button onclick="showPopover('snippet-icon-package')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-package')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-package">
+                    <pre><code>&lt;svg class=&quot;icon icon-package&quot;&gt;&lt;use xlink:href=&quot;#icon-package&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-phone">
+                <div class="icon-box" id="icon-box-icon-phone">
+                    <svg class="icon icon-phone"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-phone"></use></svg>
+                </div>
+                <h2>icon-phone</h2>
+                <button onclick="showPopover('snippet-icon-phone')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-phone')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-phone">
+                    <pre><code>&lt;svg class=&quot;icon icon-phone&quot;&gt;&lt;use xlink:href=&quot;#icon-phone&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-pin-1">
+                <div class="icon-box" id="icon-box-icon-pin-1">
+                    <svg class="icon icon-pin-1"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-pin-1"></use></svg>
+                </div>
+                <h2>icon-pin-1</h2>
+                <button onclick="showPopover('snippet-icon-pin-1')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-pin-1')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-pin-1">
+                    <pre><code>&lt;svg class=&quot;icon icon-pin-1&quot;&gt;&lt;use xlink:href=&quot;#icon-pin-1&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-pin">
+                <div class="icon-box" id="icon-box-icon-pin">
+                    <svg class="icon icon-pin"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-pin"></use></svg>
+                </div>
+                <h2>icon-pin</h2>
+                <button onclick="showPopover('snippet-icon-pin')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-pin')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-pin">
+                    <pre><code>&lt;svg class=&quot;icon icon-pin&quot;&gt;&lt;use xlink:href=&quot;#icon-pin&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-plane">
+                <div class="icon-box" id="icon-box-icon-plane">
+                    <svg class="icon icon-plane"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-plane"></use></svg>
+                </div>
+                <h2>icon-plane</h2>
+                <button onclick="showPopover('snippet-icon-plane')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-plane')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-plane">
+                    <pre><code>&lt;svg class=&quot;icon icon-plane&quot;&gt;&lt;use xlink:href=&quot;#icon-plane&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-play">
+                <div class="icon-box" id="icon-box-icon-play">
+                    <svg class="icon icon-play"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-play"></use></svg>
+                </div>
+                <h2>icon-play</h2>
+                <button onclick="showPopover('snippet-icon-play')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-play')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-play">
+                    <pre><code>&lt;svg class=&quot;icon icon-play&quot;&gt;&lt;use xlink:href=&quot;#icon-play&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-present-card">
+                <div class="icon-box" id="icon-box-icon-present-card">
+                    <svg class="icon icon-present-card"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-present-card"></use></svg>
+                </div>
+                <h2>icon-present-card</h2>
+                <button onclick="showPopover('snippet-icon-present-card')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-present-card')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-present-card">
+                    <pre><code>&lt;svg class=&quot;icon icon-present-card&quot;&gt;&lt;use xlink:href=&quot;#icon-present-card&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-present">
+                <div class="icon-box" id="icon-box-icon-present">
+                    <svg class="icon icon-present"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-present"></use></svg>
+                </div>
+                <h2>icon-present</h2>
+                <button onclick="showPopover('snippet-icon-present')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-present')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-present">
+                    <pre><code>&lt;svg class=&quot;icon icon-present&quot;&gt;&lt;use xlink:href=&quot;#icon-present&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-search">
+                <div class="icon-box" id="icon-box-icon-search">
+                    <svg class="icon icon-search"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-search"></use></svg>
+                </div>
+                <h2>icon-search</h2>
+                <button onclick="showPopover('snippet-icon-search')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-search')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-search">
+                    <pre><code>&lt;svg class=&quot;icon icon-search&quot;&gt;&lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-star">
+                <div class="icon-box" id="icon-box-icon-star">
+                    <svg class="icon icon-star"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-star"></use></svg>
+                </div>
+                <h2>icon-star</h2>
+                <button onclick="showPopover('snippet-icon-star')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-star')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-star">
+                    <pre><code>&lt;svg class=&quot;icon icon-star&quot;&gt;&lt;use xlink:href=&quot;#icon-star&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-truck">
+                <div class="icon-box" id="icon-box-icon-truck">
+                    <svg class="icon icon-truck"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-truck"></use></svg>
+                </div>
+                <h2>icon-truck</h2>
+                <button onclick="showPopover('snippet-icon-truck')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-truck')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-truck">
+                    <pre><code>&lt;svg class=&quot;icon icon-truck&quot;&gt;&lt;use xlink:href=&quot;#icon-truck&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-twitter">
+                <div class="icon-box" id="icon-box-icon-twitter">
+                    <svg class="icon icon-twitter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-twitter"></use></svg>
+                </div>
+                <h2>icon-twitter</h2>
+                <button onclick="showPopover('snippet-icon-twitter')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-twitter')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-twitter">
+                    <pre><code>&lt;svg class=&quot;icon icon-twitter&quot;&gt;&lt;use xlink:href=&quot;#icon-twitter&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-user">
+                <div class="icon-box" id="icon-box-icon-user">
+                    <svg class="icon icon-user"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-user"></use></svg>
+                </div>
+                <h2>icon-user</h2>
+                <button onclick="showPopover('snippet-icon-user')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-user')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-user">
+                    <pre><code>&lt;svg class=&quot;icon icon-user&quot;&gt;&lt;use xlink:href=&quot;#icon-user&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-visa">
+                <div class="icon-box" id="icon-box-icon-visa">
+                    <svg class="icon icon-visa"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-visa"></use></svg>
+                </div>
+                <h2>icon-visa</h2>
+                <button onclick="showPopover('snippet-icon-visa')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-visa')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-visa">
+                    <pre><code>&lt;svg class=&quot;icon icon-visa&quot;&gt;&lt;use xlink:href=&quot;#icon-visa&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-vk">
+                <div class="icon-box" id="icon-box-icon-vk">
+                    <svg class="icon icon-vk"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-vk"></use></svg>
+                </div>
+                <h2>icon-vk</h2>
+                <button onclick="showPopover('snippet-icon-vk')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-vk')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-vk">
+                    <pre><code>&lt;svg class=&quot;icon icon-vk&quot;&gt;&lt;use xlink:href=&quot;#icon-vk&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-wallet">
+                <div class="icon-box" id="icon-box-icon-wallet">
+                    <svg class="icon icon-wallet"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-wallet"></use></svg>
+                </div>
+                <h2>icon-wallet</h2>
+                <button onclick="showPopover('snippet-icon-wallet')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-wallet')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-wallet">
+                    <pre><code>&lt;svg class=&quot;icon icon-wallet&quot;&gt;&lt;use xlink:href=&quot;#icon-wallet&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-writing">
+                <div class="icon-box" id="icon-box-icon-writing">
+                    <svg class="icon icon-writing"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-writing"></use></svg>
+                </div>
+                <h2>icon-writing</h2>
+                <button onclick="showPopover('snippet-icon-writing')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-writing')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-writing">
+                    <pre><code>&lt;svg class=&quot;icon icon-writing&quot;&gt;&lt;use xlink:href=&quot;#icon-writing&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+            <li title="icon-yt">
+                <div class="icon-box" id="icon-box-icon-yt">
+                    <svg class="icon icon-yt"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./../temp/sprite.svg#icon-yt"></use></svg>
+                </div>
+                <h2>icon-yt</h2>
+                <button onclick="showPopover('snippet-icon-yt')">Show Snippet</button>
+                <br/>
+                <button onclick="invertBackground('icon-box-icon-yt')">Invert Background</button>
+                <div class="snippet-popover" id="snippet-icon-yt">
+                    <pre><code>&lt;svg class=&quot;icon icon-yt&quot;&gt;&lt;use xlink:href=&quot;#icon-yt&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                    <button onclick="hidePopover()">Close</button>
+                </div>
+            </li>
+        
+    </ul>
+</section>
+<footer>
+    <p>Generated by <a href="https://github.com/shakyshane/gulp-svg-sprites">Gulp Svg Sprites</a> - Preview page
+        courtesy of <a href="http://iconizr.com" target="_blank">iconizr</a>.</p>
+</footer>
+<script type="text/javascript">
+    var openSnippet;
+    function showPopover(id) {
+        openSnippet = document.getElementById(id);
+        openSnippet.classList.add("active");
+    }
+    function hidePopover() {
+
+        openSnippet.classList.remove("active");
+    }
+    function invertBackground(id) {
+        var elem = document.getElementById(id);
+        elem.classList.toggle("inverted");
+    }
+</script>
+</body>
+</html>

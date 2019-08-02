@@ -1,0 +1,44 @@
+.rate
+  $active-color: #ee6839
+  position: relative
+  display: inline-flex
+  align-items: center
+  flex-wrap: nowrap
+  vertical-align: middle
+  &--picker
+    direction: rtl
+  &--picker &__label
+    margin-right: 0
+    margin-left: 4px
+    &:last-child
+      margin-left: 0
+  &__label, &__star
+    margin-right: 4px
+    &:last-child
+      margin-right: 0
+  &__label
+    display: block
+    cursor: pointer
+    input
+      display: none
+  &__label input:checked + &__star, &__label.is-checked ~ &__label &__star
+    color: $active-color
+  &__star
+    color: #d5dbd9
+    font-size: 16px
+    transition: all ease .3s
+    &:before
+      @extend %ticon
+      content: $ticon-star
+  &__active
+    display: inline-flex
+    align-items: center
+    flex-wrap: nowrap
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    z-index: 2
+    overflow: hidden
+  &__active &__star
+    color: $active-color

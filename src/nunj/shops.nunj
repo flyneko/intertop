@@ -1,0 +1,97 @@
+---
+title: Магазины
+gmaps: true
+---
+
+{% extends "layouts/_inner.nunj" %}
+
+{% block scripts %}
+    <script>
+        function mapInit() {
+            var map = createMap(document.getElementById('shops-map'), {lat: 48.964503, lng: 66.909742}, 6);
+            var markers = [
+                { pos: [44.044652, 67.427335], count: 9 },
+                { pos: [46.783487, 70.899546], count: 5 },
+                { pos: [50.554253, 67.330529], count: 2 },
+                { pos: [50.019636, 64.516161], count: 5 },
+                { pos: [47.995528, 62.136241], count: 4 },
+                { pos: [52.737091, 66.906939], count: 6 },
+                { pos: [49.192092, 77.178948], count: 1 },
+                { pos: [53.218506, 66.144905], count: 3 },
+
+            ];
+
+            for (var i in markers) {
+                var m = markers[i];
+                new CustomMarker(m.pos, map, {count: m.count});
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+    <div class="p-shops">
+        <div class="l-wrapper">
+            {{ chunks.breadcrumbs(['Главная', 'Магазины']) }}
+
+            <div class="page">
+                <div class="page__header">
+                    <h2 class="h2">Магазины</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="shops-map" class="p-shops__map"></div>
+
+        <div class="p-shops__tabs js-tabs">
+            {% set cities = { 'Алматы': 'almaty', 'Актау': 'aktau', 'Актобэ': 'aktobe', 'Астана': 'astana', 'Костанай': 'kostanai', 'Караганда': 'karaganda' } %}
+            <div class="l-wrapper">
+                <div class="d-sm-none m-b-15">
+                    <select data-tabs="select" class="js-select">
+                        {% for k, v in cities %}
+                            <option value="{{ v }}">Город: {{ k }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="tabs d-none d-sm-block">
+                    <div class="tabs__bar" data-tabs="bar"></div>
+                    <ul class="tabs__list">
+                        {% for k, v in cities %}
+                            <li class="tabs__item">
+                                <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ v }}"><span>{{ k | safe }}</span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            {% for k, v in cities %}
+                <div id="{{ v }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                    {% for i in range(1, 7) %}
+                        <div class="shop">
+                            <div class="l-wrapper">
+                                <div class="shop__inn">
+                                    <div>
+                                        <figure class="shop__img"><img src="./temp/shops/{{ i }}.jpg"></figure>
+                                    </div>
+                                    <div class="shop__base">
+                                        <div class="shop__info">
+                                            <div class="count-marker">{{ loop.index }}</div>
+                                            <span>{{ k }}, Коргалжинское шоссе, 1 ТРЦ "Mega Astana" </span>
+                                        </div>
+                                        <div>Режим работы: 10:00 - 22:00 </div>
+                                        <div class="shop__contacts">
+                                            <a href="#" class="link">+7 (7172) 79-14-94</a> <br>
+                                            <a href="mailto:itop1-as@intertop.kz" class="link">itop1-as@intertop.kz</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

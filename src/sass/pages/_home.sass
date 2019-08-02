@@ -1,0 +1,64 @@
+.p-home
+  &__head
+    margin-bottom: 35px
+    +r($md)
+      margin-bottom: 20px
+    .cards__container
+      height: 530px
+      +r($md)
+        height: 450px
+      +r($sm)
+        height: 370px
+      +r($xxs)
+        height: 250px
+    .swiper-slide .card__btn
+      +r($sm)
+        display: none
+    .swiper-dots
+      +r($md)
+        position: absolute
+        bottom: 10px
+    .swiper-dot
+      +r($md)
+        background: transparent
+        border-color: #ffffff
+        &.active
+          background: #fff
+          border-color: #ffffff
+  &__actions
+    .cards__container
+      height: 700px
+      +r($md)
+        height: 600px
+      +r($sm)
+        height: 450px
+      +r($xxs)
+        height: 350px
+  &__products
+    .tabs
+      z-index: 4
+      margin-bottom: 30px
+      +r($md)
+        margin-bottom: 25px
+      &__list
+        margin: 0 -15px
+        +r($md)
+          margin: 0 -10px
+        +r($xxs)
+          margin: 0 -6px
+      &__item
+        padding: 0 15px
+        +r($md)
+          padding: 0 10px
+        +r($xxs)
+          padding: 0 6px
+      &__link
+        font-size: 26px
+        +r($md)
+          font-size: 22px
+        +r($sm)
+          font-size: 20px
+        +r($xxs)
+          font-size: 18px
+    .products-carousel
+      z-index: 1

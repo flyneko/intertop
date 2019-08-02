@@ -1,0 +1,149 @@
+@keyframes accordion-in
+  0%
+    opacity: 0
+    transform: scale(0.9) rotateX(-60deg)
+    transform-origin: 50% 0
+  100%
+    opacity: 1
+    transform: scale(1)
+@keyframes accordion-out
+  0%
+    opacity: 1
+    transform: scale(1)
+  100%
+    opacity: 0
+    transform: scale(0.9) rotateX(-60deg)
+
+.accordion
+  border: 1px solid #eaeaea
+  border-width: 1px 0
+  perspective: 1500px
+  & + &
+    margin-top: -1px
+  &.is-expanded
+    //
+  &.is-expanded &__head
+    color: $style-color
+    &:before
+      transform: rotate(180deg)
+  &.is-expanded &__indicator
+    path
+      stroke: $style-color
+      stroke-dashoffset: -15
+  &.is-expanded &__content
+    max-height: 1999px
+    transition-duration: 4s
+  &.is-animate-in &__box
+    animation: accordion-in 0.45s normal ease-in-out both 1
+  &.is-animate-out &__box
+    animation: accordion-out 0.45s alternate ease-in-out both 1
+  &__head
+    font-weight: 600
+    font-size: 24px
+    color: #292a2f
+    display: flex
+    align-items: center
+    height: 75px
+    padding-left: 55px
+    padding-right: 20px
+    position: relative
+    cursor: pointer
+    +r($md)
+      font-size: 22px
+    +r($sm)
+      font-size: 20px
+      height: 65px
+      padding-bottom: 1px
+    +r($xxs)
+      padding-left: 50px
+      font-size: 18px
+  &__indicator
+    position: absolute
+    top: 50%
+    left: 15px
+    transform: translateY(-50%)
+    font-size: 18px
+    transition: all ease .3s
+    +r($sm)
+      font-size: 16px
+    path
+      fill: none
+      stroke: #292a2f
+      stroke-linecap: round
+      stroke-width: 2
+      stroke-dasharray: 29 40
+      transition: stroke-dashoffset 0.3s
+  &__content
+    overflow: hidden
+    max-height: 0
+    transition: all ease 2s
+  &__box
+    padding: 0 15px 20px
+
+.accordion-simple
+  border: 1px solid $style-color6
+  perspective: 1500px
+  & + &
+    margin-top: 20px
+  &.is-expanded
+  //
+  &.is-expanded &__head
+    color: $style-color
+    &:after
+      transform: rotate(180deg) translateY(50%)
+  &.is-expanded &__content
+    max-height: 1999px
+    border-color: $style-color6
+    transition-duration: 4s
+  &.is-animate-in &__box
+    animation: accordion-in 0.45s normal ease-in-out both 1
+  &.is-animate-out &__box
+    animation: accordion-out 0.45s alternate ease-in-out both 1
+  &__head
+    font-weight: 600
+    font-size: 22px
+    color: #292a2f
+    display: flex
+    align-items: center
+    height: 75px
+    padding-left: 80px
+    padding-right: 60px
+    position: relative
+    cursor: pointer
+    &:before, &:after
+      @extend %ticon
+      position: absolute
+      content: ''
+      top: 50%
+      transform: translateY(-50%)
+      transition: all ease .3s
+    &:before
+      content: $ticon-hexagon
+      font-size: 32px
+      color: $style-color
+      left: 30px
+      +r($xxs)
+        left: 15px
+    &:after
+      content: $ticon-chevron-down
+      font-size: 16px
+      color: #000
+      right: 30px
+      +r($xxs)
+        right: 15px
+    +r($sm)
+      font-size: 20px
+      height: 65px
+    +r($xxs)
+      padding-left: 60px
+      font-size: 18px
+  &__content
+    overflow: hidden
+    max-height: 0
+    transition: all ease 2s
+    transition-property: max-height
+    border-top: 1px solid transparent
+  &__box
+    padding: 25px 30px
+    +r($sm)
+      padding: 15px

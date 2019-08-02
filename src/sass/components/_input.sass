@@ -1,0 +1,59 @@
+.input
+  height: 40px
+  background: #fff
+  border: 1px solid #9a9a9a
+  border-radius: 2px
+  font-size: 13px
+  width: 100%
+  display: inline-block
+  vertical-align: middle
+  color: $font-color
+  padding: 0 10px
+  +r($sm)
+    padding: 0 15px
+  &--sm
+    height: 35px
+  &.is-error
+    border-color: $error-color
+  &:focus
+    border-color: $style-color
+    position: relative
+  +placeholder
+    opacity: 1
+    color: #9a9a9a
+    +r($md)
+      font-style: normal
+  &[readonly]
+    color: #737373
+    background: #ededed
+    border-color: #ededed !important
+  &[disabled]
+    background: #f0f0f0
+    border-color: #9a9a9a !important
+textarea.input
+  resize: none
+  padding-top: 11px
+  padding-bottom: 11px
+  height: 150px
+  &[rows]
+    height: auto
+
+.input-range
+  display: flex
+  align-items: center
+  > *
+    padding: 0 2px
+    &:first-child
+      padding-left: 0
+    &:last-child
+      padding-right: 0
+  &__label
+    color: #9a9a9a
+    & + &
+      margin-left: 17px
+  &__input
+    flex-grow: 1
+  .input
+    font-size: 14px
+    font-weight: 600
+    text-align: center

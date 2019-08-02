@@ -1,0 +1,33 @@
+---
+title: Мои заказы
+---
+
+{% extends "layouts/_cabinet.nunj" %}
+
+{% block main %}
+    <a href="#" class="back-btn">Вернуться назад</a>
+    <div class="p-cabinet__title">
+        <h2 class="h2">Заказа N-288291120</h2>
+        <span class="text-normal h2">Выполняется</span>
+    </div>
+    <div class="p-cabinet__block">
+        <div class="row">
+            {% for k, v in {
+                'Доставка': { 'Способ доставки:': 'Курьерская доставка',  'Адрес доставки:': 'г. Алматы, ул. Шевченко 90, кв. 55', 'Статус:': 'Сборка заказа' },
+                'Оплата': { 'Способ оплаты:': 'Банковская карта',  'К оплате:': '54 030 тг.', 'Статус:': 'Оплачено' },
+                'Детали заказа': { 'Имя и Фамилия:': 'Олег Верещагин', 'Телефон:': ' +7 (707) 455-36-22', 'Эл. адрес:': 'oleg.vereshagin@mail.ru' },
+                'Итого': { 'Стоимость товаров:': '52 530 тг.', 'Доставка:': '1 500 тг.', 'Списано бонусов:': '0 тг.', 'Начислено бонусов:': '2 450 тг.', 'Итого:': '54 030 тг.' }
+            } %}
+                <div class="col-12 col-xs-6">
+                    {{ chunks.info(k, v) }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <h2 class="h2">Состав заказа</h2>
+    <div class="p-cabinet__block">
+        {% for i in range(1, 5) %}
+            {{ chunks.cart_item(i, { static: true, footer: true, mod: 'static' }) }}
+        {% endfor %}
+    </div>
+{% endblock %}

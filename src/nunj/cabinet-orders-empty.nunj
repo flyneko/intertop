@@ -1,0 +1,15 @@
+---
+title: Мои заказы - Пусто
+---
+
+{% extends "layouts/_cabinet.nunj" %}
+
+{% block main %}
+    <div class="placeholder-block">
+        <div class="placeholder-block__inn">
+            <div class="placeholder-block__icon">{{ mixins.icon('writing') }}</div>
+            <div class="placeholder-block__title">Сделайте свой первый заказ!</div>
+            <a href="#" class="btn btn--arrow"><span>Смотреть каталог</span></a>
+        </div>
+    </div>
+{% endblock %}

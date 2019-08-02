@@ -1,0 +1,46 @@
+.p-404
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  > *
+    flex: 1
+    +r($sm)
+      width: 100%
+      flex: 1 0 auto
+  &__main
+    text-align: center
+  &__img
+    +r($sm)
+      text-align: center
+      margin-bottom: 15px
+      img
+        max-width: 300px
+  &__num
+    font-size: 400px
+    font-weight: 600
+    color: $style-color4
+    line-height: 0.75
+    +r($lg)
+      font-size: 250px
+    +r($sm)
+      font-size: 150px
+  &__base
+    display: inline-block
+    text-align: left
+  &__title
+    font-size: 50px
+    font-weight: 600
+    margin-bottom: 20px
+    +r($lg)
+      font-size: 40px
+    +r($sm)
+      text-align: center
+      font-size: 30px
+  &__subtitle
+    font-weight: bold
+    font-size: 18px
+    color: #737373
+    margin-bottom: 15px
+  .list
+    font-size: 14px
+    color: #737373

@@ -1,0 +1,10 @@
+<ul class="m-catalog__list m-catalog__list--sub">
+    {% for i in ['САНДАЛИИ', 'КРОССОВКИ', 'КЕДЫ', 'ТУФЛИ', 'БОТИНКИ', 'ПОЛУБОТИНКИ', 'СЛИПОНЫ', 'МОКАСИНЫ', 'БОСОНОЖКИ', 'БАЛЕТКИ'] %}
+        <li class="m-catalog__item {% if loop.index % 2 %}m-catalog__item--has-sub{% endif %}">
+                <a href="#" class="m-catalog__link">
+                        <span class=" {% if loop.index % 2 %}js-m-catalog-link{% endif %}">{{ i }}</span>
+                        <span class="m-catalog__count">3123</span>
+                </a>
+        </li>
+    {% endfor %}
+</ul>

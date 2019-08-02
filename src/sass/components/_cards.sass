@@ -1,0 +1,103 @@
+.cards
+  =offset($offset)
+    &__row
+      margin: 0 -#{$offset / 2}px -#{$offset}px
+    &__col
+      padding: 0 #{$offset / 2}px #{$offset}px
+    &__container--v > *
+      height: calc(50% - #{$offset}px)
+      margin-bottom: #{$offset}px
+  &__col
+    margin-bottom: 0 !important
+  &__container
+    &.row > *
+      height: 50%
+    > *
+      height: 100%
+    &--v
+      display: flex
+      flex-wrap: wrap
+      > *
+        &:last-child
+          height: 50% !important
+          margin-bottom: 0
+      .carousel
+        height: 100%
+      .swiper-container
+        height: calc(100% - 33px)
+  .swiper-slide > .card
+    height: 100%
+  +offset(30)
+  +r($md)
+    +offset(20)
+  +r($sm)
+    +offset(15)
+  +r($xxs)
+    +offset(10)
+
+.card
+  display: flex
+  width: 100%
+  align-items: flex-end
+  position: relative
+  cursor: pointer
+  overflow: hidden
+  &:hover &__img
+    width: calc(100% + 20px)
+    left: -20px
+  &:hover &__btn
+    background: $style-color
+    color: $style-color2
+    &:after
+      margin-left: 25px
+      +arr(4, 7, $style-color2, r)
+  &--l &__img
+    background-position: left center
+  &--lt &__img
+    background-position: left top
+  &--t &__img
+    background-position: top center
+  &--rt &__img
+    background-position: right top
+  &__img
+    overflow: hidden
+    position: absolute
+    height: 100%
+    width: 100%
+    left: 0
+    top: 0
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    transition: all ease .3s
+  &__btn
+    background: $style-color2
+    color: $style-color4
+    font-size: 14px
+    font-weight: bold
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    height: 55px
+    padding: 0 30px
+    position: relative
+    border: 0
+    z-index: 2
+    transition: all ease .3s
+    +r($md)
+      height: 45px
+      padding: 0 25px
+    +r($sm)
+      height: 40px
+      padding: 0 20px
+    +r($xxs)
+      height: 35px
+      font-size: 12px
+      padding: 0 13px
+    &:after
+      +arr(4, 7, $style-color, r)
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      margin-left: 15px
+      transition: all ease .3s

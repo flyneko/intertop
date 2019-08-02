@@ -1,0 +1,175 @@
+.order-step
+  border: 1px solid $style-color6
+  border-radius: 4px
+  overflow: hidden
+  & + &
+    margin-top: 20px
+    +r($xs)
+      margin-top: 16px
+    +r($xxs)
+      margin-top: 13px
+  &.is-active &__header
+    background: $style-color
+    color: #ffffff
+  &.is-active &__edit
+    color: #fff
+    border-color: #fff
+  &.is-completed
+    border-color: $style-color5
+  &.is-completed &__edit
+    display: block
+    animation: fadeInRight 400ms forwards
+  &.is-completed &__icon
+    .icon
+      opacity: 0
+    &:before
+      color: $style-color5
+      display: block
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 10px 20px
+    border-radius: 4px 4px 0 0
+    height: 75px
+    +r($md)
+      padding: 10px 15px
+      height: 60px
+    +r($xs)
+      padding: 10px
+      height: 50px
+    &-base
+      display: flex
+      align-items: center
+  &__icon
+    font-size: 0
+    margin-right: 15px
+    position: relative
+    &:before, .icon
+      font-size: 36px
+      fill: #cfe3dc
+      +r($xs)
+        font-size: 28px
+      +r($xxs)
+        font-size: 22px
+    &:before
+      @extend %ticon
+      content: $ticon-check-circle
+      position: absolute
+      left: 0
+      top: 0
+      display: none
+      animation: zoomIn .3s
+    .icon
+      fill: #cfe3dc
+  &__title
+    font-weight: 600
+    font-size: 20px
+    +r($xs)
+      font-size: 18px
+    +r($xxs)
+      font-size: 16px
+  &__inn
+    padding: 20px
+    background: #ffffff
+    display: none
+    border-radius: 0 0 4px 4px
+    border-top: 1px solid $style-color6
+    +r($xs)
+      padding: 15px
+    +r($xxs)
+      padding: 10px
+  &__actions
+    margin: 20px -20px -20px
+    padding: 20px
+    border-top: 1px solid $style-color6
+    &:after
+      clear: both
+      content: ''
+      display: block
+      width: 100%
+    +r($xs)
+      padding: 15px
+      margin: 15px -15px -15px
+    +r($xxs)
+      margin: 10px -10px -10px
+      padding: 10px
+  &__btn
+    @extend .btn
+    @extend .btn--outline
+    max-width: 115px
+    width: 100%
+    padding: 0
+    +r($xxs)
+      min-height: 35px
+    > span
+      &:before, &:after
+        @extend %ticon
+        display: inline-block
+        vertical-align: middle
+        font-size: 9px
+    &--next
+      float: right
+      > span
+        &:before
+          display: none
+        &:after
+          content: $ticon-arrow-right
+          margin-left: 20px
+    &--prev
+      border-color: #7c7c7c
+      color: #7c7c7c !important
+      float: left
+      &:before
+        background: #7c7c7c
+      > span
+        &:before
+          content: $ticon-arrow-left
+          margin-right: 20px
+        &:after
+          display: none
+  &__bonus + &__actions
+    margin-top: 0
+  &__bonus
+    border-top: 1px solid $style-color6
+    padding: 10px 20px
+    margin: 20px -20px 0
+    display: flex
+    align-items: center
+    +r($xs)
+      padding: 10px 15px
+      margin: 15px -15px 0
+    +r($xxs)
+      margin: 10px -10px 0
+      padding: 10px
+    &-label
+      font-weight: 600
+      margin-right: 13px
+    &-input
+      position: relative
+      max-width: 510px
+      width: 100%
+    &-btn
+      position: absolute
+      right: 0
+      top: 0
+      width: 38px
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 0
+      background-color: transparent
+      .icon
+        fill: #000
+        font-size: 9px
+  &__edit
+    font-size: 13px
+    color: #4d4d4d
+    font-weight: normal
+    border-bottom: 1px dotted #4d4d4d
+    display: none
+  .input
+    border-color: #dcdcdc
+  .btn
+    font-size: 14px

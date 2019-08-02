@@ -1,0 +1,65 @@
+<nav class="nav">
+    <div class="nav__bar js-nav-bar"></div>
+    <div class="l-wrapper">
+        <ul class="nav__inn">
+            {% for i in [ 'Женская обувь', 'Мужская обувь', 'Детская обувь', 'Одежда', 'Аксессуары', 'Распродажа %', 'Уход', 'Бренды'] %}
+                <li class="nav__item"><a href="#" class="nav__link js-nav-item {% if i == 'Распродажа %' %}nav__link--red{% endif %}"><span>{{ i }}</span></a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+<div class="catalog js-catalog">
+    <div class="catalog__inn">
+        <div class="l-wrapper">
+            <div class="row">
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="catalog__title">Категории</div>
+                            <ul class="catalog__menu">
+                                <li class="catalog__menu-item catalog__menu-item--offset"><a href="#" class="catalog__menu-link">Осень-зима 2017</a></li>
+                                <li class="catalog__menu-item"><a href="#" class="catalog__menu-link">Для девочек</a></li>
+                                <li class="catalog__menu-item catalog__menu-item--offset"><a href="#" class="catalog__menu-link">Для мальчиков</a></li>
+                                {% for i in ['САНДАЛИИ', 'КРОССОВКИ', 'КЕДЫ', 'ТУФЛИ', 'БОТИНКИ', 'ПОЛУБОТИНКИ', 'СЛИПОНЫ', 'МОКАСИНЫ', 'БОСОНОЖКИ', 'БАЛЕТКИ'] %}
+                                    <li class="catalog__menu-item"><a href="#" class="catalog__menu-link link">{{ i }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <a href="#" class="catalog__show">Показать все</a>
+                        </div>
+                        <div class="col-4">
+                            <div class="catalog__title">Бренды</div>
+                            <ul class="catalog__menu">
+                                {% for i in ['GEOX', 'CLARKS', 'SKECHERS', 'TIMBERLAND', 'TOMMY HILFIGER', 'KEDDO', 'PRIMIGI', 'BRASKA', 'IMAC' ,'BRASKA АСПЕКТ', 'GARVALIN', 'CROSBY', 'BIOMECANICS', 'BETSY'] %}
+                                    <li class="catalog__menu-item"><a href="#" class="catalog__menu-link link">{{ i }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <a href="#" class="catalog__show">Показать все</a>
+                        </div>
+                        <div class="col-4">
+                            <div class="catalog__title">Коллекция</div>
+                            <ul class="catalog__menu">
+                                {% for i in ['Осень', 'Зима', 'Лето', 'Весна'] %}
+                                    <li class="catalog__menu-item"><a href="#" class="catalog__menu-link link">{{ i }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <a href="#" class="catalog__show">Показать все</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="cards">
+                        <div class="cards__row row">
+                            {% for k, v in { 'Спорт': '19', 'Школа': '20', 'Праздник': '21' } %}
+                                <div class="cards__col col-4">
+                                    <div class="cards__container">
+                                        {{ chunks.card({ img: v, btn: k }) }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

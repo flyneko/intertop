@@ -1,0 +1,49 @@
+.carousel
+  position: relative
+  .swiper-slide
+    height: auto
+    width: auto
+  .swiper-dots
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    font-size: 0
+    z-index: 2
+    bottom: 0
+    left: 0
+    width: 100%
+    margin-top: 20px
+    +r($sm)
+      flex-direction: row
+    +r($xxs)
+      margin-top: 15px
+    .play
+      margin-top: 10px
+  .swiper-dot
+    border: 2px solid #d8d8d8
+    width: 13px
+    height: 13px
+    display: inline-block
+    vertical-align: middle
+    margin-right: 10px
+    overflow: hidden
+    cursor: pointer
+    border-radius: 50%
+    background: #fff
+    transition: all ease .3s
+    +r($md)
+      width: 10px
+      height: 10px
+      margin-right: 7px
+    +r($xxs)
+      width: 8px
+      height: 8px
+      margin-right: 5px
+    &.active
+      background: $style-color
+      border-color: $style-color
+    &:last-child
+      margin-right: 0
+  .swiper-button-disabled
+    opacity: 0.7
